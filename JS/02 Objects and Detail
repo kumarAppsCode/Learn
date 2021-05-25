@@ -1,1 +1,6 @@
 Objects
+var age=40;
+var age='I am Dinesh';
+-----------------------------
+(type of age):==>Data type 
+-----------------------------

@@ -26,3 +26,6 @@ mostly use in body tag to avoid rendering
  Analytics script( Analytics script= page visitor) not use in body because person may close the page
  so we need to add analytics script in header
 ************************************************************************
+ Browser: need java script off/on 
+tag: <noscript> ==> warning to message
+************************************************************************

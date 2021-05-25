@@ -1,0 +1,31 @@
+Value: it refer amount
+Varialbe: it will be vary
+==================================================================
+Identifier: name==>Variable+constand+property+funcation
+  letter/_/$==camel Case
+==================================================================  
+Keywaord: comments / Reserved words
+==================================================================
+Statement:
+var message; -- message is statement
+message='hai';
+==================================================================
+comment:
+Single line commend: // 
+multiple line commend:
+/**
+**/
+==================================================================
+Data type:
+simple: (primitive type)
+numnber
+String 
+Boolean
+null
+undefine
+---------------------
+complex(refernce data type)
+Objects
+---------------------
+var octNum=0255;
+var hexNum=0xFF;  

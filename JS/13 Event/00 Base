@@ -2,3 +2,5 @@ onmouseOver================move to the  content
 onmouseOut ================move exit from content
 onmouseover="stop()"=======Default Funcation 
 onmouseout="start()"=======Default Funcation
+onmouseup ================Right click
+onmousedown ==============Right click exit

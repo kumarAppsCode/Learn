@@ -1,0 +1,8 @@
+ResponseEntity represents an HTTP response, 
+including 
+headers,
+body,
+and status.
+While @ResponseBody 
+puts the return value into the body of the response, 
+ResponseEntity also allows us to add headers and status code

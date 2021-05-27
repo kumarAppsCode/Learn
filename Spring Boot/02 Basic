@@ -1,0 +1,9 @@
+Spring boot:
+1. Started
+2. Tomcat Server
+3. Port
+How? Parent
+----------------------
+URL: whitelabel Error page
+----------------------
+Repository------>CrudRepository----->PagingAndSortingRepository----->JpaRepository

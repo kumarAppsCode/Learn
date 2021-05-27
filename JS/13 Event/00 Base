@@ -4,3 +4,4 @@ onmouseover="stop()"=======Default Funcation
 onmouseout="start()"=======Default Funcation
 onmouseup ================Right click
 onmousedown ==============Right click exit
+onclick="onCalFun()=======click to call function

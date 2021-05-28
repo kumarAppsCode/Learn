@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on Key up and down</title>
+    <script>
+        function funOnKeypress(x){
+            x.style.color ="red"
+            x.style.backgroundColor ="yellow";
+        }
+
+        function funOnDown(x){
+            x.style.color ="black"
+            x.style.backgroundColor ="transparent";
+        }
+
+        function funKeyPress(x){
+            // x.style.color ="yellow"
+            // x.style.backgroundColor ="blue";
+            // x.style.color ="red"
+            // x.style.backgroundColor ="yellow";
+            x.style.color = "white";
+            x.style.backgroundColor = "grey";
+        }
+
+    </script>
+
+</head>
+<body>
+  Key 1: <input type="text" 
+                onkeyup="funOnKeypress(this)" 
+                onkeydown="funOnDown(this)"
+                onkeypress="funKeyPress(this)"
+                > 
+</body>
+</html>

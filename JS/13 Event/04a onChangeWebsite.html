@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change website</title>
+    <script>
+        function funChangeWebsite(x){
+            window.location=x;
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+<select onchange="funChangeWebsite(this.value)">
+<option value="null">Select website</option>
+<option value="https://www.google.com/">Google</option>
+<option value="https://www.facebook.com/">Face book</option>
+<option value="https://www.linkedin.com/feed/?trk=">LinkedIn</option>
+</select>
+
+
+</body>
+</html>

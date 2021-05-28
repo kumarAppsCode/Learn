@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iamge Change</title>
+    <script>
+        function funcImageChange(x){
+            document.body.style.backgroundImage= "url('"+x+"')";
+        }
+
+
+    </script>
+</head>
+<body>
+
+    <select onChange="funcImageChange(this.value)">
+        <option>Select the image</option>
+        <option value="D:/Projects/New Learn/JS/Full/Udemy/JavaScript/JavaScript/Events/images/maven.jpg">
+        Maven</option>
+        <option value="D:/Projects/New Learn/JS/Full/Udemy/JavaScript/JavaScript/Events/images/webservices.jpg">
+        Web Services</option>
+        <option value="D:/Projects/New Learn/JS/Full/Udemy/JavaScript/JavaScript/Events/images/xslt.jpg">
+        XSLT</option>
+    </select>
+    
+</body>
+</html>

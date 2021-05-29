@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throws</title>
+    <Script>
+        function funAgeValidate(){
+            try {
+                var age=document.getElementById("age").value;
+                console.log("age"+age);
+                if(age==""){
+                    throw "Age Can't be Empty";
+                }else if(age<18){
+                    throw "To Young cann't be vote";
+                }else{
+                    throw null;
+                }
+
+            } catch (Obj) {
+                document.getElementById("errInfo").innerHTML=Obj;                
+            }
+        }
+    
+    </Script>
+</head>
+<body>
+    Age:<input type="text" id="age"></input>
+    <input type="button" onclick="funAgeValidate()" value="Validate"/>
+    <p id="errInfo"></p>    
+</body>
+</html>

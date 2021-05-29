@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <script> 
+        // var d=new Date();
+        // document.write(d);
+         function getDate(){
+             var d=new Date();
+             var da=d.toLocaleDateString();
+             var t=d.toLocaleTimeString();
+             var b=d.toLocaleString();
+             document.getElementById("all").innerHTML=d;
+             document.getElementById("localDate").innerHTML=da;
+             document.getElementById("localTime").innerHTML=t;
+             document.getElementById("localAll").innerHTML=b;
+         }   
+        
+    </script>
+</head>
+<body onload="getDate()">
+    <p id="all"></p>
+    <p id="localDate"></p>
+    <p id="localTime"></p>
+    <p id="localAll"></p>
+</body>
+</html>

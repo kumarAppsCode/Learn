@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Validation</title>
+        <script> 
+            function funValidate(){
+             var num=document.myForm.number.value;
+               if(isNaN(num)|| num<1|| num>10){
+                   alert("Kindly Enter the valid number between 0 to 10");
+                   document.myForm.number.focus();
+                   return false;
+               } else{
+                   alert("Success!");
+                   return true;
+               }
+
+            }
+        </script>
+
+</head>
+<body>
+    <h3>Number Validation Enter number between 1 to 10</h3> 
+   <form name="myForm" action="val.jsp" onSubmit="return funValidate()">
+    Number: <input type="text" name="number"/>
+    <input type="submit" value="Validate" />
+   </form>   
+</body>
+</html>

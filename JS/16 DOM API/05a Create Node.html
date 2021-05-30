@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Node Task</title>
+    <Script>
+        function funCreate(){
+           var parent=document.getElementById("div");
+           var child=document.createElement("p");
+           var text=document.createTextNode("TV: 25000$");
+           child.appendChild(text);
+           parent.appendChild(child);
+        }
+        //-------------------------- 
+        function funDelete(){
+           var parent=document.getElementById("div");
+           var child=document.getElementById("para2");
+           parent.removeChild(child);
+        }
+    </Script>
+
+
+</head>
+<body>
+    <div id="div">
+       <p id="para1">Laptop: 8000$</p>     
+       <p id="para2">Cellphone: 3000$</p>     
+    </div>
+    <input type="button" value="Create" id="btn1" onclick="funCreate()"/>
+    <input type="button" value="Delete" id="btn2" onclick="funDelete()"/>
+</body>
+</html>

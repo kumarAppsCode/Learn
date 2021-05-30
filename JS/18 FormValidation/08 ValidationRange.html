@@ -1,0 +1,59 @@
+<!-- Brackets -->
+<!-- [...] - any one charater 
+     [^..] - any one charater not in brackets (Start) 
+     [0-9] - number range
+     [a-z] - charater
+     [A-Z] - character
+Qualifier:
+     x+ - match any String with one or more (+ atlease one char)
+     x* - match any String with  0 or more 
+     x{N} - match any String with sequences of N 
+     x{3.5} - any String with sequences of at least two x's
+     x$ - Sting with x at the end of it (End)
+     ^x - Sting with x at the beginning of it
+ Meta charater:
+     . - single character
+     \s- white space character
+     \S -no white space character 
+     \d - a digit(0-9)
+     \D - a non -digit
+     \w - a word character    
+ Literial
+ Modifier    
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text validation</title>
+    <Script>
+
+        function funval(){
+                var reg=/^[A-Za-z0-9\s]{3,6}$/;
+                var address=document.myForm.address.value;
+                var result= reg.test(address);
+                if(result){
+                    alert("Success.!");
+                    document.getElementById("err").innerHTML=null;
+                    return true;
+                }else{
+                    // alert("Kindly enter valid Info");
+                    document.getElementById("err").innerHTML="Please enter Alpha or Numeric Value";
+                    return false;
+                }
+            }
+    </Script>
+
+</head>
+<body>
+    <form name="myForm" action="reg.jsp" onsubmit="return funval()">
+    Address:<textArea name="address"></textArea> <br/>
+    <b id="err"></b>  
+    
+    <input type="submit" value="Submit"/>
+    </form>    
+</body>
+</html>

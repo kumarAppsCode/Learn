@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button </title>
+    <script>
+        function funval(){
+          var valid=false;
+          var x=document.myForm.paymentMethod;  
+            for(var i=0;i<x.length;i++){
+                if(x[i].checked){
+                    valid=true;
+                    break;
+                }
+            }
+            if(valid){
+                alert("Success!");
+                return true;
+            }else{
+                alert("Please select the value..!");
+                return false;
+            }
+        }
+    </script>
+
+</head>
+<body>
+   <form name="myForm" action="nav.jsp" onsubmit="return funval()">
+       <input type="radio" name="paymentMethod" value="cod">Cash on Delivery
+       <input type="radio" name="paymentMethod" value="netbank">Net Bank
+       <input type="radio" name="paymentMethod" value="debitcard">Debit Card
+       <input type="submit" value="Submit" name="submit"/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select one </title>
+    <script>
+        function funValidate(){
+            var col=document.myForm.colour.value;
+            if(col==""){
+                alert("Please select the colour");
+                return false;
+            }else{
+                alert("Success..!");
+                return true;
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <form name="myForm" onsubmit="return funValidate()">
+        <!-- onchange="return funValidate()" -->
+        <select name="colour">
+            <option value="">Select the colour</option>    
+            <option value="red">Red</option>    
+            <option value="blue">Blue</option>    
+            <option value="yellow">Yellow</option>    
+        </select>    
+    <input type="submit" value=Submit  />
+    </form>    
+
+
+</body>
+</html>

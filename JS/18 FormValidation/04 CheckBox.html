@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check box</title>
+    <Script>
+        function funval(){
+            var valid=false;
+            if(document.getElementById("js").checked){
+                valid=true;
+            }
+            if(document.getElementById("angular").checked){
+                valid=true;
+            }
+            if(document.getElementById("react").checked){
+                valid=true;
+            }
+            if(document.getElementById("springboot").checked){
+                valid=true;
+            }
+
+            if(valid){
+                alert("Success!");
+                return true;
+            }else{
+                alert("Please chose any one check box");
+                document.getElementById("js").focus();
+                document.getElementById("angular").focus();
+                document.getElementById("react").focus();
+                document.getElementById("springboot").focus();
+                return false;    
+            }
+
+        }
+    
+    </Script>
+
+</head>
+<body>
+   <form name="myForm" action="nav.jsp" onsubmit="return funval()">
+       <input type="checkbox" id="js" value="js">Javascript
+       <input type="checkbox" id="angular" value="angular">Angular
+       <input type="checkbox" id="react" value="react">React
+       <input type="checkbox" id="springboot" value="springboot">Spring Boot</input>
+       <input type="submit" value="Submit" name="submit"/>
+    </form>
+</body>
+</html>

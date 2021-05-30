@@ -10,6 +10,7 @@
             var col=document.myForm.colour.value;
             if(col==""){
                 alert("Please select the colour");
+                document.myForm.colour.focus();
                 return false;
             }else{
                 alert("Success..!");
@@ -20,7 +21,7 @@
 
 </head>
 <body>
-    <form name="myForm" onsubmit="return funValidate()">
+    <form name="myForm" action="color.jsp" onsubmit="return funValidate()">
         <!-- onchange="return funValidate()" -->
         <select name="colour">
             <option value="">Select the colour</option>    

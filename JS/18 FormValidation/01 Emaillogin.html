@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script>
+          function funValidate(){
+              var email=document.myForm.email.value;
+              var password=document.myForm.password.value;
+              if(email==""){
+                alert("Please enter Email Address");
+                document.myForm.email.focus();
+                return false;
+              }else if(password==""){
+                alert("Please enter Password");
+                document.myForm.password.focus();
+                return false;
+              }else{
+                alert("Success");
+                return true;    
+              }
+          }  
+    </script>
+
+</head>
+<body>
+    <form name="myForm" onSubmit="return funValidate()" action="Reg.jsp">   
+        Email: <input type="text" name="email"/>
+        Password: <input type="password" name="password"/>
+        <input type="submit" value="Register" />
+    </form>    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Objects</title>
+
+    <script>
+        function getBlog(title, text){
+           this.title = title;
+           this.text= text;
+           this.addCategory = addCategory; 
+        }
+
+        function addCategory(category){
+            this.category = category;
+        }
+
+//-------------------------
+        var bb1=new getBlog("Java", "Core Java");
+        bb1.addCategory("JAVA New Technologies");
+        document.write(bb1.title+"<br/>");
+        document.write(bb1.text+"<br/>");
+        document.write(bb1.category+"<br/>");
+//------------------------- 
+        var bb2=new getBlog("JS", "Core Js");
+        bb2.addCategory("JS New Technologies");
+        document.write(bb2.title+"<br/>");
+        document.write(bb2.text+"<br/>");
+        document.write(bb2.category+"<br/>");
+    </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,10 @@
+	@RestController
+	@RequestMapping("DepartmentsApp/")
+	public class Demo {
+    
+		@RequestMapping("Greetings/")
+		public String Greetings(){
+        return "welcome to the Departments application";
+		}
+		
+	}

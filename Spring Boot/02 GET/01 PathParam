@@ -1,0 +1,16 @@
+@RequestMapping(value="abc/{name}/{age}")
+    public String getMessage(
+            @PathVariable String name, 
+            @PathVariable String age
+            ) {
+        
+        String  msg = name+"Age:"+age;
+        
+        return msg;
+    }
+***************************************************************************
+    @RequestMapping("/api/employees/{id}")
+    public String getEmployeesById(@PathVariable String id) {
+        return "ID: " + id;
+    }
+***************************************************************************    

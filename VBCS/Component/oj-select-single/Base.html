@@ -1,0 +1,25 @@
+<oj-select-single id="oj-select-single-1769826060-1" data="[[$page.variables.getFinBusinessUnitsLOVListSDP5]]"
+    item-text="BusinessUnitName" class="oj-flex-item oj-sm-12 oj-md-4"
+    on-value-item-changed="[[$listeners.ojSelectSingle17698260601ValueItem]]">
+        <template slot="collectionTemplate" data-oj-as="collection">
+          <oj-table 
+                   scroll-policy="loadMoreOnScroll" 
+                   horizontal-grid-visible="disabled" 
+                   vertical-grid-visible="disabled"
+                   selection-mode='{"row": "single"}' 
+                   columns-default='{"resizable": "disabled","sortable": "disabled"}'
+                   class="oj-select-results" 
+                   on-oj-row-action="[[collection.handleRowAction]]" 
+                   data="[[collection.data]]"
+                   selected.row="[[collection.selected]]" 
+                   current-row="{{collection.currentRow}}"
+                   columns='[{"headerText":"BU_ID","field":"BusinessUnitId"},{"headerText":"BUANme","field":"BusinessUnitName"}]'
+          ></oj-table>
+        </template>
+  </oj-select-single>
+</div>
+<div class="oj-flex">
+  <oj-input-text id="oj-input-text-1769826060-1" class="oj-flex-item oj-sm-12 oj-md-4" value="{{ $variables.bUID }}">
+    <oj-label for="oj-input-text-1769826060-1" slot="start">Text</oj-label>
+  </oj-input-text>
+</div>

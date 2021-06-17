@@ -1,0 +1,10 @@
+.oj-my-shell{
+    background-color: #114b7b;
+}
+.oj-must-white{
+    color: white !IMPORTANT;
+}
+
+
+<div id="page" class="oj-web-applayout-page oj-my-shell">
+<header role="banner" class="oj-web-applayout-header oj-my-shell">

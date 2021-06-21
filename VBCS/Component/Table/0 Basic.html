@@ -1,0 +1,18 @@
+  <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+    data="[[$page.variables.taskHeaderListSDP]]"
+    columns='[
+    {"headerText":"RequestNumber","field":"requestNumber","template":"requestNumber"},
+    {"headerText":"ProjectName","field":"projectName"},
+    {"headerText":"CustomerName","field":"customerName"},
+    {"headerText":"Description","field":"description"},
+    {"headerText":"Priority","field":"priority"},
+    {"headerText":"Subject","field":"subject"},
+    {"headerText":"AssignedTo","field":"assignTo"},
+    {"headerText":"Status","field":"updateStatus"}]'
+   id="oj-table-950926790-1">
+    <template slot="requestNumber">
+      <a target="_blank" on-click="[[$listeners.aClick]]">
+        <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+      </a>
+    </template>
+  </oj-table>

@@ -1,0 +1,1 @@
+[[ $variables.trainStep==null || $variables.trainStep==0 ]]

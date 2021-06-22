@@ -5,6 +5,7 @@
 }
 
 /* Custome Table */
+/*<oj-table class="myconttable" */
 .myconttable .oj-table-column-header-cell{
     color: white;
     background-color:black;

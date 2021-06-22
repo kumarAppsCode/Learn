@@ -1,0 +1,11 @@
+/* Default Table */
+.oj-table-column-header-cell{
+    color: blue;
+    background-color: cornsilk;
+}
+
+/* Custome Table */
+.myconttable .oj-table-column-header-cell{
+    color: white;
+    background-color:black;
+}

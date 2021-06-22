@@ -1,0 +1,30 @@
+<oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+        data="[[$page.variables.getAllContractsSearchListSDP]]"
+        columns='[
+        {"headerText":"S.No","field":"","template":"S.No"},
+        {"headerText":"Contract Number","field":"contractName"},
+        {"headerText":"Contact Name","field":"contactName"},
+        {"headerText":"Business Unit","field":"orgName"},
+        {"headerText":"Contract Date","field":"contractDate"},
+        {"headerText":"Customer Name","field":"customerName"},
+        {"headerText":"Active","field":"activeYN","template":"activeYN"},
+        {"headerText":"Description","field":"description"},{"headerText":"Created By","field":"createdBy"}]'
+        horizontal-grid-visible="enabled">
+        <template slot="S.No">
+          <oj-input-text value="{{ $current.index+1 }}"></oj-input-text>
+        </template>
+
+      <template slot="activeYN">
+      <oj-bind-if test="[[ $current.data=true ]]">
+          <!-- <oj-input-text value="Ok">
+          </oj-input-text> -->
+          <img :src="[[ $flow.path + 'resources/images/accept_ena.png' ]]">
+      </oj-bind-if>
+      <oj-bind-if test="[[ $current.data!=true ]]">
+          <!-- <oj-input-text value="Not Ok">
+          </oj-input-text> -->
+          <img :src="[[ $flow.path + 'resources/images/Cancel.png' ]]">
+      </oj-bind-if>
+      </template>
+
+      </oj-table>

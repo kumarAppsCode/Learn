@@ -1,4 +1,18 @@
-        <oj-select-single label-hint="Select (Single)" 
+Type		: Object against array[]
+Variable	: 
+				1. ADP
+				2. Item Type(1 Object)
+				3. Key Attribute (BU_ID)
+onLoad		: 
+				1. REST
+				2. item[]==ADP(data[])
+Screen		:
+				1.[[ $variables.businessvar ]]
+				2.BusinessUnitName
+----------------------------------------------------------
+
+
+<oj-select-single label-hint="Select (Single)" 
         value="{{ $variables.createContract.orgId }}"
           data="[[ $variables.businessvar ]]" 
           item-text="BusinessUnitName"></oj-select-single>

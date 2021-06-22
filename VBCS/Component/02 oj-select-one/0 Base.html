@@ -1,0 +1,20 @@
+Type		: Object against array[]
+Variable	: 
+				1. ADP
+				2. Item Type(1 Object)
+				3. Key Attribute (BU_ID)
+onLoad		: 
+				1. REST
+				2. item[]==ADP(data[])
+Screen		:
+				1.[[ $variables.businessvar ]]
+				2.BusinessUnitName
+----------------------------------------------------------
+
+<oj-select-one label-hint="Select (One)" 
+          value="{{ $variables.createContract.orgId }}"
+          options="[[ $variables.businessvar ]]" 
+          options-keys.value="BusinessUnitId"
+          options-keys.label="BusinessUnitName" 
+          >
+        </oj-select-one>

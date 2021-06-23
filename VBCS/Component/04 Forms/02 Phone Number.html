@@ -1,0 +1,8 @@
+          <oj-input-text virtual-keyboard="tel"
+            validators='[{
+              "type":"regexp", 
+              "options":{"pattern":"\\+? *([\\d]+ *\\( *[0-9]+ *\\))?[\\d \\-.]+", 
+              "hint":"Enter a valid phone number.", 
+              "messageDetail": "Value must be a valid phone number"}}]'
+            placeholder="Phone Number" value="{{ $variables.varCreateEmployee.mobile }}" required="true">
+						</oj-input-text>

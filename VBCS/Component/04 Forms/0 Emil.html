@@ -1,0 +1,10 @@
+          <oj-input-text virtual-keyboard="email"
+            validators='[{
+              "type":"regexp", 
+              "options":{"pattern":"([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})", 
+              "hint":"Enter an email address.", 
+              "messageDetail": "Value must be of the form xxx@xxx.xx"}}]'
+            placeholder="Enter Email" 
+            value="{{ $variables.varCreateEmployee.email }}" 
+            required="true">
+						</oj-input-text>

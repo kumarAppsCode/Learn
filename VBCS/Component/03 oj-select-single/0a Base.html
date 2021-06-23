@@ -1,0 +1,16 @@
+<oj-select-single 
+   value="{{ $variables.varCreateEmployee.designation }}" placeholder="Select Designation"
+   item-text="dESIGNATION" 
+   data="[[ $variables.dESIGNATIONListSDP ]]"
+   on-value-item-changed="[[$listeners.ojSelectSingleValueItem]]" required="true">
+   <template slot="collectionTemplate" data-oj-as="collection">
+      <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+         vertical-grid-visible="disabled" selection-mode='{"row": "single"}'
+         columns-default='{"resizable": "disabled",
+         "sortable": "disabled"}' class="oj-select-results"
+         columns=' [{"headerText":"Designation","field":"dESIGNATION"},
+         {"headerText":"Grade","field":"gRADE"}]' on-oj-row-action="[[collection.handleRowAction]]"
+         data="[[collection.data]]" selected.row="[[collection.selected]]"
+         current-row="{{collection.currentRow}}"></oj-table>
+   </template>
+</oj-select-single>

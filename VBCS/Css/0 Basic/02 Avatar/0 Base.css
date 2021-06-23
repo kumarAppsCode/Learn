@@ -1,0 +1,10 @@
+.edit-avatar{
+    margin-top: 30px;
+    margin-left: 55px;
+}
+.edit-avatar .oj-avatar-no-image{
+    border-radius: 55px !important;
+    width: 95px;
+    height: 95px;
+    font-weight: bold;
+} 

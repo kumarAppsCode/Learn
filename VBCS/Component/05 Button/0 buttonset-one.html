@@ -1,0 +1,11 @@
+		<oj-buttonset-one display="icons" value="{{ $variables.buttonSetView }}" chroming="borderless"
+			class="oj-flex-item oj-sm-flex-initial oj-buttonset-width-auto" style="margin-top:5px;">
+			<oj-option value="LIST">
+				<span class="vb-icon vb-icon-list" slot="startIcon"></span>
+			</oj-option>
+			<oj-option value="GRID">
+				<span class="vb-icon vb-icon-grid" slot="startIcon"></span>
+			</oj-option>
+		</oj-buttonset-one> 
+
+<oj-bind-if test="[[ $variables.buttonSetView === 'LIST' ]]">

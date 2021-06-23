@@ -16,7 +16,7 @@
     flex-direction: column;
 } */
 
-.oj-messages-general .oj-messages-container {
+/* .oj-messages-general .oj-messages-container {
     border-width: 1px;
     border-color: red;
     border-style: solid;
@@ -28,4 +28,8 @@
     margin-top: auto;
     margin: auto;
     width: max-content;
+} */
+
+.oj-messages-layer{
+    width: 400px;
 }

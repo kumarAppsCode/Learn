@@ -1,0 +1,21 @@
+<div class="oj-flex">
+  <oj-list-view class="oj-flex-item oj-sm-12 oj-md-12" data="[[ $variables.buVar ]]" display="card">
+    <template slot="itemTemplate" data-oj-as="item">
+      <oj-list-item-layout>
+        <oj-action-card style="width:380px;height:130px;">
+          <div class="oj-flex">
+            <div>
+              <oj-avatar class="oj-flex-item oj-sm-flex-initial" initials="[[ $variables.intVar ]]"></oj-avatar>
+            </div>
+            <div style="margin-left:20px">
+              <h6 style="font-size:14x; font-weight:1;">
+                <oj-bind-text value="[[$current.data.BusinessUnitName]]"></oj-bind-text>
+							</h6>
+              <oj-bind-text value="[[ $current.data.BusinessUnitId ]]"></oj-bind-text>
+            </div>
+          </div>
+        </oj-action-card>
+      </oj-list-item-layout>
+    </template>
+  </oj-list-view>
+</div>

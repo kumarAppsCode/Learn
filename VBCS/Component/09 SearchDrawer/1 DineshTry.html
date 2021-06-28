@@ -1,0 +1,52 @@
+<div class="oj-offcanvas-outer-wrapper" style="border :1px">
+  <oj-button on-oj-action="[[$listeners.ojButtonOjAction]]">Button</oj-button>
+  <span class="vb-icon vb-icon-globe" on-click="[[$listeners.spanClick]]"></span>
+  	<div 
+    id="startDrawer" 
+    class="oj-offcanvas-start oj-panel oj-panel-alt5 oj-offcanvas-overlay-shadow" 
+    style="width: 200px">
+      <div class="oj-flex">
+        <h2 class="oj-flex-item oj-sm-12 oj-md-12" id="h1-1660298733-2">Menu</h2>
+      </div>
+      <div class="oj-flex">
+        <h2 class="oj-flex-item oj-sm-12 oj-md-12" id="h1-1660298733-3">Menu1</h2>
+      </div>
+    </div>  
+<!--  -->
+  		<div class="demo-main-content" id="mainContent">
+      <div class="oj-flex">
+        <h2 class="oj-flex-item oj-sm-12 oj-md-12" id="h1-1660298733-3">Table</h2>
+      </div>
+      </div>
+
+</div>
+************************************************************************************************************************
+/*
+  Copyright (c) 2018, Oracle and/or its affiliates.
+  The Universal Permissive License (UPL), Version 1.0
+*/
+define(['ojs/ojcore'], function(oj) {
+  'use strict';
+
+  var PageModule = function PageModule() {};
+
+  /**
+   *
+   * @param {String} arg1
+   * @return {String}
+   */
+  PageModule.prototype.showSide = function () {
+    var offcanvas = {
+      "selector": "#startDrawer",
+      "content": "#mainContent",
+      "edge": "start",
+      "displayMode": "push",
+      "size": "200px"
+    };
+    oj.OffcanvasUtils.open(offcanvas);
+ 
+  };
+
+  return PageModule;
+});
+************************************************************************************************************************

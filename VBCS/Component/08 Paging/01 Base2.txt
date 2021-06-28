@@ -1,0 +1,65 @@
+    <body class="demo-disable-bg-image">
+      <div id="sampleDemo" style="" class="demo-padding demo-container">
+        <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+                  
+          <div id="pagingControlDemo">
+              <oj-table id="table" aria-label="Departments Table"
+                     data="[[pagingDataProvider]]"
+                     columns='[{"headerText": "Department Id", "field": "DepartmentId"},
+                               {"headerText": "Department Name", "field": "DepartmentName"},
+                               {"headerText": "Location Id", "field": "LocationId"},
+                               {"headerText": "Manager Id", "field": "ManagerId"}]' 
+                     class="oj-sm-width-full">
+                  <oj-paging-control id="paging" data="[[pagingDataProvider]]" page-size="10" slot="bottom">
+                  </oj-paging-control>
+              </oj-table>
+          </div>        
+          
+          
+          
+          
+        </div>
+      </div>
+    </body>
+    ************************
+      require(["require", "exports", "knockout", "ojs/ojbootstrap", "ojs/ojpagingdataproviderview", "ojs/ojarraydataprovider", "ojs/ojknockout", "ojs/ojtable", "ojs/ojpagingcontrol"], function (require, exports, ko, ojbootstrap_1, PagingDataProviderView, ArrayDataProvider) {
+      "use strict";
+      
+      class ViewModel {
+          constructor() {
+              this.deptArray = [
+                  {
+                      DepartmentId: 10015,
+                      DepartmentName: "ADFPM 1001 neverending",
+                      LocationId: 200,
+                      ManagerId: 300,
+                  },
+                  {
+                      DepartmentId: 556,
+                      DepartmentName: "BB",
+                      LocationId: 200,
+                      ManagerId: 300,
+                  },
+                  {
+                      DepartmentId: 10,
+                      DepartmentName: "Administration",
+                      LocationId: 200,
+                      ManagerId: 300,
+                  },
+                  {
+                      DepartmentId: 13022,
+                      DepartmentName: "Human Resources15",
+                      LocationId: 200,
+                      ManagerId: 300,
+                  },
+              ];
+              this.pagingDataProvider = new PagingDataProviderView(new ArrayDataProvider(this.deptArray, { idAttribute: "DepartmentId" }));
+          }
+      }
+      ojbootstrap_1.whenDocumentReady().then(() => {
+          ko.applyBindings(new ViewModel(), document.getElementById("pagingControlDemo"));
+      });
+  });
+                  
+                  
+    

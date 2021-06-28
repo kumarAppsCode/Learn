@@ -1,0 +1,55 @@
+<h4 style="background-color:powderblue; color:green;">Categories and Food</h4>]
+<div class="oj-offcanvas-outer-wrapper" style="border :1px">
+  <span class="vb-icon vb-icon-globe" on-click="[[$listeners.spanClick]]"></span>
+  
+	<div id="startDrawer" class="oj-offcanvas-start oj-panel oj-panel-alt5 oj-offcanvas-overlay-shadow" style="width: 200px">
+		<!-- <div class="oj-flex">
+			<h2 id="h1-1660298733-2" class="oj-flex-item oj-sm-12 oj-md-12 selectionShareable">Menu</h2> -->
+		<!-- </div> -->
+		<div class="oj-flex">
+      <h2 class="oj-flex-item oj-sm-12 oj-md-12" id="h1-1660298733-2">Menu</h2>
+    </div>
+    <div class="oj-flex">
+      <oj-label class="oj-flex-item oj-sm-12 oj-md-3" id="oj-label-1660298733-1"
+        on-click="[[$listeners.ojLabel16602987331Click]]">Employees</oj-label>
+    </div>
+
+    <div class="oj-flex">
+      <oj-label class="oj-flex-item oj-sm-12 oj-md-3" id="oj-label-1660298733-2">Food</oj-label>
+    </div>
+		<!-- <div class="oj-flex">
+			<span class="oj-flex-item oj-sm-12 oj-md-1 vb-icon vb-icon-list" id="span-1660298733-1"></span>
+			<oj-label id="oj-label-1660298733-1" class="oj-flex-item oj-sm-12 oj-md-3">Category</oj-label>
+		</div>
+		<div class="oj-flex">
+			<span class="oj-flex-item oj-sm-12 oj-md-1 vb-icon vb-icon-pie" id="span-1660298733-2"></span>
+			<oj-label id="oj-label-1660298733-2" class="oj-flex-item oj-sm-12 oj-md-3">Food</oj-label>
+		</div> -->
+	</div>
+	<div class="demo-main-content" id="mainContent">
+	<div class="oj-flex">
+      <hr class="oj-flex-item oj-sm-12 oj-md-12" id="hr-1660298733-1" />
+    </div>
+	<div class="oj-flex">
+		<oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+    data="[[$page.variables.categoriesListSDP]]"
+    columns='[{"headerText":"Id","field":"id"},{"headerText":"category","field":"category"}]' id="sing"
+    selection-mode.row="single" on-first-selected-row-changed="[[$listeners.singFirstSelectedRow]]"
+    style="width:100%;margin-bottom:50px;background-color: lightgrey;"></oj-table>
+	</div>
+	<div class="oj-flex">
+		<hr class="oj-flex-item oj-sm-12 oj-md-12">
+	</div>
+	<div class="oj-flex">
+		<oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+			data="[[$page.variables.foodListSDP]]"    style="width:100%;margin-bottom:40px; background-color: lightpink;"
+
+			columns='[{"headerText":"foodName","field":"foodName"},{"headerText":"category","field":"categoryTypeObject","sortProperty":"categoryTypeObject.category","template":"categoryCellTemplate2"}]'>
+			<template slot="categoryCellTemplate2">
+				<oj-bind-text value="[[ $current.data.items[0] ? $current.data.items[0].category : undefined ]]">
+				</oj-bind-text>
+			</template>
+		</oj-table>
+	</div>
+	</div>
+</div>

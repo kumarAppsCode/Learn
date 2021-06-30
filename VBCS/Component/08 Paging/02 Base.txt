@@ -1,0 +1,43 @@
+<oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12" columns='[{"headerText":"firstName","field":"firstName"},{"headerText":"lastName","field":"lastName"},{"headerText":"email","field":"email"}]' data="[[ $variables.pagingData ]]" on-first-selected-row-changed="[[$listeners.ojTableFirstSelectedRow]]" selection-mode.row="single">
+ <oj-paging-control 
+ id="paging"  
+ data="[[ $variables.pagingData ]]" 
+ page-size="3" slot="bottom">
+ </oj-paging-control>
+  </oj-table>
+  ************************************************
+  define([
+  'ojs/ojpagingdataproviderview',
+  'ojs/ojarraydataprovider'
+    ], function(PagingDataProviderView,ArrayDataProvider) {
+  'use strict';
+
+  var PageModule = function PageModule() {};
+
+  PageModule.prototype.pagingData = function(array) {
+    var data = new PagingDataProviderView(new ArrayDataProvider(
+    array, {
+      idAttribute: 'id'
+    }));
+    return data;
+  };
+  return PageModule;
+});
+************************************************
+  "imports": {
+    "components": {
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-paging-control": {
+        "path": "ojs/ojpagingcontrol"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      }
+
+    }
+  }

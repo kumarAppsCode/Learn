@@ -25,7 +25,11 @@ function loadDoc(dataBody) {
       console.log("Result 2==>"+JSON.stringify(response));
       console.log("Result 3==>:"+response.emp_no);
       console.log("Result 4==>"+response.gender)
-    
+        if(response.gender=="Female"){
+          document.getElementById("myAPR").style.display="block";
+        }else{
+          document.getElementById("myREJ").style.display="block";
+        }
     },
     error:function(err){
       console.log(err);
@@ -44,7 +48,7 @@ function getData(){
 
  var dataBody={
   empName: "Nithiya",
-  gender: "Female",
+  gender: "Females",
   emp_type: "Tempory",
   email: "Priya.lee@gmail.com",
   mobile: "+9842012345",

@@ -37,5 +37,11 @@ JDEdwards  ERP    ==== SCM
 PeopleSoft  ERP   ==== HCM
 Siebel            ==== CRM
 MS Dynamics ERP   ==== Finance
-Hyperion  ERP     ==== Planning And Budget Report
+Hyperion  ERP     ==== Budget Planning And Budget Report
 Primavera ERP    ==== PPM
+******************************************************
+Financial From Oracle=================================Oracle Fusion Financial Application
+HCM From PeopleSoft===================================Oracle Fusion HCM Application
+CRM From Siebel=======================================Oracle Fusion CRM Application
+Budget Planning And Budget Report From Hyperion=======Oracle Fusion Heyperion Application
+SCM From JDEdwards  ERP===============================Oracle Fusion SCM/Procurment Application

@@ -1,7 +1,27 @@
 Oracle Fusion Cloud Finance Application 
 
 Oracle:- Company + Data base
+  Data base ->SQL->Form and Page + Report Generation
+  Page will be ->Department base
+Oracle Application:-DB+Page+Report
+Finance: Module
 
-Data base ->SQL->Form and Page
 
-Page ->Department base
+Finance Department
+Payable Department=======Oracle Account Payable Application     =======>Purchase Invoice, Payment
+Receivable department====Oracle Account Receivalbe Application  =======>Sale Invoice, Receipt
+Cash Department==========Oracle Cash Management Application     =======>Bank Account, Bank Statement Reconcillation
+Asset Department=========Oracle Fixed Asset  Application        =======>land/building/company chair/ Asset
+
+SCM-Supplier Chain Related Department
+Purchasing Department=====Oracle  Purchasing Application
+Sales Department==========Oracle Order managment  Application 
+Inventory Department======Oracle Inventory Application
+
+HRMS/HCM Department-Human Resouse Managment System Department/Human Capital Management
+HR Department============Oracle HR  Application
+Payroll Department=======Oracle Payroll  Application
+
+
+Project Department
+CRM  Department

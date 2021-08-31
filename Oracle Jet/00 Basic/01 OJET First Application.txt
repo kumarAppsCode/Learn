@@ -1,0 +1,3 @@
+
+ojet create <project name> --template=navdrawer|navbar|basic|blank
+

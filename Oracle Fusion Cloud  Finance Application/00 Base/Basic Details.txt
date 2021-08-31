@@ -49,5 +49,20 @@ SCM From JDEdwards  ERP===============================Oracle Fusion SCM/Procurme
 I need: So Move To Cloud
 Server
 Fusion Apps DBA
+*************
+Cloud want use Oracle 
+SaaS= Software As A Services
+  Oracle Standard Product
+  No Product Customzation
+  We Can Customize Report
+  Auto Upgrade
+  3rd Party integration
+PaaS= Platform As a Services
+  Oracle Standard Product
+  Product Customzation
+  We Can Customize Report
+  No Auto Upgrade
+  3rd Party integration-ICS/SOA
+IaaS= Infrastructure as a Services
 
 

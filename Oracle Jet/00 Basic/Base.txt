@@ -1,1 +1,10 @@
 Step 1: Download Visual Studio Code
+Step 2: VS Extendtion: Goodle: oracle jet for visual studio code--> https://marketplace.visualstudio.com/items?itemName=Oracle.oracle-jet-core
+Step 3: Node Js
+        C:\Users\DineshkumarP>node -v
+        v12.18.2
+        C:\Users\DineshkumarP>npm -v
+        6.13.7
+        C:\Users\DineshkumarP>
+
+Step 4: OJET CMD

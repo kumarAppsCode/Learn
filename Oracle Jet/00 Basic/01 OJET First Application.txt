@@ -2,3 +2,8 @@
 ojet create <project name> --template=navdrawer|navbar|basic|blank
 
 ojet create OjetNavDraw --template=navdrawer
+
+open folder to build: ojet build 
+open folder to run  : ojet serve
+index page open: 
+************************************************

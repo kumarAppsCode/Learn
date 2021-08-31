@@ -1,1 +1,7 @@
-Hi
+Oracle Fusion Cloud Finance Application 
+
+Oracle:- Company + Data base
+
+Data base ->SQL->Form and Page
+
+Page ->Department base

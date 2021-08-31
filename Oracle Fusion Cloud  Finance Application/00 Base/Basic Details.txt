@@ -5,6 +5,7 @@ Oracle:- Company + Data base
   Page will be ->Department base
 Oracle Application:-DB+Page+Report
 Finance: Module
+Fusion: Took All ERP Company as single application 
 
 
 Finance Department

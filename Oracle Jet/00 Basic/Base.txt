@@ -6,6 +6,8 @@ Step 3: Node Js
         C:\Users\DineshkumarP>npm -v
         6.13.7
         C:\Users\DineshkumarP>
+Node Js upgrad: npm install npm@latest -g
+
 
 Step 4: OJET CMD
         Goodle: Install Oracle JET

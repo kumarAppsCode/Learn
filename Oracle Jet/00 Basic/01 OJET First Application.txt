@@ -1,3 +1,4 @@
 
 ojet create <project name> --template=navdrawer|navbar|basic|blank
 
+ojet create OjetNavDraw --template=navdrawer

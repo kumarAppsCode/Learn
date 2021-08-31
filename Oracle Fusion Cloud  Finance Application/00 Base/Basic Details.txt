@@ -25,3 +25,15 @@ Payroll Department=======Oracle Payroll  Application
 
 Project Department
 CRM  Department
+***********************88888
+Oracle 11i Application
+Oracle R12 Application
+
+SAP ERP           ==== SAles and Delivery (Good In)
+Oracle ERP        ==== Finance 
+JDEdwards  ERP    ==== SCM
+PeopleSoft  ERP   ==== HCM
+Siebel            ==== CRM
+MS Dynamics ERP   ==== Finance
+Hyperion  ERP     ==== Planning And Budget Report
+Primavera ERP    ==== PPM

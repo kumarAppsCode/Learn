@@ -45,3 +45,9 @@ HCM From PeopleSoft===================================Oracle Fusion HCM Applicat
 CRM From Siebel=======================================Oracle Fusion CRM Application
 Budget Planning And Budget Report From Hyperion=======Oracle Fusion Heyperion Application
 SCM From JDEdwards  ERP===============================Oracle Fusion SCM/Procurment Application
+*******************************************************
+I need: So Move To Cloud
+Server
+Fusion Apps DBA
+
+

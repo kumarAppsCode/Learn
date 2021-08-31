@@ -6,7 +6,14 @@ Step 3: Node Js
         C:\Users\DineshkumarP>npm -v
         6.13.7
         C:\Users\DineshkumarP>
-Node Js upgrad: npm install npm@latest -g
+1. Node Js upgrad: npm install npm@latest -g
+or
+2. Run PowerShell as Administrator
+   Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+   npm install -g npm-windows-upgrade
+   npm-windows-upgrade
+or
+3.required: { node: '>=12.21.0' }, google and install it new node
 
 
 Step 4: OJET CMD

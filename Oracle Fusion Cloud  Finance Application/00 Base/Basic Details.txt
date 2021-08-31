@@ -64,5 +64,6 @@ PaaS= Platform As a Services
   No Auto Upgrade
   3rd Party integration-ICS/SOA
 IaaS= Infrastructure as a Services
+  Storeage Space
 
 

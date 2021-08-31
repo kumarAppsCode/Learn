@@ -1,1 +1,1 @@
-Hi
+Step 1: Download Visual Studio Code

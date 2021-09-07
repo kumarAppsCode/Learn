@@ -190,5 +190,5 @@ BEGIN
     END IF;
   END LOOP;  
   DBMS_OUTPUT.put_line('----------------------------------------'); 
-
+pout:='Y';
 END XXPM_PROPERTY_JSON_PKG;

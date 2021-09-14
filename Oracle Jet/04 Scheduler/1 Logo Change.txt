@@ -10,3 +10,6 @@ Add below line
 Run the application: No logo show so stop and re-run the application 
 
 If need adjust the size [<img src="css/images/logo.png" width="190" height="60"/>]
+
+If Screen small you need to hide logo, So you need to call hide class:
+<img src="css/images/logo.png" width="190" height="60" class="oj-sm-only-hide"/>

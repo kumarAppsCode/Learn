@@ -1,0 +1,8 @@
+Search logo in google [png type] in images choose: type and select transparent lov then save the logo
+
+Paste the logo in [SchedulerService\src\css\images] image folder
+
+Index.html Search [logo]--[<span role="img" class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span>] command it
+
+Add below line
+<img src="css/images/logo.png" width="300" height="60"/>

@@ -23,6 +23,6 @@ If screen small logo in navDrawer. So copy the img code and paste in <navDrawer 
                             on-click="[[toggleDrawer]]"
                             selection="{{selection.path}}">
 </oj-navigation-list>
-  <img src="css/images/logo.png" width="190" height="60" class="oj-sm-only-hide"/>
+  <img src="css/images/logo.png" width="190" height="60"/>
 </div>
 

@@ -6,3 +6,5 @@ Index.html Search [logo]--[<span role="img" class="oj-icon demo-oracle-icon" tit
 
 Add below line
 <img src="css/images/logo.png" width="300" height="60"/>
+
+Run the application: No logo show

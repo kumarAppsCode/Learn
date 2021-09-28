@@ -1,0 +1,112 @@
+<div class="oj-flex">
+  <!-- Pie -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-11  oj-xl-11 oj-panel oj-bg-success-10">
+    <oj-collapsible class="oj-flex-item oj-sm-flex-initial">
+      <div class="oj-flex">
+        <!-- <div class="oj-flex-item oj-sm-12 oj-md-12"> -->
+        <oj-form-layout label-edge='start'>
+          <div class="oj-flex">
+            <oj-label for="oj-input-text--1937367569-1" class="oj-flex-item oj-sm-flex-initial">Area Name</oj-label>
+            <div class="oj-flex">
+              <!-- <div class="oj-flex-item oj-sm-12 oj-md-2"></div> -->
+              <span class="oj-flex-item oj-sm-12 oj-md-6"></span>
+            </div>
+            <oj-input-text id="oj-input-text--1937367569-1" class="oj-flex-item oj-sm-flex-initial"
+              placeholder="Area Name" value="{{ $variables.searchObject.areaName }}"
+              on-value-changed="[[$listeners.ojInputText19373675691Value]]"></oj-input-text>
+          </div>
+          <oj-validation-group>
+            <oj-button on-oj-action="[[$listeners.ojButtonOjAction]]">Search</oj-button>
+            <oj-button on-oj-action="[[$listeners.ojButtonOjAction2]]">Reset</oj-button>
+          </oj-validation-group>
+        </oj-form-layout>
+        <!-- </div> -->
+      </div>
+    </oj-collapsible>
+  </div>
+  <!-- pyramidChart -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-1  oj-xl-1">
+    <oj-button display='icons' style="position:fixed; right:10px""><oj-bind-text value=" [[
+      $application.translations.app.button__text_c5c8 ]]">
+      </oj-bind-text><img
+                                                                                                                                                                slot="startIcon"
+                                                                                                                                                                :src="[[ $flow.path + 'resources/images/house.png' ]]"
+                                                                                                                                                                style="object-fit: fill; object-position: 50%50%;"
+                                                                                                                                                                width="25"
+                                                                                                                                                                height="25"
+                                                                                                                                                                on-click="[[$listeners.imgClick]]">
+    </oj-button>
+  </div>
+</div>
+<!--  -->
+<div class="oj-flex">
+  <oj-collapsible id="SearchResult" expanded="true" style="width:100%">
+    <p slot="header">
+      <oj-bind-text value="[[ $application.translations.app.p__text_ddb6 ]]"></oj-bind-text>
+    </p>
+    <oj-toolbar id="myToolbar" aria-controls="controlled">
+      <oj-menu-button id="menuButton" class="oj-button-sm">
+        <oj-bind-text value="[[ $application.translations.app.menuButton__text_5b1d ]]"></oj-bind-text>
+        <span slot='startIcon' class="oj-ux-ico-settings"></span>
+        <oj-menu id="myAreaMenu" slot="menu" on-oj-action="[[$listeners.myAreaMenuOjAction]]">
+          <oj-option id="CreatePoArea" value="CreatePoArea">
+            <oj-bind-text value="[[ $application.translations.app.CreatePoArea__text_b457 ]]"></oj-bind-text>
+            <span class="oj-ux-ico-add-create-page" slot="startIcon"></span>
+          </oj-option>
+          <oj-option id="CraeteAppk" value="CraeteAppv">
+            <oj-bind-text value="[[ $application.translations.app.CraeteAppk__text_e649 ]]"></oj-bind-text>
+            <span class="oj-ux-ico-add-to-assets" slot="startIcon"></span>
+          </oj-option>
+          <oj-option id="CreateAppsk" value="CreateAppsv">
+            <oj-bind-text value="[[ $application.translations.app.CreateAppsk__text_e6a0 ]]"></oj-bind-text>
+            <span class="oj-ux-ico-notes-add" slot="startIcon"></span>
+          </oj-option>
+          <oj-option id="Download" value="Download">
+            <oj-bind-text value="[[ $application.translations.app.Download__text_e416 ]]"></oj-bind-text>
+            <span class="oj-ux-ico-print" slot="startIcon"></span>
+          </oj-option>
+        </oj-menu>
+      </oj-menu-button>
+      <oj-button display='icons' class="oj-button-sm">
+        <span slot='startIcon' class="oj-ux-ico-activities"></span>
+      </oj-button>
+      <oj-button display='icons' class="oj-button-sm">
+        <span slot='startIcon' class="vb-icon vb-icon-plus"></span>
+      </oj-button>
+      <oj-button display='icons' class="oj-button-sm">
+        <span slot='startIcon' class="vb-icon vb-icon-pencil"></span>
+      </oj-button>
+      <oj-button display='icons' class="oj-button-sm">
+        <span slot='startIcon' class="vb-icon vb-icon-table"></span>
+      </oj-button>
+      <oj-button display='icons' class="oj-button-sm">
+        <span slot='startIcon' class="vb-icon vb-icon-filter-funnel"></span>
+      </oj-button>
+      <oj-button display='icons' class="oj-button-sm">
+        <span slot='startIcon' class="oj-ux-ico-print"></span>
+      </oj-button>
+    </oj-toolbar>
+    <!-- Table -->
+    <div class="oj-flex">
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+        data="[[ $variables.pagingAreaData ]]"
+        columns='[{"headerText":"Area Name","field":"AREA_NAME","template":"Area Name"},        {"headerText":"AP Batch Source Name","field":"AP_BATCH_SOURCE_NAME"},        {"headerText":"AR Batch Source Name","field":"AR_BATCH_SOURCE_NAME"},        {"headerText":"GL Batch Source Name","field":"GL_BATCH_SOURCE_NAME"},        {"headerText":"GL Category","field":"GL_CATEGORY"},        {"headerText":"Description","field":"DESCRIPTION"},        {"headerText":"ActiveYn","field":"ENABLED_FLAG","template":"ActiveYn"}]'>
+                <template slot="Area Name">
+          <a target="_blank">
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </a>
+        </template>
+        <template slot="ActiveYn">
+          <oj-bind-if test="[[$current.data=='Y']]">
+            <img :src="[[ $flow.path + 'resources/images/Ok_icon.png' ]]">
+          </oj-bind-if>
+          <oj-bind-if test="[[$current.data=='N']]">
+            <img :src="[[ $flow.path + 'resources/images/Cancel_1.png' ]]">
+          </oj-bind-if>
+        </template>
+      <oj-paging-control id="paging"  data="[[ $variables.pagingAreaData ]]" page-size="10" slot="bottom">
+      </oj-paging-control>
+      </oj-table>
+    </div>
+  </oj-collapsible>
+</div>

@@ -1,0 +1,42 @@
+		    <!--Edit-->
+        <template slot="LineEdit">
+          <oj-bind-if test="[[ $variables.varSelectedStep==null || $variables.varSelectedStep === 'ONE'?true:false ]]">
+            <oj-button display="icons" disabled="[[ $variables.varSelectedStep === 'TWO'?true:false ]]" on-oj-action="[[$listeners.ojButtonOjAction8]]" chroming="borderless">
+              <img :src="[[ $flow.path + 'resources/images/edit_ena.png' ]]" slot="startIcon"> 
+            </oj-button>
+          </oj-bind-if>
+          <!-- Edit Disable -->
+			    <oj-bind-if test="[[ $variables.varSelectedStep === 'TWO'?true:false ]]">
+            <oj-button display="icons" disabled="[[ $variables.varSelectedStep === 'TWO'?true:false ]]"  chroming="borderless">
+              <img :src="[[ $flow.path + 'resources/images/edit_dis.png' ]]" slot="startIcon"> 
+            </oj-button> 
+          </oj-bind-if>
+        </template>
+        <!--Delete  -->
+        <template slot="LineDelete">
+          <oj-bind-if test="[[ $variables.varSelectedStep==null || $variables.varSelectedStep === 'ONE'?true:false ]]">
+            <oj-button display="icons" disabled="[[ $variables.varSelectedStep === 'TWO'?true:false ]]" on-oj-action="[[$listeners.ojButtonOjAction12]]" chroming="borderless">
+              <img :src="[[ $flow.path + 'resources/images/delete_ena.png' ]]" slot="startIcon">
+            </oj-button>
+          </oj-bind-if>
+          <!--Delete Disable -->
+          <oj-bind-if test="[[ $variables.varSelectedStep === 'TWO'?true:false ]]">
+            <oj-button display="icons" disabled="[[ $variables.varSelectedStep === 'TWO'?true:false ]]"  chroming="borderless">
+              <img :src="[[ $flow.path + 'resources/images/delete_dis.png' ]]" slot="startIcon">
+            </oj-button>
+          </oj-bind-if>
+        </template>
+        <!-- Inter Face Line-->
+        <template slot="interfaceLns">
+          <oj-bind-if test="[[ $variables.varSelectedStep==null || $variables.varSelectedStep === 'ONE'?true:false ]]">
+            <oj-button display="icons" disabled="[[ $variables.varSelectedStep === 'TWO'?true:false ]]" on-oj-action="[[$listeners.ojButtonOjAction13]]" chroming="borderless">
+              <img :src="[[ $flow.path + 'resources/images/add_ena.png' ]]" slot="startIcon">
+            </oj-button>
+          </oj-bind-if>
+          <!-- Inter Face Line  Disable -->
+          <oj-bind-if test="[[ $variables.varSelectedStep === 'TWO'?true:false ]]">
+            <oj-button display="icons" disabled="[[ $variables.varSelectedStep === 'TWO'?true:false ]]" chroming="borderless">
+              <img :src="[[ $flow.path + 'resources/images/add_dis.png' ]]" slot="startIcon">
+            </oj-button>
+          </oj-bind-if>
+        </template>

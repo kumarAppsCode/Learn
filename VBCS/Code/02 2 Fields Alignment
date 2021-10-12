@@ -1,0 +1,32 @@
+        <oj-form-layout label-edge="top" max-columns="2" columns="2">
+				<oj-select-single label-hint="GL Location Segment" class=""
+					  on-value-item-changed="[[$listeners.ojSelectSingleValueItem2]]"
+					  value="{{ $variables.createPosOfficeRequestVar.gl_location_segment }}"
+					  data="[[$page.variables.getCOASegmentListSDP]]" item-text="FLEX_VALUE">
+				  <!--  -->
+				  <template slot="collectionTemplate" data-oj-as="collection">
+					<oj-input-text value="{{ $variables.searchGLLocSeg }}" label-hint="Search" placeholder="Search"></oj-input-text>
+								<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+								vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+								"sortable": "disabled"}' class="oj-select-results" 
+								columns=' [
+					  {"headerText":"Flex Value","field":"FLEX_VALUE"},
+					  {"headerText":"Description","field":"FLEX_VALUE_MEANING"}
+					  ]' 
+								on-oj-row-action="[[collection.handleRowAction]]"
+								data="[[collection.data]]" selected.row="[[collection.selected]]"
+								current-row="{{collection.currentRow}}"></oj-table>
+							</template>
+				  <template slot="cellTemplate" data-oj-as="cell">
+								<oj-highlight-text text='[[String(cell.data)]]' >
+					  <!-- match-text='[[collection.searchText]]' -->
+								</oj-highlight-text>
+							</template>
+				</oj-select-single>
+        <!--  -->
+        <!-- <div class="oj-flex"> -->
+			  <oj-label for="oj-input-text--706204795-2"></oj-label>
+			  <oj-input-text id="oj-input-text--706204795-2" disabled="true"
+				  value="{{ $variables.createPosOfficeRequestVar.gl_location_segment_desc }}"></oj-input-text>
+        <!-- </div> -->
+    </oj-form-layout>

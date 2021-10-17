@@ -1,0 +1,41 @@
+<!--
+ Copyright (c) 2014, 2020, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div id="card-container">
+	<oj-action-card id="l-card" class="oj-sm-margin-2x demo-card-content budgetplan">Budget Plan</oj-action-card>
+	<oj-action-card id="t-card" class="oj-sm-margin-2x demo-card-content budgettransfer">Budget Transfer</oj-action-card>
+  	<oj-action-card id="t-card" class="oj-sm-margin-2x demo-card-content budgetentry">Budget Entry</oj-action-card>
+    	<oj-action-card id="t-card" class="oj-sm-margin-2x demo-card-content budgetctlform">Budget Control Form</oj-action-card>
+</div>
+/* **********************************
+    app.css
+/* *************************************** */
+.demo-center-items{
+     text-align: center;
+}
+.demo-card-content {
+     width: 40%;
+     height: 7rem;
+     padding: 2rem;
+     font-size: 25px;
+}
+.budgetplan{
+     border-left-color:#b4555d;
+     border-left-width: 3px;
+}
+.budgettransfer{
+     border-left-color: #b4555d;
+     border-left-width: 3px;
+}
+.budgetentry{
+     border-left-color: #b4555d;
+     border-left-width: 3px;
+}
+.budgetctlform{
+     border-left-color: #b4555d;
+     border-left-width: 3px;
+}
+/* *************************************** */
+
+

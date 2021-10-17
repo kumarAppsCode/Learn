@@ -1,3 +1,9 @@
+/* Screen Header */
+.oj-web-applayout-header {
+    z-index: 1;
+    background-color: #b4555d;
+    box-shadow: none;
+}
 /* Screen Bottom */
 .oj-web-applayout-footer {
     min-height: 3.571rem;

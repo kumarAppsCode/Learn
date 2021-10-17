@@ -1,0 +1,25 @@
+.demo-center-items{
+     text-align: center;
+}
+.demo-card-content {
+     width: 40%;
+     height: 7rem;
+     padding: 2rem;
+     font-size: 25px;
+}
+.budgetplan{
+     border-left-color:#b4555d;
+     border-left-width: 3px;
+}
+.budgettransfer{
+     border-left-color: #b4555d;
+     border-left-width: 3px;
+}
+.budgetentry{
+     border-left-color: #b4555d;
+     border-left-width: 3px;
+}
+.budgetctlform{
+     border-left-color: #b4555d;
+     border-left-width: 3px;
+}

@@ -1,0 +1,26 @@
+/* Screen Bottom */
+.oj-web-applayout-footer {
+    min-height: 3.571rem;
+    border-top: 1px solid #b4555d;
+    background-color: #b4555d;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*Title Name  */
+.oj-web-applayout-header-title {
+    font-size: 1.14286rem;
+    font-weight: 400;
+    /* color: #2e444c; */
+    color: white;
+    font-weight: normal;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+}
+/*Create By   */
+.oj-text-color-secondary, .oj-text-secondary-color {
+    /* color: #2e444c; */
+    color: white;
+}

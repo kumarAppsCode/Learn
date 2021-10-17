@@ -1,0 +1,9 @@
+/* button color */
+.oj-button-toggle.oj-default.oj-button-full-chrome, .oj-button-toggle.oj-focus-only.oj-button-full-chrome, .oj-button-nocomp.oj-button-full-chrome, .oj-button.oj-default.oj-button-full-chrome .oj-button-button, .oj-button.oj-focus-only.oj-button-full-chrome .oj-button-button{
+      background: #b4555d;
+     cursor: pointer; 
+}
+/* button color white */
+.oj-button-text{
+    color: white;
+}

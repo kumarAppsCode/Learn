@@ -1,0 +1,179 @@
+<div class="oj-flex">
+  <!-- Pie -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-11  oj-xl-11">
+     <!-- oj-panel oj-bg-success-10 -->
+    <oj-collapsible class="oj-flex-item oj-sm-flex-initial" expanded="true" style="width:100%">
+      <div class="oj-flex">
+        <!-- <div class="oj-flex-item oj-sm-12 oj-md-12"> -->
+        <!-- </div> -->
+
+      </div>
+      <oj-form-layout label-edge='start' columns="2" max-columns="2">
+        <!--planName -->
+        <oj-input-text label-hint="Plan Name" placeholder="Plan Name" value="{{ $variables.searchBudgetPlan.planName }}"
+          on-value-changed="[[$listeners.ojInputTextValue]]"></oj-input-text>
+        <!--Administrator  -->
+        <oj-input-text label-hint="Administrator" placeholder="Administrator"
+          value="{{ $variables.searchBudgetPlan.administrator }}" on-value-changed="[[$listeners.ojInputTextValue2]]"></oj-input-text>
+        <!-- startDate -->
+        <oj-input-date label-hint="Start Date" value="{{ $variables.searchBudgetPlan.startDate }}"
+          converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+          on-value-changed="[[$listeners.ojInputDateValue]]"></oj-input-date>
+        <!-- End Date -->
+        <oj-input-date label-hint="End Date" value="{{ $variables.searchBudgetPlan.endDate }}"
+          converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+          on-value-changed="[[$listeners.ojInputDateValue2]]"></oj-input-date>
+        <!--Status Code -->
+        <oj-select-one label-hint="Status Code" value="{{ $variables.searchBudgetPlan.statusCode }}"
+          on-value-changed="[[$listeners.ojSelectOneValue]]">Clode
+          <oj-option></oj-option>
+          <oj-option value="Open">Open</oj-option>
+          <oj-option value="Close">Close</oj-option>
+        </oj-select-one>
+        <oj-input-date label-hint="Entry Start Date" value="{{ $variables.searchBudgetPlan.entryStartDate }}"
+          converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+          on-value-changed="[[$listeners.ojInputDateValue3]]"></oj-input-date>
+        <oj-input-date label-hint="Entry End Date" value="{{ $variables.searchBudgetPlan.entryEndDate }}"
+          converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+          on-value-changed="[[$listeners.ojInputDateValue4]]"></oj-input-date>
+        <oj-validation-group>
+          <oj-button on-oj-action="[[$listeners.ojButtonOjAction2]]">Search</oj-button>
+          <oj-button on-oj-action="[[$listeners.ojButtonOjAction]]">Reset</oj-button>
+        </oj-validation-group>
+      </oj-form-layout>
+    </oj-collapsible>
+  </div>
+  <!-- line 1 row 2 -->
+  <!-- <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-1  oj-xl-1">
+    <oj-button display='icons' class="homebutton" style="position:fixed; right:10px">
+      <oj-bind-text value="Home"> </oj-bind-text>
+      <img slot="startIcon":src="[[ $flow.path + 'resources/images/home-icon.png' ]]"
+      style="object-fit: fill; object-position: 50%50%;" width="25" height="25">
+    </oj-button>
+  </div> -->
+    <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-1  oj-xl-1" style="position:fixed; right:-81px">
+      <img style="object-fit: fill; object-position: 50%50%;" width="25" height="25"
+        :src="[[ $flow.path + 'resources/images/home-icon_1.png' ]]" on-click="[[$listeners.imgClick]]">
+    </div>
+</div>
+<!--  -->
+<div class="oj-flex">
+  <oj-collapsible id="SearchResult" expanded="true" style="width:100%">
+   
+    <div class="oj-flex">
+      <div class="oj-flex-item oj-sm-12 oj-md-12">
+        <h1>Search</h1>
+      </div>
+      <br>
+      <!-- Tool Bar -->
+      <div class="oj-flex-item oj-sm-12 oj-md-12">
+      <oj-toolbar id="myToolbar" aria-controls="controlled">
+        <oj-menu-button id="menuButton" class="oj-button-sm">
+          <oj-bind-text value="Action"></oj-bind-text>
+          <span slot='startIcon' class="oj-ux-ico-settings"></span>
+          <oj-menu id="myMenu" slot="menu" on-oj-action="[[$listeners.myMenuOjAction]]">
+            <oj-option id="CreatePoArea" value="Create Budget">
+              <oj-bind-text value="Create Budget Plan"></oj-bind-text>
+              <span class="oj-ux-ico-add-create-page" slot="startIcon"></span>
+            </oj-option>
+            <oj-option id="CraeteAppk" value="CraeteAppv">
+              <oj-bind-text value="Option1"></oj-bind-text>
+              <span class="oj-ux-ico-add-to-assets" slot="startIcon"></span>
+            </oj-option>
+            <oj-option id="CreateAppsk" value="CreateAppsv">
+              <oj-bind-text value="Option2"></oj-bind-text>
+              <span class="oj-ux-ico-notes-add" slot="startIcon"></span>
+            </oj-option>
+            <oj-option id="Download" value="Download">
+              <oj-bind-text value="Option3"></oj-bind-text>
+              <span class="oj-ux-ico-print" slot="startIcon"></span>
+            </oj-option>
+          </oj-menu>
+        </oj-menu-button>
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="oj-ux-ico-activities"></span>
+        </oj-button>
+        <oj-button display='icons' class="oj-button-sm" on-oj-action="[[$listeners.ojButtonOjAction3]]" >
+          <span slot='startIcon' class="vb-icon vb-icon-plus"></span>
+        </oj-button>
+        <oj-button display='icons' class="oj-button-sm" on-oj-action="[[$listeners.ojButtonOjAction5]]" >
+          <span slot='startIcon' class="vb-icon vb-icon-pencil"></span>
+        </oj-button>
+        <oj-button display='icons' class="oj-button-sm" on-oj-action="[[$listeners.ojButtonOjAction6]]" >
+          <span slot='startIcon' class="vb-icon vb-icon-delete-trash-can"></span>
+        </oj-button>
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="vb-icon vb-icon-filter-funnel"></span>
+        </oj-button>
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="oj-ux-ico-print"></span>
+        </oj-button>
+      </oj-toolbar>
+      </div>
+    </div> 
+
+    <!-- Table -->
+    <div class="oj-flex">
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12" columns='[
+        {"headerText":"Edit","field":"","template":"Edit"},
+        {"headerText":"Plan Name","field":"PLAN_NAME"},
+        {"headerText":"Status Code","field":"STATUS_CODE"},
+        {"headerText":"Administrator","field":"ADMINISTRATOR_PERSON_NAME"},
+        {"headerText":"Start Date","field":"START_DATE","template":"startdate"},
+        {"headerText":"End Date","field":"END_DATE","template":"enddate"},
+        {"headerText":"Entry Start Date","field":"ENTRY_START_DATE","template":"entrystartdate"},
+        {"headerText":"Entry Start Date","field":"ENTRY_END_DATE","template":"entryenddate"} 
+       ]'
+        selection-mode.row="single" edit-mode="rowEdit" data="[[ $variables.pagingSearchBudgetplan ]]"
+        on-first-selected-row-changed="[[$listeners.ojTableFirstSelectedRow]]">
+        <!-- edit -->
+        <template slot="Edit">
+          <oj-button display="icons" chroming="borderless" on-oj-action="[[$listeners.ojButtonOjAction4]]">Button
+            <img slot="startIcon" :src="[[ $flow.path + 'resources/images/edit_ena.png' ]]">
+          </oj-button>
+        </template>
+        <!--Start Date  -->
+          <template slot="startdate">
+          <oj-input-date value="[[$current.data]]" readonly="true"
+            converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+        </template>
+        <!--end Date  -->
+          <template slot="enddate">
+          <oj-input-date value="[[$current.data]]" readonly="true"
+            converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+        </template>
+        <!--Entry Start Date  -->
+          <template slot="entrystartdate">
+          <oj-input-date value="[[$current.data]]" readonly="true"
+            converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+        </template>
+        <!--Entry End Date  -->
+          <template slot="entryenddate">
+          <oj-input-date value="[[$current.data]]" readonly="true"
+            converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+        </template>
+        <!-- <template slot="ActiveYn">
+          <oj-bind-if test="[[$current.data=='true']]">
+            <img :src="[[ $flow.path + 'resources/images/Ok_icon.png' ]]">
+          </oj-bind-if>
+          <oj-bind-if test="[[$current.data=='false']]">
+            <img :src="[[ $flow.path + 'resources/images/Cancel.png' ]]">
+          </oj-bind-if>
+        </template> -->
+        <oj-paging-control id="paging" data="[[ $variables.pagingSearchBudgetplan ]]" page-size="10" slot="bottom">
+        </oj-paging-control>
+      </oj-table>
+    </div>
+  </oj-collapsible>
+</div>
+<oj-dialog style="display:none" dialog-title="Warning" id="deleteDialogPopUp" drag-affordance="title-bar">
+  <div slot="body">
+    <div class="oj-flex">
+      <h1 class="oj-flex-item oj-sm-12 oj-md-12">Are you sure you want to delete this Record?</h1>
+    </div>
+  </div>
+  <div slot="footer">
+    <oj-button on-oj-action="[[$listeners.ojButtonOjAction7]]"  >Yes</oj-button>
+    <oj-button on-oj-action="[[$listeners.ojButtonOjAction8]]" >No</oj-button>
+  </div>
+</oj-dialog>

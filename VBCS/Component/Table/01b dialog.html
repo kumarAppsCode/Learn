@@ -1,0 +1,64 @@
+<!-- Add/Edit line Popup -->
+<oj-dialog style="display:none; width: 500px; height: 512px;" dialog-title="Office Line Information"
+  id="OfficeLineAddDialog">
+  <div slot="body">
+    <!-- Stage 1 -->
+    <oj-form-layout label-edge="inside">
+      <oj-input-text label-hint="Office Name" class="oj-form-control-full-width" required="true"
+        ></oj-input-text>
+      <oj-input-text label-hint="Org Code" class="oj-form-control-full-width" required="true"
+        ></oj-input-text>
+      <oj-input-text label-hint="Sub Inventory" class="oj-form-control-full-width" required="true"
+        ></oj-input-text>
+    </oj-form-layout>
+    <!-- Stage 2 -->
+        <oj-form-layout label-edge="top" max-columns="2" columns="2">
+        <oj-select-single label-hint="GL Location Segment" class=""
+              on-value-item-changed="[[$listeners.ojSelectSingleValueItem2]]"
+              value="{{ $variables.createPosOfficeRequestVar.gl_location_segment }}"
+              data="[[$page.variables.getCOASegmentListSDP]]" item-text="FLEX_VALUE">
+          <!--  -->
+          <template slot="collectionTemplate" data-oj-as="collection">
+          <br>
+            <oj-input-text value="{{ $variables.searchGLLocSeg }}" label-hint="Search" placeholder="Search"></oj-input-text>
+						<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+						vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+						"sortable": "disabled"}' class="oj-select-results" 
+						columns=' [
+              {"headerText":"Flex Value","field":"FLEX_VALUE"},
+              {"headerText":"Description","field":"FLEX_VALUE_MEANING"}
+              ]' 
+						on-oj-row-action="[[collection.handleRowAction]]"
+						data="[[collection.data]]" selected.row="[[collection.selected]]"
+						current-row="{{collection.currentRow}}"></oj-table>
+					</template>
+          <template slot="cellTemplate" data-oj-as="cell">
+						<oj-highlight-text text='[[String(cell.data)]]' >
+              <!-- match-text='[[collection.searchText]]' -->
+						</oj-highlight-text>
+					</template>
+        </oj-select-single>
+        <!--  -->
+          <oj-label for="oj-input-text--706204795-22"></oj-label>
+          <oj-text-area id="oj-input-text--706204795-22" readonly="true" rows="2"
+              value="{{ $variables.createPosOfficeRequestVar.gl_location_segment_desc }}"></oj-text-area>
+    </oj-form-layout>
+    <!-- Stage 3 -->
+      <oj-form-layout label-edge="inside">
+      <oj-validation-group>
+        <oj-switch label-hint="Active" class="" value="{{ $variables.createPosOfficeRequestVar.enabled_flag }}">
+        </oj-switch>
+        <oj-switch label-hint="Main Office" value="{{ $variables.createPosOfficeRequestVar.main_office_flag }}">
+        </oj-switch>
+      </oj-validation-group>
+      <oj-text-area label-hint="Description" class="oj-form-control-full-width"
+        value="{{ $variables.createPosOfficeRequestVar.description }}" rows="3"></oj-text-area>
+    </oj-form-layout>
+  </div>
+  <div slot="footer">
+    <oj-button on-oj-action="[[$listeners.ojButtonOjAction17]]"
+      :hidden="[[ $variables.officeLnsFlag==='Insert'?false:true ]]">Save &amp; Add Another Office</oj-button>
+    <oj-button on-oj-action="[[$listeners.ojButtonOjAction7]]">Save &amp; Close</oj-button>
+    <oj-button on-oj-action="[[$listeners.ojButtonOjAction6]]">Cancel</oj-button>
+  </div>
+</oj-dialog>

@@ -1,0 +1,116 @@
+  <div class="oj-flex">
+    <div class="oj-panel oj-flex-item oj-sm-12 oj-md-12">
+      <div class="oj-flex">
+        <oj-label for="oj-input-text--1566709663-1" class="oj-flex-item oj-sm-12 oj-md-4">Create</oj-label>
+        <oj-input-text id="oj-input-text--1566709663-1" class="oj-flex-item oj-sm-12 oj-md-8" readonly="true">
+        </oj-input-text>
+      </div>
+      <oj-toolbar id="myToolbar" aria-controls="controlled" class=""
+        :hidden="[[ $variables.varSelectedStep==='TWO'?true:false ]]">
+        <oj-menu-button id="menuButton" class="oj-button-sm" hidden="true">Action
+          <span slot='startIcon' class="oj-ux-ico-settings"></span>
+          <oj-menu id="myMenu" slot="menu">
+            <oj-option id="CreateContract" value="CreateContract">
+              <span class="oj-ux-ico-add-create-page" slot="startIcon"></span>Create
+            </oj-option>
+          </oj-menu>
+        </oj-menu-button>
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="oj-ux-ico-activities"></span>
+        </oj-button>
+        <oj-button display='icons' class="oj-button-sm">
+          <span slot='startIcon' class="vb-icon vb-icon-plus"></span>
+        </oj-button>
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="vb-icon vb-icon-pencil"></span>
+        </oj-button>
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="vb-icon vb-icon-delete-trash-can"></span>
+        </oj-button>
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="vb-icon vb-icon-filter-funnel"></span>
+        </oj-button>
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="oj-ux-ico-print"></span>
+        </oj-button>
+      </oj-toolbar>
+      <oj-table data="" class="oj-flex-item oj-sm-12 oj-md-12"
+        selection-mode.row="single"
+        columns='[  
+        {"headerText": "Office Number",    "field": "OFFICE_ID",    "template": "officeIDTemp"  },
+        {"headerText": "Office Name",    "field": "OFFICE_NAME"  },  
+        {"headerText": "Description",    "field": "DESCRIPTION"  },  
+        {"headerText": "Org Code",    "field": "INV_ORG_CODE"  },
+        {"headerText": "Sub Inventory",    "field": "SUB_INV_CODE"  },
+        {"headerText": "Location",    "field": "GL_LOCATION_SEGMENT"  },
+        {"headerText": "Location Description",    "field": "GL_LOCATION_SEGMENT_DESC"  },
+        {"headerText": "Active",    "field": "ENABLED_FLAG",    "template": "LineActiveYn"},
+        {"headerText": "Main Office",    "field": "MAIN_OFFICE_FLAG",    "template": "MainOfficeYn"},
+        {"headerText": "Update",    "field": "",    "template": "LineEdit"  },
+        {"headerText": "Delete",    "field": "",    "template": "LineDelete"  }
+        ]'
+        id="LineTable">
+        <!--  -->
+        <template slot="officeIDTemp">
+          <div class="oj-flex">
+            <oj-label for="oj-input-text--706204795-1" class="oj-flex-item oj-sm-12 oj-md-2">
+              <oj-bind-text value='[[ "OFF-"+ $current.data]]'></oj-bind-text>
+            </oj-label>
+            <oj-input-text id="oj-input-text--706204795-1" class="oj-flex-item oj-sm-12 oj-md-4"></oj-input-text>
+          </div>
+        </template>
+        <!-- Line Active YN  -->
+        <template slot="LineActiveYn">
+          <oj-bind-if test="[[$current.data=='true']]">
+            <img :src="[[ $flow.path + 'resources/images/Ok_icon.png' ]]">
+          </oj-bind-if>
+          <oj-bind-if test="[[$current.data!=='true']]">
+            <img :src="[[ $flow.path + 'resources/images/Cancel_1.png' ]]">
+          </oj-bind-if>
+        </template>
+        <!--Main Office YN  -->
+        <template slot="MainOfficeYn">
+          <oj-bind-if test="[[$current.data=='true']]">
+            <img :src="[[ $flow.path + 'resources/images/Ok_icon.png' ]]">
+          </oj-bind-if>
+          <oj-bind-if test="[[$current.data!='true']]">
+            <img :src="[[ $flow.path + 'resources/images/Cancel_1.png' ]]">
+          </oj-bind-if>
+        </template>
+        <!--Edit-->
+        <template slot="LineEdit">
+          <oj-bind-if test="[[ $variables.varSelectedStep==null || $variables.varSelectedStep === 'ONE'?true:false ]]">
+            <oj-button display="icons" chroming="borderless">
+              <img :src="[[ $flow.path + 'resources/images/edit_ena.png' ]]" slot="startIcon">
+            </oj-button>
+          </oj-bind-if>
+          <!-- Edit Disable -->
+          <oj-bind-if test="[[ $variables.varSelectedStep === 'TWO'?true:false ]]">
+            <oj-button display="icons" disabled="[[ $variables.varSelectedStep === 'TWO'?true:false ]]"
+              chroming="borderless">
+              <img :src="[[ $flow.path + 'resources/images/edit_dis.png' ]]" slot="startIcon">
+            </oj-button>
+          </oj-bind-if>
+        </template>
+        <!--Delete  -->
+        <template slot="LineDelete">
+          <oj-bind-if test="[[ $variables.varSelectedStep==null || $variables.varSelectedStep === 'ONE'?true:false ]]">
+            <oj-button display="icons" disabled="[[ $variables.varSelectedStep === 'TWO'?true:false ]]"
+             chroming="borderless">
+              <img :src="[[ $flow.path + 'resources/images/delete_ena.png' ]]" slot="startIcon">
+            </oj-button>
+          </oj-bind-if>
+          <!--Delete Disable -->
+          <oj-bind-if test="[[ $variables.varSelectedStep === 'TWO'?true:false ]]">
+            <oj-button display="icons" disabled="[[ $variables.varSelectedStep === 'TWO'?true:false ]]"
+              chroming="borderless">
+              <img :src="[[ $flow.path + 'resources/images/delete_dis.png' ]]" slot="startIcon">
+            </oj-button>
+          </oj-bind-if>
+        </template>
+        <!--  -->
+        <oj-paging-control id="paging" data="" page-size="10" slot="bottom">
+        </oj-paging-control>
+      </oj-table>
+    </div>
+  </div>

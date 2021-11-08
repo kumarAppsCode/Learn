@@ -62,3 +62,24 @@
     <oj-button on-oj-action="[[$listeners.ojButtonOjAction6]]">Cancel</oj-button>
   </div>
 </oj-dialog>
+*************************************************************
+<!-- Add/Edit line Popup -->
+<oj-dialog style="display:none; width: 500px; height: 512px;" dialog-title="Office Line Information"
+  id="OfficeLineAddDialog">
+  <div slot="body">
+    <!-- Stage 1 -->
+    <oj-form-layout label-edge="inside">
+      <oj-input-text label-hint="Office Name" class="oj-form-control-full-width" required="true"
+        ></oj-input-text>
+      <oj-input-text label-hint="Org Code" class="oj-form-control-full-width" required="true"
+        ></oj-input-text>
+      <oj-input-text label-hint="Sub Inventory" class="oj-form-control-full-width" required="true"
+        ></oj-input-text>
+    </oj-form-layout>
+  </div>
+  <div slot="footer">
+    <oj-button >Save &amp; Add Another Office</oj-button>
+    <oj-button >Save &amp; Close</oj-button>
+    <oj-button >Cancel</oj-button>
+  </div>
+</oj-dialog>

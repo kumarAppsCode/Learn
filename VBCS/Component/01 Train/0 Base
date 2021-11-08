@@ -1,1 +1,21 @@
 [[ $variables.trainStep==null || $variables.trainStep==0 ]]
+
+
+[[ $application.user.email ]]
+
+
+[[ $functions.toDayDate() ]]
+
+************************************
+[[
+	[
+		{"id":"ONE","label":"POS Setup"},
+		{"id":"TWO","label":"Preview","disabled":$variables.area_idVar!=0?false:true}
+	]
+]]
+
+
+[[ $variables.varSelectedStep==null||$variables.varSelectedStep==='ONE' ]]
+
+
+$variables.varSelectedStep==='FIVE'?true:false

@@ -1,0 +1,68 @@
+<!-- Attachment Detail-->
+  <div class="oj-flex">
+    <div class="oj-panel oj-flex-item oj-sm-12 oj-md-12">
+      <div class="oj-flex">
+        <oj-label for="oj-input-text--1566709663-1" class="oj-flex-item oj-sm-12 oj-md-4">Budget Transfer</oj-label>
+        <oj-input-text id="oj-input-text--1566709663-1" class="oj-flex-item oj-sm-12 oj-md-8" readonly="true">
+        </oj-input-text>
+      </div>
+      <oj-toolbar id="myToolbar" aria-controls="controlled" class="">
+        <oj-menu-button id="menuButton" class="oj-button-sm" hidden="true">Action
+          <span slot='startIcon' class="oj-ux-ico-settings"></span>
+          <oj-menu id="myMenu" slot="menu">
+            <oj-option id="CreateContract" value="CreateContract">
+              <span class="oj-ux-ico-add-create-page" slot="startIcon"></span>Create Offices
+            </oj-option>
+          </oj-menu>
+        </oj-menu-button>
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="oj-ux-ico-activities"></span>
+        </oj-button>
+
+        <oj-button display='icons' class="oj-button-sm">
+          <span slot='startIcon' class="vb-icon vb-icon-plus"></span>
+        </oj-button>
+
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="vb-icon vb-icon-pencil"></span>
+        </oj-button>
+
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="vb-icon vb-icon-delete-trash-can"></span>
+        </oj-button>
+
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="vb-icon vb-icon-filter-funnel"></span>
+        </oj-button>
+
+        <oj-button display='icons' class="oj-button-sm" hidden="true">
+          <span slot='startIcon' class="oj-ux-ico-print"></span>
+        </oj-button>
+      </oj-toolbar>
+    <!--Table  -->
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+        selection-mode.row="single"
+        columns='[  
+        {    "headerText": "Expense Type",    "field": "EXPENSE_TYPE"  },
+        {    "headerText": "Account Code",    "field": "ACCOUNT_CODE"  },
+        {    "headerText": "Account Name",    "field": "ACCOUNT_NAME"  },
+        {    "headerText": "Budget",    "field": "BUDGET_AMOUNT"  },
+        {    "headerText": "Previous Year Budget",    "field": "PREVIOUS_YEAR_BUDGET"  },
+        {    "headerText": "Previous Year Actuals",    "field": "PREVIOUS_YEAR_ACTUALS"  },
+        {    "headerText": "Variance",    "field": "VARIANCE"  }
+        ]'>
+
+<!-- ,{    "headerText": "Add Line",    "field": "" , "template": "addLine" } -->
+      <!-- Add Line -->
+        <!-- <template slot="LineEdit">
+            <oj-button display="icons" chroming="borderless">
+              <img slot="startIcon" :src="[[ $application.path + 'resources/images/custimages/add_ena.png' ]]">
+            </oj-button>
+        </template> -->
+    <!--  -->
+        <oj-paging-control id="paging" data="" page-size="10" slot="bottom">
+        </oj-paging-control>
+        </oj-table>
+    </div>
+  </div>
+<!--  -->

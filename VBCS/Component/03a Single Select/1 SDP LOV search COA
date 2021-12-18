@@ -1,0 +1,72 @@
+      <!--Company Name  -->
+      <oj-select-single label-hint="Company Name" value="{{ $variables.createBudgetplanRequestVar.COMPANY_NAME }}"
+        data="[[$page.variables.getCOASegmentNameListSDP]]" item-text="flex_value_meaning_code"
+        on-value-item-changed="[[$listeners.ojSelectSingleValueItem2]]">
+        <!--  -->
+        <template slot="collectionTemplate" data-oj-as="collection">
+        <br>
+        <oj-input-text  label-hint="Search"  placeholder="Search" value="{{ $variables.searchField.companySearch }}"></oj-input-text>
+            <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+            vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+            columns-default='{"resizable": "disabled","sortable": "disabled"}' class="oj-select-results" 
+            columns='  [
+                    {"headerText":"Code","field":"flex_value_code"},
+                    {"headerText":"Name","field":"flex_value_meaning_display"}
+                  ]' 
+            on-oj-row-action="[[collection.handleRowAction]]"
+            data="[[collection.data]]" selected.row="[[collection.selected]]"
+            current-row="{{collection.currentRow}}"></oj-table>
+            </template>
+                  <template slot="cellTemplate" data-oj-as="cell">
+            <oj-highlight-text text='[[String(cell.data)]]' >
+                <!-- match-text='[[collection.searchText]]' -->
+            </oj-highlight-text>
+        </template>
+      </oj-select-single>
+---------------------------------------------------
+      <!--To Account -->
+      <oj-select-single label-hint="To Account" value="{{ $variables.postBudgettransferVar.TO_ACCOUNT_CODE }}"
+        data="[[$page.variables.getCOASegmentNameListSDP]]" item-text="flex_value_meaning_display">
+        <!--  -->
+        <template slot="collectionTemplate" data-oj-as="collection">
+        <br>
+        <oj-input-text  label-hint="Search"  placeholder="Search" value="{{ $variables.searchField.accounttoSearch }}"></oj-input-text>
+            <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+            vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+            columns-default='{"resizable": "disabled","sortable": "disabled"}' class="oj-select-results" 
+            columns='  [
+                    {"headerText":"Code","field":"flex_value_display"},
+                    {"headerText":"Name","field":"flex_value_meaning_display"}
+                  ]' 
+            on-oj-row-action="[[collection.handleRowAction]]"
+            data="[[collection.data]]" selected.row="[[collection.selected]]"
+            current-row="{{collection.currentRow}}"></oj-table>
+            </template>
+                  <template slot="cellTemplate" data-oj-as="cell">
+            <oj-highlight-text text='[[String(cell.data)]]' >
+                <!-- match-text='[[collection.searchText]]' -->
+            </oj-highlight-text>
+        </template>
+      </oj-select-single>
+------------------------------------------
+    "getCOASegmentNameListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "StagingAPI/getCOASegmentName",
+        "keyAttributes": "flex_value_display",
+        "itemsPath": "items",
+        "responseType": "getCOASegmentNameResponse",
+        "uriParameters": {
+          "segmentName": "Account",
+          "searchValue": "{{ $variables.searchField.companySearch }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "flex_value_meaning_code"
+          ]
+        }
+      }
+    }
+----------------------------------------------------
+	
+	  

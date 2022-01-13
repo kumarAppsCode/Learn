@@ -1,0 +1,74 @@
+/* 
+table.oj-table-element {
+    font-weight: normal;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid #D6DFE6;
+    padding: 10px;
+    border-radius: 2px;
+} */
+
+.oj-table-container {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid #D6DFE6;
+    /* padding: 10px; */
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    color: #333333;
+    border:hidden;
+    font-weight: bold;
+}
+
+.oj-search-table {
+    position: relative;
+    line-height: normal;
+    /* font-size: inherit; */
+    min-width: 240px;
+    min-height: calc(14 * 2.28571rem);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.oj-table {
+    position: relative;
+    line-height: normal;
+    /* font-size: inherit; */
+    min-width: 240px;
+    min-height: auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.oj-table-column-header-cell{
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+     color: black;
+     /* background-color: #b4555d; */
+     font-weight: bold;
+     border-color: #ededed;
+}
+
+.oj-table-data-cell{
+    min-height:1px !important;
+    height: 5px !important;
+}
+
+.oj-table-data-cell {
+    font-size: inherit;
+    font-weight: normal;
+    min-width: 1rem;
+    min-height: 1rem;
+    padding-top: calc(0.5em + -5px);
+    padding-bottom: -0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 2.75em;
+    float: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}

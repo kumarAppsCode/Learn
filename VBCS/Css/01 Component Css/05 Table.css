@@ -6,3 +6,39 @@
     font-weight: 500;
 }
 ****************************************************************************************
+/* 
+table.oj-table-element {
+    font-weight: normal;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid #D6DFE6;
+    padding: 10px;
+    border-radius: 2px;
+} */
+
+.oj-table-container {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    /* border: 1px solid #D6DFE6; */
+    padding: 10px;
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    color: #333333;
+    border:hidden;
+    font-weight: bold;
+}
+
+.oj-table-column-header-cell{
+     color: white;
+     background-color: #b4555d;
+     font-weight: bold;
+}
+
+.oj-table-data-cell{
+    min-height:1px !important;
+    height: 5px !important;
+}

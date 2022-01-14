@@ -1,0 +1,132 @@
+<div class="oj-flex">
+  <!-- Pie -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-11  oj-xl-11">
+      <div class="oj-flex-item oj-sm-12 oj-md-12">
+        <h1>Search</h1>
+      </div>
+      <br>
+      <oj-form-layout label-edge='start' columns="2" max-columns="2">
+        <!--Interface Name -->
+        <oj-select-single label-hint="Interface Name" value="{{ $variables.searchParameter.p_INTERFACE_NAME }}"
+          data="[[$page.variables.getProcessRequestNameListSDP]]" item-text="interface_display"
+          on-value-item-changed="[[$listeners.ojSelectSingleValueItem]]">
+          <!--  -->
+          <template slot="collectionTemplate" data-oj-as="collection">
+          <br>
+          <oj-input-text  label-hint="Search" placeholder="Search" value="{{ $variables.searchfieldrequestName }}"></oj-input-text>
+          <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+                vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+                columns-default='{"resizable": "disabled","sortable": "disabled"}' 
+                class="oj-select-results" 
+                columns=' [
+                  {"headerText":"Module","field":"module"},
+                  {"headerText":"Interface Display","field":"interface_display"}
+                  ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}"></oj-table>
+          </template>
+          <template slot="cellTemplate" data-oj-as="cell">
+            <oj-highlight-text text='[[String(cell.data)]]' >
+            <!-- match-text='[[collection.searchText]]' -->
+            </oj-highlight-text>
+          </template>
+			    <!--  -->	
+          </oj-select-single>
+        <oj-input-text label-hint="Interface Code" placeholder="Interface Code"
+          value="{{ $variables.searchParameter.p_INTERFACE_CODE }}" disabled="true"></oj-input-text>  
+        <!--Submitted From Date -->
+        <oj-input-date label-hint="From Date" placeholder="From Date"
+          value="{{ $variables.searchParameter.p_fromDate }}"
+          converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+          on-value-changed="[[$listeners.ojInputDateValue]]"
+          >
+          </oj-input-date>
+        <!--Submitted To Date -->
+        <oj-input-date label-hint="To Date" placeholder="To Date" value="{{ $variables.searchParameter.p_toDate }}"
+          converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+          on-value-changed="[[$listeners.ojInputDateValue2]]"></oj-input-date>
+        <!--Parameters -->
+        <oj-select-single label-hint="Parameters" value="{{ $variables.searchParameter.p_INTERFACE_PARAMETERS }}"
+          data="[[$page.variables.getProcessRequestParamListSDP]]" item-text="parameters_display"
+          on-value-item-changed="[[$listeners.ojSelectSingleValueItem2]]" >
+          <!--  -->
+			    <!--  -->	
+        </oj-select-single>
+
+        <!-- poNumber -->
+        <oj-bind-if test="false">
+        <oj-select-single label-hint="Submitted By" placeholder="Submitted By"
+          value="{{ $variables.searchParameter.p_CREATED_BY }}">
+          <!--  -->
+			    <!--  -->	
+          </oj-select-single>
+          </oj-bind-if>
+          <br>
+      </oj-form-layout>
+  </div>
+  <!-- line 1 row 2 -->
+  <!-- <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-1  oj-xl-1">
+    <oj-button display='icons' class="homebutton" style="position:fixed; right:10px">
+      <oj-bind-text value="Home"> </oj-bind-text>
+      <img slot="startIcon":src="[[ $flow.path + 'resources/images/home-icon.png' ]]"
+      style="object-fit: fill; object-position: 50%50%;" width="25" height="25">
+    </oj-button>
+  </div> -->
+    <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-1  oj-xl-1" style="position:fixed; right:-81px">
+      <img style="object-fit: fill; object-position: 50%50%;" width="25" height="25"
+        :src="[[ $application.path + 'resources/images/home-icon.png' ]]" on-click="[[$listeners.imgClick]]" >
+    </div>
+</div>
+<!--  -->
+<!--Row 2: Search button  -->
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-5  oj-xl-5"></div>
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-2  oj-xl-2">
+    <!--  -->
+      <oj-validation-group >
+          <oj-button on-oj-action="[[$listeners.ojButtonOjAction]]" >Search</oj-button>
+          <oj-button on-oj-action="[[$listeners.ojButtonOjAction2]]"   >Reset</oj-button>
+          <oj-button hidden="true" on-oj-action="[[$listeners.ojButtonOjAction3]]"   >New Inteface Request</oj-button>
+      </oj-validation-group>
+  </div>
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-5  oj-xl-5"></div>
+</div>  
+<!--Row 3: Table  -->
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+      <div id="mainContent">
+           <oj-button  chroming="solid" hidden="true">Create </oj-button>
+           <oj-button on-oj-action="[[$listeners.ojButtonOjAction3]]"   >New Inteface Request</oj-button>
+            <!-- oj Table -->
+        <div class="oj-flex">
+          <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12" columns='[
+            {"headerText":"S.NO","field":"interface_run_id"},
+            {"headerText":"Interface Run Date","field":"interface_run_date", "template":"rundate"},
+            {"headerText":"Interface Run By","field":"created_by"},
+            {"headerText":"Interface Name","field":"interface_name"},
+            {"headerText":"Interface Code","field":"interface_code"},
+            {"headerText":"Parameters","field":"interface_parameters"},
+            {"headerText":"Interface Status","field":"interface_status"}, 
+            {"headerText":"Interface Message","field":"interface_message"}  
+          ]'
+            selection-mode.row="single" edit-mode="rowEdit" data="[[ $variables.pagingSearchProcess ]]"
+            id="searchInvoiceTable">
+            <!-- {"headerText":"Interface Run Id","field":"interface_id"}, -->
+            <!--Run Date  -->
+              <template slot="rundate">
+              <oj-input-date value="[[$current.data]]" readonly="true"
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+            </template>
+            <!--  -->
+            <oj-paging-control id="paging" data="[[ $variables.pagingSearchProcess ]]" page-size="10" slot="bottom">
+            </oj-paging-control>
+          </oj-table>
+        </div>
+      </div>
+  </div>
+</div>          
+
+
+
+

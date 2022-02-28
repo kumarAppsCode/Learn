@@ -42,3 +42,26 @@ table.oj-table-element {
     min-height:1px !important;
     height: 5px !important;
 }
+
+
+
+/*Face Message  */
+.oj-messages-general {
+    width: calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    min-width: calc(50% - 20px);
+}
+
+/*Table -input Date  */
+
+.oj-text-field.oj-read-only .oj-text-field-input {
+    background-color: transparent;
+    border-color: transparent;
+    border-left-width: 0;
+    border-right-width: 0;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding-left: 0;
+    padding-right: 0;
+}

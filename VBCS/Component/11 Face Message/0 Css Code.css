@@ -1,0 +1,5 @@
+.oj-messages-general {
+    width: calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    min-width: calc(50% - 20px);
+}

@@ -1,0 +1,333 @@
+<div class="oj-flex">
+  <!-- Pie -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-11  oj-xl-11">
+    <!-- oj-panel oj-bg-success-10 -->
+    <!-- <oj-collapsible class="oj-flex-item oj-sm-flex-initial" expanded="true" style="width:100%">
+        <div class="oj-flex-item oj-sm-12 oj-md-12">
+        <h1>Search Invoice</h1>
+        </div>
+      <br>
+    </oj-collapsible> -->
+    <div class="oj-flex-item oj-sm-12 oj-md-12">
+        <h1>Search Invoice</h1>
+    </div>
+      <oj-form-layout label-edge="start" columns="2" max-columns="2" direction="row" class="" >
+        <!--departmentName -->
+        <!-- <div class="oj-flex"> -->
+          <oj-label for="oj-select-single--277117695-1" class="oj-flex-item oj-sm-12 oj-md-12">Department Name</oj-label>
+          <oj-select-single id="oj-select-single--277117695-1"  class="oj-flex-item oj-sm-12 oj-md-12"
+            data="[[$page.variables.getCoasegmentSegmentNameListSDP]]" item-text="flex_value_meaning_display"
+            value="{{ $variables.searchbudgetinvoice.P_DEPARTMENT }}"
+            on-value-item-changed="[[$listeners.ojSelectSingle2771176951ValueItem]]" disabled="true">
+            <!--  -->
+            <template slot="collectionTemplate" data-oj-as="collection">
+					<br>
+					<oj-input-text  label-hint="Search" placeholder="Search" value="{{ $variables.searchvardep }}"></oj-input-text>
+					<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+								vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+								"sortable": "disabled"}' class="oj-select-results" 
+								columns=' [
+								  {"headerText":"Department Code","field":"flex_value_display"},
+								  {"headerText":"Department Name","field":"flex_value_meaning_display"}
+								  ]' 
+								on-oj-row-action="[[collection.handleRowAction]]"
+								data="[[collection.data]]" selected.row="[[collection.selected]]"
+								current-row="{{collection.currentRow}}"></oj-table>
+					</template>
+				    <template slot="cellTemplate" data-oj-as="cell">
+						<oj-highlight-text text='[[String(cell.data)]]' >
+						<!-- match-text='[[collection.searchText]]' -->
+						</oj-highlight-text>
+					</template>
+            
+            
+            </oj-select-single>
+        <!-- </div> -->
+        <!--invoiceNumber  -->
+        <!-- <div class="oj-flex"> -->
+          <oj-label for="oj-select-single--277117695-2" >Invoice Number</oj-label>
+          <oj-select-single id="oj-select-single--277117695-2" 
+            data="[[$page.variables.getInvoicenoListSDP]]" item-text="invoice_no_code"
+            value="{{ $variables.searchbudgetinvoice.P_INVOICE_NO }}"
+            on-value-item-changed="[[$listeners.ojSelectSingle2771176952ValueItem]]">
+            <!--  -->
+          <template slot="collectionTemplate" data-oj-as="collection">
+					<br>
+					<oj-input-text  label-hint="Search" placeholder="Search" value="{{ $variables.searchvarInv }}"></oj-input-text>
+					<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+								vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+								"sortable": "disabled"}' class="oj-select-results" 
+								columns=' [
+								  {"headerText":"Invoice Number","field":"invoice_no_display"},
+								  {"headerText":"Invoice Request Number","field":"invoice_request_no_display"}
+								  ]' 
+								on-oj-row-action="[[collection.handleRowAction]]"
+								data="[[collection.data]]" selected.row="[[collection.selected]]"
+								current-row="{{collection.currentRow}}"></oj-table>
+					</template>
+				    <template slot="cellTemplate" data-oj-as="cell">
+						<oj-highlight-text text='[[String(cell.data)]]' >
+						<!-- match-text='[[collection.searchText]]' -->
+						</oj-highlight-text>
+					</template>
+          </oj-select-single>
+        <!-- </div> -->
+        <!-- poNumber -->
+        <!-- <div class="oj-flex"> -->
+          <oj-label for="oj-select-single--277117695-2" class="">PO Number</oj-label>
+          <oj-select-single id="oj-select-single--277117695-3" data="[[$page.variables.getPonumberListSDP]]"
+            item-text="po_number_display" value="{{ $variables.searchbudgetinvoice.P_PO_NUMBER }}"
+            on-value-item-changed="[[$listeners.ojSelectSingle2771176953ValueItem]]">
+            <!--  -->
+          <template slot="collectionTemplate" data-oj-as="collection">
+					<br>
+					<oj-input-text  label-hint="Search" placeholder="Search" value="{{ $variables.searchvarpo }}"></oj-input-text>
+					<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+								vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+								"sortable": "disabled"}' class="oj-select-results" 
+								columns=' [
+								  {"headerText":"PO Number","field":"po_number_display"},
+								  {"headerText":"Description","field":"description"}
+								  ]' 
+								on-oj-row-action="[[collection.handleRowAction]]"
+								data="[[collection.data]]" selected.row="[[collection.selected]]"
+								current-row="{{collection.currentRow}}"></oj-table>
+					</template>
+				    <template slot="cellTemplate" data-oj-as="cell">
+						<oj-highlight-text text='[[String(cell.data)]]' >
+						<!-- match-text='[[collection.searchText]]' -->
+						</oj-highlight-text>
+					</template>
+            
+            
+            
+            </oj-select-single>
+        <!-- </div> -->
+        <!--supplierName -->
+        <!-- <div class="oj-flex"> -->
+          <oj-label for="oj-select-single--277117695-3">Supplier Name</oj-label>
+          <oj-select-single id="oj-select-single--277117695-4" data="[[$page.variables.getVendornameListSDP]]"
+            item-text="vendor_display" value="{{ $variables.searchbudgetinvoice.P_VENDOR_NAME }}"
+            on-value-item-changed="[[$listeners.ojSelectSingle2771176954ValueItem]]">
+          <!--  -->
+          <template slot="collectionTemplate" data-oj-as="collection">
+					<br>
+					<oj-input-text  label-hint="Search" placeholder="Search" value="{{ $variables.searchvarsuplier }}"></oj-input-text>
+					<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+								vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+								"sortable": "disabled"}' class="oj-select-results" 
+								columns=' [
+								  {"headerText":"Supplier Name","field":"vendor_display"}
+								  ]' 
+								on-oj-row-action="[[collection.handleRowAction]]"
+								data="[[collection.data]]" selected.row="[[collection.selected]]"
+								current-row="{{collection.currentRow}}"></oj-table>
+					</template>
+				    <template slot="cellTemplate" data-oj-as="cell">
+						<oj-highlight-text text='[[String(cell.data)]]' >
+						<!-- match-text='[[collection.searchText]]' -->
+						</oj-highlight-text>
+					</template>
+          </oj-select-single>
+        <!-- </div> -->
+        <!-- status -->
+        <!-- <div class="oj-flex"> -->
+          <oj-label for="oj-select-single--277117695-4">Status</oj-label>
+          <oj-select-single id="oj-select-single--277117695-4" data="[[$page.variables.getInvoicestatusListSDP]]"
+            item-text="status_display" value="{{ $variables.searchbudgetinvoice.P_STATUS }}"
+            on-value-item-changed="[[$listeners.ojSelectSingle2771176954ValueItem2]]"></oj-select-single>
+        <!-- </div> -->
+        <!--initiator  -->
+        <!-- <div class="oj-flex"> -->
+        <oj-label for="oj-select-single--277117695-5">Initiator</oj-label>
+        <oj-select-single id="oj-select-single--277117695-5" value="{{ $variables.searchbudgetinvoice.P_PERSON_ID }}"
+          on-value-item-changed="[[$listeners.ojSelectSingle2771176955ValueItem]]"
+          data="[[$page.variables.getEmployeeListListSDP]]" item-text="user_name_code">
+          <!--  -->
+          <template slot="collectionTemplate" data-oj-as="collection">
+          <br>
+          <oj-input-text  label-hint="Search" placeholder="Search" value="{{ $variables.searchvarperson }}"></oj-input-text>
+          <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+                vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+                "sortable": "disabled"}' class="oj-select-results" 
+                columns=' [
+                  {"headerText":"Person Number","field":"person_number"},
+                  {"headerText":"Name","field":"full_name"},
+                  {"headerText":"Login User","field":"user_name_display"},
+                  {"headerText":"E-Mail","field":"email_address"}
+                  ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}"></oj-table>
+          </template>
+          </oj-select-single>
+        <!-- </div> -->
+        <!-- <oj-input-text label-hint="Initiator" placeholder="Initiator"></oj-input-text> -->
+        <!--  -->
+        <!-- <oj-validation-group >
+          <oj-button  on-oj-action="[[$listeners.ojButtonOjAction]]">Search</oj-button>
+          <oj-button  on-oj-action="[[$listeners.ojButtonOjAction2]]">Reset</oj-button>
+        </oj-validation-group> -->
+      </oj-form-layout>
+  </div>
+  <!-- line 1 row 2 -->
+  <!-- <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-1  oj-xl-1">
+    <oj-button display='icons' class="homebutton" style="position:fixed; right:10px">
+      <oj-bind-text value="Home"> </oj-bind-text>
+      <img slot="startIcon":src="[[ $flow.path + 'resources/images/home-icon.png' ]]"
+      style="object-fit: fill; object-position: 50%50%;" width="25" height="25">
+    </oj-button>
+  </div> -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-1  oj-xl-1" style="position:fixed; right:-81px">
+    <img style="object-fit: fill; object-position: 50%50%;" width="25" height="25"
+        :src="[[ $application.path + 'resources/images/home-icon.png' ]]" on-click="[[$listeners.imgClick]]" >
+  </div>
+</div>
+<!--Row 2: Search button  -->
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-5  oj-xl-5"></div>
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-2  oj-xl-2">
+    <!--  -->
+      <oj-validation-group >
+          <oj-button  on-oj-action="[[$listeners.ojButtonOjAction]]">Search</oj-button>
+          <oj-button  on-oj-action="[[$listeners.ojButtonOjAction2]]">Reset</oj-button>
+      </oj-validation-group>
+  </div>
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-5  oj-xl-5"></div>
+</div>  
+<!--  -->
+
+<!--  -->
+<!--  -->
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+          <div id="mainContent">
+           <oj-button  on-oj-action="[[$listeners.ojButtonOjAction3]]" chroming="solid">Create Invoice</oj-button>
+            <!-- oj Table -->
+    <oj-table scroll-policy="loadMoreOnScroll" 
+        class="oj-sm-width-full oj-bg-body oj-search-table"
+        columns='[
+        {"headerText":"","field":"","resizable":"enabled","template":"Edit","width":37},
+        {"headerText":"Invoice Request #","field":"invoice_request_no","resizable":"enabled","width":137},
+        {"headerText":"Invoice #","resizable":"enabled","field":"invoice_no","width":90},
+        {"headerText":"PO #","resizable":"enabled","field":"po_number"},
+        {"headerText":"Department","resizable":"enabled","field":"department"},
+        {"headerText":"Supplier Name","resizable":"enabled","field":"vendor_name"},
+        {"headerText":"PO Type","resizable":"enabled","field":"po_type"},
+        {"headerText":"PO Amount","field":"po_amount","resizable":"enabled","template":"searchamount"},
+        {"headerText":"Status","resizable":"enabled","field":"status","template":"status"},
+        {"headerText":"Payment Date","resizable":"enabled","field":"invoice_date","template":"paymentdate"},
+        {"headerText":"Currency","resizable":"enabled","field":"currency_code","width":90},
+        {"headerText":"Currency Description","resizable":"enabled","field":"currency_description","width":160},
+        {"headerText":"Integration Status","resizable":"enabled","field":"integration_status","template":"intstatus"},
+        {"headerText":"","field":"","resizable":"enabled","template":"emsg","width":40}
+        ]'
+        selection-mode.row="single" edit-mode="rowEdit" data="[[ $variables.pagingSearchInvoice ]]"
+        id="searchInvoiceTable" display="grid">
+        <!-- edit -->
+        <template slot="Edit">
+          <oj-button display="icons" chroming="borderless" on-oj-action="[[$listeners.ojButtonOjAction4]]">Button
+            <img slot="startIcon" :src="[[ $application.path + 'resources/images/edit_ena.png' ]]">
+          </oj-button>
+        </template>
+        <!--Payment Date  -->
+        <template slot="paymentdate">
+          <oj-input-date value="[[$current.data]]" readonly="true"
+            converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+        </template>
+        <!--PO Amount  -->
+        <template slot="searchamount">
+          <oj-input-number style="text-align: right;" value="[[$current.data]]" readonly="true"
+            converter='{"options":{"minimumFractionDigits":2},"type":"number"}'>
+          </oj-input-number>
+        </template>
+
+        <!--Integration Error Message  -->
+        <template slot="emsg">
+            <oj-button display='icons' chroming="borderless" on-oj-action="[[$listeners.ojButtonOjAction6]]" >
+              <!-- <span slot='startIcon' class="oj-ux-ico-edit"></span> -->
+              <img slot="startIcon" :src="[[ $application.path + 'resources/images/submitrequest_ena.png' ]]">
+            </oj-button>
+        </template>
+
+        <!--Integration Status  status-->
+        <template slot="status">
+          <oj-bind-if test='[[ $current.data==="Approved" ]]'>
+          <span class="oj-text-color-green oj-typography-heading-md ">Approved</span>
+          </oj-bind-if>
+          <!--  -->
+          <oj-bind-if test='[[ $current.data==="Pending" ]]'>
+            <span class="oj-text-color-blue oj-typography-heading-md ">Pending</span>
+          </oj-bind-if>
+          <!--  -->
+          <oj-bind-if test='[[ $current.data==="Draft" ]]'>
+            <span class="oj-text-color-black oj-typography-heading-md ">Draft</span>
+          </oj-bind-if>
+          <!--  -->
+          <oj-bind-if test='[[ $current.data==="Rejected" ]]'>
+            <span class="oj-text-color-red oj-typography-heading-md">Rejected</span>
+          </oj-bind-if>
+
+        </template>
+
+
+        <!--Integration Status  -->
+        <template slot="intstatus">
+          <oj-bind-if test='[[ $current.data==="AP Invoiced" ]]'>
+          <oj-input-text class="oj-text-color-green oj-typography-body-xs oj-typography-semi-bold" value="[[$current.data]]" readonly="true"></oj-input-text>
+          </oj-bind-if>
+          <!--  -->
+          <oj-bind-if test='[[ $current.data==="Error" ]]'>
+            <oj-input-text class="apinvoicError" value="[[$current.data]]" readonly="true"></oj-input-text>
+          </oj-bind-if>
+          <!--  -->
+          <oj-bind-if test='[[ $current.data==="READY_TO_AP" ]]'>
+          <oj-input-text class="apReady" value="[[$current.data]]" readonly="true"></oj-input-text>
+          </oj-bind-if>
+          <!--  -->
+          <oj-bind-if
+            test='[[ ($current.data==="Error"|| $current.data==="AP Invoiced"||$current.data==="READY_TO_AP")?false:true ]]'>
+              <oj-input-text class="apDraft" value="[[$current.data]]" readonly="true"></oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <!--  <template slot="ActiveYn">
+          <oj-bind-if test="[[$current.data=='true']]">
+            <img :src="[[ $flow.path + 'resources/images/Ok_icon.png' ]]">
+          </oj-bind-if>
+          <oj-bind-if test="[[$current.data=='false']]">
+            <img :src="[[ $flow.path + 'resources/images/Cancel.png' ]]">
+          </oj-bind-if>
+        </template> -->
+      <!--  -->
+        <oj-paging-control id="paging" 
+        class="oj-sm-width-full" data="[[ $variables.pagingSearchInvoice ]]" page-size="8" 
+        slot="bottom">
+        </oj-paging-control>
+      </oj-table>
+
+          </div>
+        </div>
+      </div>
+<!--  -->
+<oj-dialog style="display:none" dialog-title="Warning" id="erroeMsgPopUp" drag-affordance="title-bar">
+  <div slot="body">
+    <div class="oj-flex">
+      <oj-text-area  value="{{ $variables.errorMsg }}" readonly="true" ></oj-text-area>
+    </div>
+  </div>
+  <div slot="footer">
+    <oj-button on-oj-action="[[$listeners.ojButtonOjAction7]]"   >Ok</oj-button>
+  </div>
+</oj-dialog>
+
+
+
+
+
+
+
+
+
+
+

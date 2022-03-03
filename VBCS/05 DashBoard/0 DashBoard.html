@@ -1,0 +1,61 @@
+<div class="oj-flex">
+  <h3>Admin</h3>
+</div>
+<div id="card-container">
+	<oj-action-card id="l-card" class="oj-sm-margin-2x demo-card-content leaveReq" >Rules</oj-action-card>
+	<oj-action-card id="l-card" class="oj-sm-margin-2x demo-card-content leaveReq">Upload</oj-action-card>
+
+	<oj-action-card id="t-card" class="oj-sm-margin-2x demo-card-content travelReq">Logs</oj-action-card>
+  	<oj-action-card id="t-card" class="oj-sm-margin-2x demo-card-content travelReq">AP Invoice</oj-action-card>
+    	<oj-action-card id="t-card" class="oj-sm-margin-2x demo-card-content travelReq">AR Invoice</oj-action-card>
+      	<oj-action-card id="t-card" class="oj-sm-margin-2x demo-card-content travelReq">General Ledger</oj-action-card>
+        	<oj-action-card id="t-card" class="oj-sm-margin-2x demo-card-content travelReq">Reports</oj-action-card>
+          	
+</div>
+
+
+
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+    <div id="masonrylayout-tilesizes-example">
+      <div class="demo-scroll-container">
+        <oj-sample-drawer class="oj-flex-item oj-sm-12 oj-md-12" display-mode="push" position="end"
+          style="position:fixed; top:60px; right:0;" close-icon="none">
+          <div slot="drawer" style="width:200px">
+        <oj-navigation-list>
+          <ul>
+            <li>
+              <a >Home</a>
+            </li>
+            <oj-bind-text value="Admin"></oj-bind-text>
+            <li>
+              <a on-click="[[$listeners.aClick2]]">Rules</a>
+            </li>
+            <li>
+              <a onclick="" on-click="[[$listeners.aClick4]]">Upload</a>
+              </li>
+            <li>
+              <a on-click="[[$listeners.hyperlinkClick]]">Logs</a>
+            </li>
+            <oj-bind-text value="Applications"></oj-bind-text>
+            <li>
+              <a on-click="[[$listeners.aClick3]]"  >AP Invoice</a>
+            </li>
+            <li>
+              <a onclick="" on-click="[[$listeners.aClick5]]">AR Invoice</a>
+            </li>
+            <oj-bind-text value="Reports"></oj-bind-text>
+            <li>
+              <a >Reports</a>
+            </li>
+            <li>
+              <a on-click="[[$listeners.hyperlinkClick2]]" >Notification</a>
+            </li>
+          </ul>
+        </oj-navigation-list>
+          </div>
+        </oj-sample-drawer>
+      </div>
+    </div>
+  </div>
+</div>

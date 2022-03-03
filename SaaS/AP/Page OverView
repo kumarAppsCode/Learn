@@ -1,0 +1,84 @@
+Rest API to get invoice Id for a given Invoice Number
+https://fa-******.oraclepdemos.com/fscmRestApi/resources/11.13.18.05/invoices?q=InvoiceNumber=<InvoiceNumber>&fields=InvoiceId,InvoiceNumber&onlyData=true
+
+Pass Invoice Number Dynamically.
+
+Sample Response:
+{
+    "items": [
+        {
+            "InvoiceId": 1011272,
+            "InvoiceNumber": "30220221251"
+        }
+    ],
+    "count": 1,
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://fa-eqir-dev14-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/invoices",
+            "name": "invoices",
+            "kind": "collection"
+        },
+        {
+            "rel": "action",
+            "href": "https://fa-eqir-dev14-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/invoices/action/cancelInvoice",
+            "name": "cancelInvoice",
+            "kind": "other"
+        },
+        {
+            "rel": "action",
+            "href": "https://fa-eqir-dev14-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/invoices/action/cancelLine",
+            "name": "cancelLine",
+            "kind": "other"
+        },
+        {
+            "rel": "action",
+            "href": "https://fa-eqir-dev14-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/invoices/action/validateInvoice",
+            "name": "validateInvoice",
+            "kind": "other"
+        },
+        {
+            "rel": "action",
+            "href": "https://fa-eqir-dev14-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/invoices/action/calculateTax",
+            "name": "calculateTax",
+            "kind": "other"
+        },
+        {
+            "rel": "action",
+            "href": "https://fa-eqir-dev14-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/invoices/action/generateDistributions",
+            "name": "generateDistributions",
+            "kind": "other"
+        },
+        {
+            "rel": "action",
+            "href": "https://fa-eqir-dev14-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/invoices/action/applyPrepayments",
+            "name": "applyPrepayments",
+            "kind": "other"
+        },
+        {
+            "rel": "action",
+            "href": "https://fa-eqir-dev14-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/invoices/action/unapplyPrepayments",
+            "name": "unapplyPrepayments",
+            "kind": "other"
+        },
+        {
+            "rel": "action",
+            "href": "https://fa-eqir-dev14-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/invoices/action/reverseDistributions",
+            "name": "reverseDistributions",
+            "kind": "other"
+        }
+    ]
+}
+
+From the Invoice Id above response Construct the below link passing it dynamically
+
+Deep Link URL
+https://fa-********.oraclepdemos.com/fscmUI/faces/deeplink?objType=AP_VIEWINVOICE&action=VIEW&objKey=InvoiceId=<InvoiceId>
+
+
+You can use erp cloud basic Auth for now to call Rest API: 
+****.****
+****%9*

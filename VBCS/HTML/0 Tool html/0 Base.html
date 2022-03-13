@@ -1,0 +1,10 @@
+  <oj-toolbar id="myToolbar" aria-controls="controlled" class="">
+    <!-- <oj-form-layout label-edge="start" columns="2" direction="row" max-columns="2"> -->
+      <oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction2]]" class="oj-flex-item oj-sm-flex-initial">
+        <img slot="startIcon" :src="[[ $application.path + 'resources/images/refresh_ena.png' ]]">Refresh
+      </oj-button>&nbsp;
+      <oj-label id="oj-input-text--1458011430-1" style="font-weight: bold">Search</oj-label>&nbsp;
+      <oj-input-text id="oj-input-text--1458011430-1" value="{{ $variables.searchInstance }}" label-hint="Search"
+        style="width:300px;"></oj-input-text>
+    <!-- </oj-form-layout> -->
+  </oj-toolbar>

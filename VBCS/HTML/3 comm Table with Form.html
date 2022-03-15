@@ -1,0 +1,429 @@
+<!-- -- Header Tool --> 
+<div class="oj-flex">
+  <!-- row 1st layer -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-4  oj-xl-4">
+    <h1 style="font-size: larger; font-weight: bold;">Community Master</h1>
+  </div>
+  <!-- 2nd layer -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-6  oj-xl-6">
+  </div>
+  <!-- 3rd layer -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-2  oj-xl-2">
+    <!-- Tool Bar -->
+    <!-- <div style="margin-left:35%;margin-top:5px"> -->
+      <div >
+      <oj-button class="oj-button-sm"  chroming="solid" on-oj-action="[[$listeners.buttonAction2]]">About</oj-button>
+<!--Action -->
+      <oj-button class="oj-button-sm"  chroming="solid" on-oj-action="[[$listeners.ojButtonOjAction2]]">Save</oj-button>
+      <!--Cancel -->
+      <oj-button class="oj-button-sm" chroming="solid" on-oj-action="[[$listeners.ojButtonOjAction]]" >Cancel</oj-button>
+    </div>
+  </div>
+</div>
+<!--  -->
+<br>
+<!--  -->
+
+<div class="oj-flex-item  oj-sm-12 oj-md-12 oj-lg-12  oj-xl-12 oj-panel">
+<oj-validation-group id="communityForm">
+<oj-form-layout>
+  <table>
+    <tr>
+       <td align="right">
+         <oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Business Unit</oj-label>
+       </td>
+       <td align="left">
+       <oj-input-text id="oj-input-text-651077415-1" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" label-hint="Community Name" value="{{ $variables.postCommunityMaster.bu_id }}" required="true"></oj-input-text>
+       </td>
+       <td style="width: 250px;"></td>
+       <td align="right">
+         <oj-label for="oj-input-text-651077415-11">Community Code</oj-label>
+       </td>
+       <td align="left">
+          <oj-input-text id="oj-input-text-651077415-11" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" value="{{ $variables.postCommunityMaster.community_code }}"></oj-input-text>
+       </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+       <td align="right">
+         <oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Community Name</oj-label>
+       </td>
+       <td align="left">
+       <oj-input-text id="oj-input-text-651077415-1" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" label-hint="Community Name" value="{{ $variables.postCommunityMaster.community_name }}" required="true"></oj-input-text>
+       </td>
+       <td style="width: 250px;"></td>
+       <td align="right">
+         <oj-label for="oj-input-text-651077415-11">Community Name</oj-label>
+       </td>
+       <td align="left">
+          <oj-input-text id="oj-input-text-651077415-11" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" value="{{ $variables.postCommunityMaster.community_name_ar }}"></oj-input-text>
+       </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td align="right" >
+        <oj-label for="oj-input-text-651077415-2" style="font-weight: bold;">Master Developer</oj-label>
+      </td>
+      <td align="left">
+        <oj-input-text id="oj-input-text-651077415-2" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" label-hint="Master Developer" value="{{ $variables.postCommunityMaster.master_developer }}"></oj-input-text>
+      </td>
+       <td style="width: 250px;"></td>
+       <td align="right">
+         <oj-label for="oj-input-text-651077415-12" style="font-weight: bold;">Master Developer</oj-label>
+       </td>
+      <td align="left">
+        <oj-input-text id="oj-input-text-651077415-12" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" label-hint="Status" value="{{ $variables.postCommunityMaster.master_developer_ar }}"></oj-input-text>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td align="right">
+        <oj-label for="oj-input-text-651077415-3" style="font-weight: bold;">Master Community</oj-label>
+        </td>
+      <td align="left">
+      <!-- <oj-input-text id="oj-input-text-651077415-3" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" label-hint="Status" value="{{ $variables.postCommunityMaster.master_developer_id }}"></oj-input-text> -->
+      <!-- <oj-input-text id="oj-input-text-651077415-2" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" label-hint="Master Developer Id" value="{{ $variables.postCommunityMaster.master_community_id}}"></oj-input-text> -->
+          <oj-select-single id="oj-input-text-651077415-6"
+            style="width: 200px; border: solid 1px #7F949F; border-radius:7px;"
+            value="{{ $variables.postCommunityMaster.master_community_id }}"
+            data="[[$variables.getMasterCommunityNameLOVListSDP]]" item-text="community_name"
+            on-value-item-changed="[[$listeners.ojInputText6510774156ValueItem]]">
+            <!--  -->
+            <template slot="collectionTemplate" data-oj-as="collection">
+            <br>
+            <oj-input-text label-hint="Search" placeholder="Search"
+              value="{{ $variables.searchFields.developmentSearch }}" class="oj-form-control-full-width" ></oj-input-text>
+            <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+                  vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+                  columns-default='{"resizable": "disabled","sortable": "disabled"}' class="oj-select-results" 
+                  columns=' [
+                                {"headerText":"Name","field":"community_name"},
+                                {"headerText":"Arabic","field":"community_name_ar"}
+                      ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}"></oj-table>
+            </template>
+            <template slot="cellTemplate" data-oj-as="cell">
+                          <oj-highlight-text text='[[String(cell.data)]]' >
+                          </oj-highlight-text>
+            </template>
+          </oj-select-single>
+      </td>
+       <td style="width: 250px;"></td>
+       <td align="right">
+         <oj-label for="oj-input-text-651077415-13" style="font-weight: bold;">Master Community</oj-label>
+       </td>
+      <td align="left">
+          <oj-input-text id="oj-input-text-651077415-13" label-hint="Status" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" value="{{ $variables.transient.master_community_ar }}"></oj-input-text>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+      <tr>
+      <td align="right" >
+        <oj-label for="oj-input-text-651077415-4" style="font-weight: bold;">Sub Community</oj-label>
+      </td>
+      <td align="left">
+        <!-- <oj-input-text id="oj-input-text-651077415-4" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" label-hint="Status" value="{{ $variables.postCommunityMaster.sub_community_id }}"></oj-input-text> -->
+        <oj-select-single id="oj-input-text-651077415-6"
+          style="width: 200px; border: solid 1px #7F949F; border-radius:7px;"
+          value="{{ $variables.postCommunityMaster.sub_community_id }}" item-text="community_name"
+          data="[[$variables.getMasterCommunityNameLOVListSDP2]]"
+          on-value-item-changed="[[$listeners.ojInputText6510774156ValueItem5]]">
+            <!--  -->
+            <template slot="collectionTemplate" data-oj-as="collection">
+            <br>
+            <oj-input-text label-hint="Search" placeholder="Search"
+              value="{{ $variables.searchFields.subCommunitySearch }}" class="oj-form-control-full-width" ></oj-input-text>
+            <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+                  vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+                  columns-default='{"resizable": "disabled","sortable": "disabled"}' class="oj-select-results" 
+                  columns=' [
+                                {"headerText":"Name","field":"community_name"},
+                                {"headerText":"Arabic","field":"community_name_ar"}
+                      ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}"></oj-table>
+            </template>
+            <template slot="cellTemplate" data-oj-as="cell">
+                          <oj-highlight-text text='[[String(cell.data)]]' >
+                          </oj-highlight-text>
+            </template>
+          </oj-select-single>
+      </td>
+       <td style="width: 250px;"></td>
+      <td align="right">
+          <oj-label for="oj-input-text-651077415-14" style="font-weight:bold;">Sub Community</oj-label>
+        </td>
+        <td align="left">
+              <oj-input-text id="oj-input-text-651077415-14" label-hint="Status" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" value="{{ $variables.transient.sub_community_ar }}"></oj-input-text>
+        </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+      <tr>
+      <td align="right" >
+        <oj-label for="oj-input-text-651077415-5" style="font-weight:bold;">Short Name</oj-label>
+      </td>
+      <td align="left">
+        <oj-input-text id="oj-input-text-651077415-5" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" label-hint="Status" value="{{ $variables.postCommunityMaster.sma_code }}"></oj-input-text>
+      </td>
+       <td style="width: 250px;"></td>
+      <td align="right" >
+        <oj-label for="oj-input-text-651077415-15" style="font-weight:bold;">Short Name</oj-label>
+      </td>
+      <td align="left">
+              <oj-input-text id="oj-input-text-651077415-15" label-hint="Status" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" value="{{ $variables.postCommunityMaster.sma_code }}"></oj-input-text>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td align="right">
+        <oj-label for="oj-input-text-651077415-6" style="font-weight:bold;">Location</oj-label>
+        </td>
+      <td align="left">
+          <oj-select-single id="oj-input-text-651077415-6" data="[[$page.variables.getLookupListSDP]]"
+            style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" item-text="lookup_value_name_disp"
+            value="{{ $variables.postCommunityMaster.location_id }}"
+            on-value-item-changed="[[$listeners.ojInputText6510774156ValueItem2]]">
+            <!--  -->
+            <template slot="collectionTemplate" data-oj-as="collection">
+            <br>
+            <oj-input-text label-hint="Search" placeholder="Search"
+              value="{{ $variables.searchFields.locationSearch }}" class="oj-form-control-full-width" ></oj-input-text>
+            <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+                  vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+                  columns-default='{"resizable": "disabled","sortable": "disabled"}' class="oj-select-results" 
+                  columns=' [
+                                {"headerText":"Name","field":"lookup_value_name_disp"}, 
+                                {"headerText":"Arabic Name","field":"lookup_value_name_disp_ar"}
+                      ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}"></oj-table>
+            </template>
+            <template slot="cellTemplate" data-oj-as="cell">
+                          <oj-highlight-text text='[[String(cell.data)]]' >
+                          </oj-highlight-text>
+            </template>
+          </oj-select-single>
+      </td>
+       <td style="width: 250px;"></td>
+       <td align="right"><oj-label for="oj-input-text-651077415-16" style="font-weight: bold;">Location</oj-label></td>
+      <td align="left">
+          <oj-input-text id="oj-input-text-651077415-16" label-hint="Status" disabled="true" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;"
+              value="{{ $variables.transient.location_name_ar }}"></oj-input-text>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td align="right">
+        <oj-label for="oj-input-text-651077415-6" style="font-weight:bold;">District</oj-label>
+        </td>
+      <td align="left">
+                    <oj-select-single id="oj-input-text-651077415-6" data="[[$page.variables.getLookupListSDP2]]"
+                      style="width: 200px; border: solid 1px #7F949F; border-radius:7px;"
+                      item-text="lookup_value_name_disp" value="{{ $variables.postCommunityMaster.district_id }}"
+                      on-value-item-changed="[[$listeners.ojInputText6510774156ValueItem3]]">
+            <!--  -->
+            <template slot="collectionTemplate" data-oj-as="collection">
+            <br>
+            <oj-input-text label-hint="Search" placeholder="Search" class="oj-form-control-full-width"
+              value="{{ $variables.searchFields.districtSearch }}"></oj-input-text>
+            <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+                  vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+                  columns-default='{"resizable": "disabled","sortable": "disabled"}' class="oj-select-results" 
+                  columns=' [
+                                {"headerText":"Name","field":"lookup_value_name_disp"}, 
+                                {"headerText":"Arabic Name","field":"lookup_value_name_disp_ar"}
+                      ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}"></oj-table>
+            </template>
+            <template slot="cellTemplate" data-oj-as="cell">
+                          <oj-highlight-text text='[[String(cell.data)]]' >
+                          </oj-highlight-text>
+            </template>
+            </oj-select-single>
+      </td>
+       <td style="width: 250px;"></td>
+       <td align="right" >
+         <oj-label for="oj-input-text-651077415-17" style="font-weight:bold;">District</oj-label>
+         </td>
+      <td align="left">
+        <oj-input-text id="oj-input-text-651077415-17" label-hint="Status" disabled="true" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;"
+              value="{{ $variables.transient.district_ar }}"></oj-input-text>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td align="right">
+        <oj-label for="oj-input-text-651077415-6" style="font-weight:bold;">State</oj-label>
+        </td>
+      <td align="left">
+                    <oj-select-single id="oj-input-text-651077415-6" data="[[$page.variables.getLookupListSDP3]]"
+                      style="width: 200px; border: solid 1px #7F949F; border-radius:7px;"
+                      item-text="lookup_value_name_disp" value="{{ $variables.postCommunityMaster.state_id }}"
+                      on-value-item-changed="[[$listeners.ojInputText6510774156ValueItem4]]">
+            <!--  -->
+            <template slot="collectionTemplate" data-oj-as="collection">
+            <br>
+            <oj-input-text  label-hint="Search" placeholder="Search" ></oj-input-text>
+            <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+                  vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+                  columns-default='{"resizable": "disabled","sortable": "disabled"}' class="oj-select-results" 
+                  columns=' [
+                                {"headerText":"Name","field":"lookup_value_name_disp"}, 
+                                {"headerText":"Arabic Name","field":"lookup_value_name_disp_ar"}
+                      ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}"></oj-table>
+            </template>
+            <template slot="cellTemplate" data-oj-as="cell">
+                          <oj-highlight-text text='[[String(cell.data)]]' >
+                          </oj-highlight-text>
+            </template>
+            </oj-select-single>
+      </td>
+       <td style="width: 250px;"></td>
+       <td align="right">
+        <oj-label for="oj-input-text-651077415-18" style="font-weight:bold;">State</oj-label>
+       </td>
+      <td align="left">
+        <oj-input-text id="oj-input-text-651077415-18" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" label-hint="Status" disabled="true"
+              value="{{ $variables.transient.state_ar }}"></oj-input-text>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td align="right">
+        <oj-label for="oj-input-text-651077415-9" style="font-weight:bold;">Country</oj-label>
+        </td>
+      <td align="left">
+        <oj-input-text id="oj-input-text-651077415-9" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" label-hint="Status" value="{{ $variables.postCommunityMaster.country_code }}"></oj-input-text>
+      </td>
+       <td style="width: 250px;"></td>
+      <td align="right"style="font-weight: bold;" >
+        <oj-label for="oj-input-text-651077415-19" style="font-weight:bold;">Country</oj-label>
+        </td>
+      <td align="left">
+        <oj-input-text id="oj-input-text-651077415-19" label-hint="Status" disabled="true" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;"
+        value="{{ $variables.transient.country_name_ar }}"></oj-input-text>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td align="right" >
+        <oj-label for="oj-input-text-651077415-10" style="font-weight:bold;">Code</oj-label>
+        </td>
+      <td align="left">
+        <oj-input-text id="oj-input-text-651077415-10" style="width: 200px; border: solid 1px #7F949F; border-radius:7px;" label-hint="Status" value="{{ $variables.postCommunityMaster.code }}"></oj-input-text>
+      </td>
+      <td style="width: 250px;"></td>      
+       <td align="right"></td>
+      <td align="left"></td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+
+  </table>
+</oj-form-layout>
+</oj-validation-group>
+</div>
+<!--  -->
+<!-- Dialog About Start -->
+<oj-dialog style="display:none; width: 355px;height: 555px;"  dialog-title="About" id="aboutDialog">
+  <div slot="body">
+    <form>
+  <table>
+    <tr>
+      <td align="right">
+      	<oj-label for="oj-input-text-651077415-21" style="font-weight:bold;">Created By</oj-label>
+      </td>
+      <td align="left">
+        <oj-input-text id="oj-input-text-651077415-21"
+          style="width: 200px; border: solid 1px #7F949F; border-radius:7px; padding: 3px;" label-hint="Created By"
+          value="{{ $variables.postCommunityMaster.created_by }}" readonly="true" >
+        </oj-input-text>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td align="right">
+      	<oj-label for="oj-input-text-651077415-22" style="font-weight:bold;">Creation Date</oj-label>
+      </td>
+      <td align="left">
+      <oj-input-date id="oj-input-text-651077415-22" style="width: 200px; border: solid 1px #7F949F; border-radius:7px; padding: 3px;"
+        label-hint="Creation Date" converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+        value="{{ $variables.postCommunityMaster.creation_date }}" readonly="true" >
+      </oj-input-date>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td align="right">
+        <oj-label for="oj-input-text-651077415-23" style="font-weight:bold;">Last Update Date</oj-label>
+      </td>
+      <td align="left">
+      <oj-input-date id="oj-input-text-651077415-23" style="width: 200px; border: solid 1px #7F949F; border-radius:7px; padding: 3px;"
+        label-hint="Last Update Date" converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+        value="{{ $variables.postCommunityMaster.last_update_date }}" readonly="true" >
+      </oj-input-date>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td align="right">
+        <oj-label for="oj-input-text-651077415-24" style="font-weight:bold;">Last Updated By</oj-label>
+      </td>
+      <td align="left">
+        <oj-input-text id="oj-input-text-651077415-24"
+          style="width: 200px; border: solid 1px #7F949F; border-radius:7px; padding: 3px;" label-hint="Last Updated By"
+          value="{{ $variables.postCommunityMaster.last_updated_by }}" readonly="true" >
+        </oj-input-text>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+        <tr>
+      <td align="right">
+          <oj-label for="oj-input-text-651077415-25" style="font-weight:bold;">Last Update Login</oj-label>
+      </td>
+      <td align="left">
+          <oj-input-text id="oj-input-text-651077415-25"
+            style="width: 200px; border: solid 1px #7F949F; border-radius:7px; padding: 3px;" label-hint="Last Update Login"
+            value="{{ $variables.postCommunityMaster.last_update_login }}" readonly="true">
+          </oj-input-text>
+      </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+</table>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <div slot="footer">
+    <oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction]]"  >Ok</oj-button>
+  </div>
+</oj-dialog>
+
+
+
+

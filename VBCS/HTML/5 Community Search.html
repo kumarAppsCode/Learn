@@ -1,0 +1,197 @@
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-11  oj-xl-12">
+    <div class="oj-flex-item oj-sm-12 oj-md-12">
+      <h1 style="font-size: larger; font-weight: bold;">Search Community Master</h1>
+    </div>
+  </div>
+</div>
+<!--Row 2: Search button  -->
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12">
+      <oj-form-layout label-edge='start' class="" columns="3" max-columns="3">
+      <oj-select-single label-hint="Business Unit" data="[[$variables.getBusinessunitListSDP]]" style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;" 
+      item-text="bu_name" value="{{ $variables.searchObj.bu_name }}" placeholder="Business Unit">
+          <template slot="collectionTemplate" data-oj-as="collection">
+            <br>
+            <oj-input-text label-hint="Search" placeholder="Search" style="width: 18rem;"" class="oj-form-control-full-width"
+              value="{{ $variables.searchValue.buname }}" ></oj-input-text>
+            <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+                  vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+                  columns-default='{"resizable": "disabled","sortable": "disabled"}' class="oj-select-results" 
+                  columns=' [
+                                {"headerText":"Business Unit","field":"bu_name"}, 
+                                {"headerText":"Business Unit Arabic","field":"bu_name_ar"}
+                            ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}"></oj-table>
+          </template>
+      </oj-select-single>
+<!--  -->
+      <oj-input-text label-hint="Community Name"  style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+        value="{{ $variables.searchObj.community_name }}"></oj-input-text>
+<!--  -->
+      <oj-input-text label-hint="Short Name" style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+        value="{{ $variables.searchObj.community_code }}"></oj-input-text>
+<!--  -->
+      <oj-input-text label-hint="Master Developer" style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+        value="{{ $variables.searchObj.master_developer }}"></oj-input-text>
+<!--  -->
+      <oj-input-text label-hint="Sub Community" style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+        value="{{ $variables.searchObj.sub_community_name }}"></oj-input-text>
+<!--  -->
+      <oj-select-single label-hint="Location"
+        style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;" data="[[$variables.getLookupListSDP]]"
+        item-text="lookup_value_name_disp" value="{{ $variables.searchObj.location_name }}">
+          <template slot="collectionTemplate" data-oj-as="collection">
+            <br>
+            <oj-input-text label-hint="Search" placeholder="Search" style="width: 18rem;"" class="oj-form-control-full-width"
+              value="{{ $variables.searchValue.location }}" ></oj-input-text>
+            <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+                  vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+                  columns-default='{"resizable": "disabled","sortable": "disabled"}' class="oj-select-results" 
+                  columns=' [
+                                {"headerText":"Name","field":"lookup_value_name_disp"}, 
+                                {"headerText":"Arabic Name","field":"lookup_value_name_disp_ar"}
+                            ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}"></oj-table>
+          </template>     
+      </oj-select-single>
+      <!--  -->
+      <oj-select-single label-hint="District" style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+        data="[[$variables.getLookupListSDP2]]" item-text="lookup_value_name_disp"
+        value="{{ $variables.searchObj.district }}" >
+          <template slot="collectionTemplate" data-oj-as="collection">
+            <br>
+            <oj-input-text label-hint="Search" placeholder="Search" style="width: 18rem;"" class="oj-form-control-full-width"
+              value="{{ $variables.searchValue.districtSearch }}" ></oj-input-text>
+            <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+                  vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+                  columns-default='{"resizable": "disabled","sortable": "disabled"}' class="oj-select-results" 
+                  columns=' [
+                                {"headerText":"Name","field":"lookup_value_name_disp"}, 
+                                {"headerText":"Arabic Name","field":"lookup_value_name_disp_ar"}
+                            ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}"></oj-table>
+          </template>
+      </oj-select-single>
+      <!--  -->
+      <oj-select-single label-hint="State" style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;" 
+      data="[[$variables.getLookupListSDP3]]" item-text="lookup_value_id">
+        <template slot="collectionTemplate" data-oj-as="collection">
+            <br>
+            <oj-input-text label-hint="Search" placeholder="Search" style="width: 18rem;"" class="oj-form-control-full-width"
+              value="{{ $variables.searchValue.districtSearch }}" ></oj-input-text>
+            <oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+                  vertical-grid-visible="disabled" selection-mode='{"row": "single"}' 
+                  columns-default='{"resizable": "disabled","sortable": "disabled"}' class="oj-select-results" 
+                  columns=' [
+                                {"headerText":"Name","field":"lookup_value_name_disp"}, 
+                                {"headerText":"Arabic Name","field":"lookup_value_name_disp_ar"}
+                            ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}"></oj-table>
+          </template> 
+      </oj-select-single>
+      <!--  -->
+      <oj-input-text label-hint="Country" style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+        value="{{ $variables.searchObj.country_name }}"></oj-input-text>
+      <!--  -->
+      <oj-input-date label-hint="Effective Start Date"
+        style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;" placeholder="Effective Start Date"
+        converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+        value="{{ $variables.searchObj.effective_start_date }}"></oj-input-date>
+      <!--  -->
+      <oj-input-date label-hint="Effective End Date" style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+        placeholder="Effective End Date" converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+        value="{{ $variables.searchObj.effective_end_date }}"></oj-input-date>
+      </oj-form-layout>
+  </div>
+</div>
+<div class="oj-flex">
+<div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-6  oj-xl-6"></div>
+<div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-4  oj-xl-4"></div>
+<div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-2  oj-xl-2">
+    <oj-validation-group>
+      <oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction]]" >Search</oj-button>
+      <oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction2]]" >Reset</oj-button>
+    </oj-validation-group>
+  </div>
+</div>
+<!--  -->
+
+<br>
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+    <div id="mainContent">
+      <oj-button  chroming="half" on-oj-action="[[$listeners.ojButtonOjAction]]">
+        <img slot="startIcon" :src="[[ $application.path + 'resources/images/add_ena.png' ]]">Create
+      </oj-button>
+      <oj-sample-export-data max-rows="1000" include-header-row="true" display="all" chroming="half"
+        file-name="Community Master" data="[[ $variables.communityMasterPage ]]">
+    <span>Export</span>
+    <img slot="startIcon" alt="Archive Data" width="16" height="16"
+      :src="[[ $application.path + 'resources/images/xl.png' ]]" style="object-fit: fill;"/> </oj-sample-export-data>  
+      <!-- oj Table -->
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-sm-width-full oj-bg-body oj-search-table"
+        columns='[
+        {"headerText":"Community Name","field":"community_name","template":"communityId"},
+        {"headerText":"Community Name Arabic","field":"community_name_ar"},
+        {"headerText":"Business Unit","field":"bu_name"},
+        {"headerText":"Short Name","field":"community_code"},
+        {"headerText":"Master Developer","field":"master_developer"},
+        {"headerText":"Sub Community","field":"sub_community_name"},
+        {"headerText":"Location","field":"location_name"},
+        {"headerText":"District","field":"district"},
+        {"headerText":"State","field":"state"},
+        {"headerText":"Country","field":"country_name"},
+        {"headerText":"Effective Start Date","field":"effective_start_date","template":"effstartdate"},
+        {"headerText":"Effective End Date","field":"effective_end_date","template":"effenddate"},
+        {"headerText":"Active","field":"active_flag","template":"activeFlag"}
+       ]'
+        selection-mode.row="single" edit-mode="rowEdit" data="[[ $variables.communityMasterPage]]" id="searchTable"
+        display="grid" horizontal-grid-visible="enabled" vertical-grid-visible="enabled">
+        <!--communityId  -->
+        <template slot="communityId">
+          <a  style="color: #020e69; text-decoration: none; line-height: inherit; font-size: 12px; font-weight: bold;"  
+          target="_blank" on-click="[[$listeners.aClick]]" >
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </a>
+        </template>
+        <!--effective_start_date  -->
+        <template slot="effstartdate">
+          <oj-input-date value="[[$current.data]]" readonly="true"
+            converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+        </template>
+        <!--effective_end_date  -->
+        <template slot="effenddate">
+          <oj-input-date value="[[$current.data]]" readonly="true"
+            converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+        </template>
+
+        <template slot="activeFlag">
+          <oj-bind-if test='[[ $current.data==="N" ]]'>
+            <img :src="[[ $application.path + 'resources/images/Cancel.png' ]]"   >
+          </oj-bind-if>
+          <oj-bind-if test='[[ $current.data!=="N" ]]'>
+            <img :src="[[ $application.path + 'resources/images/Ok_icon.png' ]]"   >
+          </oj-bind-if>
+        </template>
+
+        <!--PO Amount  -->
+        <!-- <template slot="searchamount">
+          <oj-input-number style="text-align: right;" value="[[$current.data]]" readonly="true"
+            converter='{"options":{"minimumFractionDigits":2},"type":"number"}'>
+          </oj-input-number>
+        </template> -->
+      <oj-paging-control slot="bottom" id="paging" class="oj-sm-width-full" data="[[ $variables.communityMasterPage ]]" page-size="15">
+      </oj-paging-control>
+      </oj-table>
+    </div>
+  </div>
+</div>

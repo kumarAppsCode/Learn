@@ -1,0 +1,105 @@
+<div class="oj-flex">
+  <!-- Pie -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-12 oj-xl-12">
+    <div class="oj-flex-item oj-sm-12 oj-md-12">
+      <h1>Search AP Invoice</h1>
+    </div>
+        <oj-form-layout label-edge="start" columns="3" max-columns="3" direction="row" class="">
+      <!--departmentName -->
+      <!-- <div class="oj-flex"> -->
+      <oj-label for="oj-select-single--277117695-1" >File Name</oj-label>
+      <oj-select-single id="oj-select-single--277117695-1" data="[[$variables.getFileNameSearchListSDP]]"
+        item-text="zip_file_name_display" value="{{ $variables.search.pZipFileName }}" >
+        <template slot="collectionTemplate" data-oj-as="collection">
+          <br>
+          <oj-input-text label-hint="Search" placeholder="Search" " value="{{ $variables.fieldSearch.searchFileName }}"></oj-input-text>
+					<oj-table horizontal-grid-visible="disabled" vertical-grid-visible="disabled"
+            selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+								"sortable": "disabled"}' class="oj-select-results" columns=' [
+								  {"headerText":"File Name","field":"zip_file_name_code"},
+								  {"headerText":"Instance Id","field":"instance_id"}
+								  ]' on-oj-row-action="[[collection.handleRowAction]]" data="[[collection.data]]"
+            selected.row="[[collection.selected]]" current-row="{{collection.currentRow}}">
+            </oj-table> 
+        </template>
+        <template slot="cellTemplate" data-oj-as="cell">
+          <oj-highlight-text text='[[String(cell.data)]]'>
+            <!-- match-text='[[collection.searchText]]' -->
+          </oj-highlight-text>
+        </template>
+      </oj-select-single>
+      <!-- From Date -->
+      <oj-input-date label-hint="From Date" placeholder="From Date" converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+      value="{{ $variables.search.pFromDate }}"></oj-input-date>
+      <!-- To Date -->
+      <oj-input-date label-hint="To Date" placeholder="To Date" converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+      value="{{ $variables.search.pToDate }}"></oj-input-date>
+    </oj-form-layout>
+
+  </div>
+</div>
+<!--Row 2: Search button  -->
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-5  oj-xl-5"></div>
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-5  oj-xl-5"></div>
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-2  oj-xl-2">
+    <!--  -->
+    <oj-validation-group>
+      <oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction2]]">Search</oj-button>
+      <oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction]]">Reset</oj-button>
+    </oj-validation-group>
+  </div>
+</div>
+<!--  -->
+
+<br>
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+    <div id="mainContent">
+      <oj-sample-export-data chroming="solid" file-name="Export" data="[[ $variables.pagingSearch ]]"
+        columns='[{"field":"zip_file_name","headerText":"File Name","type":"string"},{"field":"instance_id","headerText":"Instance Id","type":"number"},{"field":"creation_date","headerText":"Creation Date","type":"string"},{"field":"file_row_count","headerText":"File Row count","type":"string"},{"field":"fbdi_success_load_row_count","headerText":"FBDI Validation Success Row Count","type":"string"},{"field":"fbdi_validation_failure_row_count","headerText":"FBDI Validation Failure Row Count","type":"string"},{"field":"fbdi_error_row_count","headerText":"FBDI Error Row Count","type":"string"}]'>
+        <img slot="startIcon" :src="[[ $application.path + 'resources/images/excel.png' ]]" width="16" height="16"
+        style="object-fit: fill;">
+      </oj-sample-export-data>
+      <!-- oj Table -->
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-sm-width-full oj-bg-body oj-search-table"
+        columns='[
+        {"headerText":"File Name","field":"zip_file_name","template":"File Name"},
+        {"headerText":"Instance Id","field":"instance_id"},
+        {"headerText":"Creation Date","field":"creation_date","template":"creationdate"},
+        {"headerText":"#Source File","field":"file_row_count"},
+        {"headerText":"#Successfully Imported","field":"fbdi_success_load_row_count"},
+        {"headerText":"#Validation Failed","field":"fbdi_validation_failure_row_count"},
+        {"headerText":"#Import Errors in ERP Cloud","field":"fbdi_error_row_count"}]'
+        selection-mode.row="single" edit-mode="rowEdit" data="[[ $variables.pagingSearch]]" id="searchTable"
+        display="grid">
+        <!-- edit -->
+        <template slot="Edit">
+          <oj-button display="icons" chroming="borderless">Button
+            <img slot="startIcon" :src="[[ $application.path + 'resources/images/edit_ena.png' ]]">
+          </oj-button>
+        </template>
+        <!--Creation Date  -->
+        <template slot="creationdate">
+          <oj-input-date value="[[$current.data]]" readonly="true"
+            converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+        </template>
+        <!--PO Amount  -->
+        <!-- <template slot="searchamount">
+          <oj-input-number style="text-align: right;" value="[[$current.data]]" readonly="true"
+            converter='{"options":{"minimumFractionDigits":2},"type":"number"}'>
+          </oj-input-number>
+        </template> -->
+        <oj-paging-control id="paging" class="oj-sm-width-full" data="[[ $variables.pagingSearch ]]" page-size="15"
+          slot="bottom">
+        </oj-paging-control>
+  <template slot="File Name">
+    <a target="_blank" on-click="[[$listeners.aClick]]">
+      <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+    </a>
+  </template>
+      </oj-table>
+
+    </div>
+  </div>
+</div>

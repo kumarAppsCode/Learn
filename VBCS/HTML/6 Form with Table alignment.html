@@ -1,0 +1,150 @@
+<h1 style="font-size: larger; font-weight: bold;">Payroll Reports</h1>
+<div class="oj-flex">
+<div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-6  oj-xl-6">
+    <oj-form-layout label-edge="start" max-columns="1">
+        <oj-bind-if test="true" >
+        <oj-label for="oj-select-single-1084591017-1" >Interface Name</oj-label>
+        <oj-select-single id="oj-select-single-1084591017-1" 
+          data="[[$variables.getSearchIntefaceNameListSDP]]" item-text="interface_name"
+          value="{{ $variables.param.interfaceId }}"
+          on-value-item-changed="[[$listeners.ojSelectSingle10845910171ValueItem]]"></oj-select-single>
+        </oj-bind-if>
+    </oj-form-layout>
+</div>
+<div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-4  oj-xl-4"></div>
+<div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-2  oj-xl-2"></div>
+</div>
+
+
+
+
+
+<h6 style="font-size: larger; font-weight: bold;">Parameter Detail</h6>
+<oj-form-layout label-edge="start" max-columns="3">
+    <!-- 1 -->
+    <oj-bind-if test='[[ $variables.getParameterList.payroll_flag==="NO"?false:true ]]'>
+        <oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Payroll</oj-label>
+        <oj-input-text id="oj-input-text-651077415-1"
+          style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"
+          value="{{ $variables.getParameterListValue.payroll_flag }}"></oj-input-text>
+    </oj-bind-if>
+    <!--2 Period  -->
+    <oj-bind-if test='[[ $variables.getParameterList.period_flag==="NO"?false:true ]]'>
+        <oj-label for="oj-input-text-651077415-2" style="font-weight: bold;">Period</oj-label>
+		<oj-input-text id="oj-input-text-651077415-2"
+    value="{{ $variables.getParameterListValue.period_flag }}"
+          style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+    </oj-bind-if>
+    <!--3  Employee Number-->
+    <oj-bind-if test='[[ $variables.getParameterList.employee_number_flag==="NO"?false:true ]]'>
+        <oj-label for="oj-input-text-651077415-3" style="font-weight: bold;">Employee Number</oj-label>
+        <oj-input-text id="oj-input-text-651077415-3"
+        value="{{ $variables.getParameterListValue.employee_number_flag }}"
+          style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+    </oj-bind-if>
+    <!--4  -->
+    <oj-bind-if test='[[ $variables.getParameterList.supplier_flag==="NO"?false:true ]]'>
+    <oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Supplier</oj-label>
+        <oj-input-text id="oj-input-text-651077415-1"
+        value="{{ $variables.getParameterListValue.supplier_flag }}"
+          style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+    </oj-bind-if>
+    <!--5  -->
+    <oj-bind-if test='[[ $variables.getParameterList.supplier_site_flag==="NO"?false:true ]]'>
+			<oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Supplier Site</oj-label>
+			<oj-input-text id="oj-input-text-651077415-1"
+      value="{{ $variables.getParameterListValue.supplier_site_flag }}"
+			  style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+		</oj-bind-if>
+    <!--6  -->
+    <oj-bind-if test='[[ $variables.getParameterList.invoice_description_flag==="NO"?false:true ]]'>
+			<oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Invoice Description</oj-label>
+			<oj-input-text id="oj-input-text-651077415-1"
+      value="{{ $variables.getParameterListValue.invoice_description_flag }}"
+			  style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+		</oj-bind-if>
+    <!--7  -->
+    <oj-bind-if test='[[ $variables.getParameterList.invoice_date_flag==="NO"?false:true ]]'>
+			<oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Invoice Date</oj-label>
+			 <oj-input-text id="oj-input-text-651077415-1"
+       value="{{ $variables.getParameterListValue.invoice_date_flag }}"
+			  style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+		</oj-bind-if>
+    <!--8  -->
+    <oj-bind-if test='[[ $variables.getParameterList.gl_date_flag==="NO"?false:true ]]'>
+			<oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">GL Date</oj-label>
+			<oj-input-text id="oj-input-text-651077415-1"
+      value="{{ $variables.getParameterListValue.gl_date_flag }}"
+			  style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+		</oj-bind-if>
+    <!--9  -->
+    <oj-bind-if test='[[ $variables.getParameterList.create_invoice_flag==="NO"?false:true ]]'>
+			<oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Create Invoice</oj-label>
+			<oj-input-text id="oj-input-text-651077415-1"
+      value="{{ $variables.getParameterListValue.create_invoice_flag }}"
+			  style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+		</oj-bind-if>
+    <!--10  -->
+    <oj-bind-if test='[[ $variables.getParameterList.payment_date_flag==="NO"?false:true ]]'>
+      <oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Payment Date</oj-label>
+      <oj-input-text id="oj-input-text-651077415-1"
+      value="{{ $variables.getParameterListValue.payment_date_flag }}"
+          style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+    </oj-bind-if>
+    <!--11  -->
+    <oj-bind-if test='[[ $variables.getParameterList.companry_account_flag==="NO"?false:true ]]'>
+        <oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Company Account</oj-label>
+        <oj-input-text id="oj-input-text-651077415-1"
+        value="{{ $variables.getParameterListValue.companry_account_flag }}"
+          style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+    </oj-bind-if>
+    <!--12  -->
+    <oj-bind-if test='[[ $variables.getParameterList.payment_type_flag==="NO"?false:true ]]'>
+        <oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Payment Type</oj-label>
+        <oj-input-text id="oj-input-text-651077415-1"
+        value="{{ $variables.getParameterListValue.payment_type_flag }}"
+          style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+    </oj-bind-if>
+    <!--13  -->
+    <oj-bind-if test='[[ $variables.getParameterList.bank_requirement_flag==="NO"?false:true ]]'>
+        <oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Bank Requirement</oj-label>
+            <oj-input-text id="oj-input-text-651077415-1"
+            value="{{ $variables.getParameterListValue.bank_requirement_flag}}"
+          style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+    </oj-bind-if>
+    <!--14  -->
+    <oj-bind-if test='[[ $variables.getParameterList.file_name_flag==="NO"?false:true ]]'>
+        <oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">File Name</oj-label>
+        <oj-input-text id="oj-input-text-651077415-1"
+        value="{{ $variables.getParameterListValue.file_name_flag }}"
+        style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+    </oj-bind-if>
+    <!--15  -->
+    <oj-bind-if test='[[ $variables.getParameterList.transfer_to_qnb_flag==="NO"?false:true ]]'>
+        <oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Transfer To QNB</oj-label>
+        <oj-input-text id="oj-input-text-651077415-1"
+        value="{{ $variables.getParameterListValue.transfer_to_qnb_flag }}"
+          style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+    </oj-bind-if>
+    <!--16  -->
+    <oj-bind-if test='[[ $variables.getParameterList.send_sms_flag==="YES" ]]'>
+        <oj-label for="oj-input-text-651077415-1" style="font-weight: bold;">Send SMS Flag</oj-label>
+        <oj-input-text id="oj-input-text-651077415-1"
+        value="{{ $variables.getParameterListValue.send_sms_flag }}"
+          style="width: 250px; border: solid 1px #7F949F; border-radius:1px;"></oj-input-text>
+    </oj-bind-if>
+</oj-form-layout>
+<br/>
+<div class="oj-flex">
+<div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-6  oj-xl-6"></div>
+<div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-4  oj-xl-4"></div>
+<div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-2  oj-xl-2">
+    <oj-bind-if test="[[ $variables.param.interfaceId!=null?true:false ]]">
+    <oj-validation-group>
+      <oj-button chroming="solid" >Search</oj-button>
+      <oj-button chroming="solid" >Reset</oj-button>
+    </oj-validation-group>
+    </oj-bind-if>
+  </div>
+</div>
+

@@ -1,0 +1,118 @@
+.oj-table-container {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid #D6DFE6;
+    /* padding: 10px; */
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    color: #333333;
+    border:hidden;
+    font-weight: bold;
+}
+
+.oj-search-table {
+    position: relative;
+    line-height: normal;
+    /* font-size: inherit; */
+    min-width: 240px;
+    min-height: calc(14 * 2.28571rem);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.oj-table {
+    position: relative;
+    line-height: normal;
+    /* font-size: inherit; */
+    min-width: 240px;
+    min-height: auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.oj-table-column-header-cell{
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+     color: black;
+     /* background-color: #b4555d; */
+     font-weight: bold;
+     border-color: #ededed;
+}
+
+.oj-table-data-cell{
+    min-height:1px !important;
+    height: 5px !important;
+}
+
+
+.oj-table-data-cell {
+    font-size: inherit;
+    font-weight: normal;
+    min-width: 1rem;
+    min-height: 1rem;
+    padding-top: calc(0.5em + -5px);
+    padding-bottom: -0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 2.75em;
+    float: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+/* ============== */
+.demo-card-content {
+     width: 23%;
+     height: 7rem;
+     padding: 2rem;
+     font-size: 25px;
+}
+.travelReq{
+     border-left-color:#009688;
+     border-left-width: 3px;
+}
+.leaveReq{
+     border-left-color: #009688;
+     border-left-width: 3px;
+}
+/* ============== */
+
+.oj-switch-track{
+  height: calc( 1.0571rem - 1px - 1px) !important;
+  width: calc( 2.1rem - 1px - 1px) !important;
+  margin-top: calc(8px - 2.28571rem / 2) !important;
+}
+
+.oj-switch-thumb{
+    height: calc( 0.99999625rem - 1px - 1px) !important;
+    width: calc( 0.99999625rem - 1px - 1px) !important;
+    margin-top: calc(8px - 2.28571rem / 2) !important;
+}
+
+/*Face Message  */
+.oj-messages-general {
+    width: calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    min-width: calc(50% - 20px);
+}
+
+/*Table -input Date  */
+
+.oj-text-field.oj-read-only .oj-text-field-input {
+    background-color: transparent;
+    border-color: transparent;
+    border-left-width: 0;
+    border-right-width: 0;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+  .home-card-content {
+    width: 100%;
+    height: 15rem;
+    padding: 2rem;
+  }

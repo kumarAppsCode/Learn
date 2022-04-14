@@ -54,3 +54,5 @@
     };
     // $chain.results.callFunctionValidateJsonData.isValid + "-" + $chain.results.callFunctionValidateJsonData.message
   };
+
+$chain.results.callFunctionValidateJsonData.isValid!=="false"?true:false

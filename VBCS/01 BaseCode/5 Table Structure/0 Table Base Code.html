@@ -1,0 +1,38 @@
+<br>
+<h1 style="font-size: larger; font-weight: bold;">Approval Action History</h1>
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+    <div id="mainContent">
+      <!-- <oj-button  chroming="half">
+        <img slot="startIcon" :src="[[ $application.path + 'resources/images/add_ena.png' ]]">Create
+      </oj-button> -->
+      <!-- oj Table -->
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-sm-width-full oj-bg-body oj-search-table"
+        columns='[
+        {"headerText":"Level","field":"action_level"},
+        {"headerText":"Category","field":"category"},
+        {"headerText":"Requestor Name","field":"request_full_name"},        
+        {"headerText":"Submission Date","field":"submission_date","template":"submissionDate"},
+        {"headerText":"Approver Name","field":"response_full_name"},
+        {"headerText":"Action","field":"action_code"},
+        {"headerText":"Action Date","field":"action_date","template":"actionDate"},        
+        {"headerText":"Comments","field":"action_comments"}
+       ]'
+        selection-mode.row="single" edit-mode="rowEdit" data="[[ $variables.approvalHistory]]" id="searchTable"
+        display="grid" horizontal-grid-visible="enabled" vertical-grid-visible="enabled">
+        <!--submissionDate  -->
+        <template slot="submissionDate">
+          <oj-input-date value="[[$current.data]]" readonly="true"
+            converter='{"type": "datetime", "options": {"pattern":"MM/dd/yyyy hh:mm:ss"}}'></oj-input-date>
+        </template>
+        <!--actionDate  -->
+        <template slot="actionDate">
+          <oj-input-date value="[[$current.data]]" readonly="true"
+            converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+        </template> 
+      <oj-paging-control slot="bottom" id="paging" class="oj-sm-width-full" data="[[ $variables.approvalHistory ]]" page-size="10">
+      </oj-paging-control>
+      </oj-table>
+    </div>
+  </div>
+</div>

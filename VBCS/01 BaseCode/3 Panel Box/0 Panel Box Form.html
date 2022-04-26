@@ -1,0 +1,196 @@
+<div class="oj-flex; oj-panel">
+<h1 style="font-size: larger; font-weight: bold;">Approver Detail</h1>  
+<div class="oj-flex-item oj-sm-12 oj-md-12">
+<oj-validation-group id="HdrForm">
+<oj-form-layout label-edge="start" columns="2" max-columns="2" direction="row" label-edge="start">
+<!--1  -->
+<oj-bind-if test="true" >
+<oj-label for="oj-input-text-651077415-1" show-required="true">Department Approver Name</oj-label>
+<oj-select-single id="oj-input-text-651077415-1" style="width: 25rem; border: solid 1px #7F949F; border-radius:7px;"
+  label-hint="Department Approver" required="true" data="[[$variables.getDepartmentempListListSDP2]]"
+  disabled="[[ ($variables.postXxinvoicehdrreq.status==='Pending'||$variables.postXxinvoicehdrreq.status==='Approved')?true:false ]]"
+  item-text="display_name_name" value="{{ $variables.postXxinvoicehdrreq.department_approver }}"
+  on-value-item-changed="[[$listeners.ojInputText6510774151ValueItem]]">
+        <template slot="collectionTemplate" data-oj-as="collection">
+					<br>
+					<oj-input-text id="oj-input-text-651077415-1" label-hint="Search" placeholder="Search"
+       value="{{ $variables.filterObj.searchDepName }}" ></oj-input-text>
+					<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+								vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+								"sortable": "disabled"}' class="oj-select-results" 
+								columns=' [
+                            {"headerText":"Person Number","field":"person_number"},
+                            {"headerText":"Employee Name","field":"display_name_name"},
+                            {"headerText":"E-Mail","field":"email_address"}
+								  ]' 
+								on-oj-row-action="[[collection.handleRowAction]]"
+								data="[[collection.data]]" selected.row="[[collection.selected]]"
+								current-row="{{collection.currentRow}}"></oj-table>
+        </template>
+        <template slot="cellTemplate" data-oj-as="cell">
+              <oj-highlight-text text='[[String(cell.data)]]' >
+              <!-- match-text='[[collection.searchText]]' -->
+              </oj-highlight-text>
+        </template>
+</oj-select-single>
+</oj-bind-if>
+<!--2  -->
+<oj-bind-if test="true" >
+<oj-label for="oj-input-text-651077415-1">Department Approver Email</oj-label>
+<oj-input-text id="oj-input-text-651077415-1" style="width: 25rem; border: solid 1px #7F949F; border-radius:7px;"
+  label-hint="Department Approver Email" placeholder="Department Approver Email" disabled="true"
+  value="{{ $variables.postXxinvoicehdrreq.department_approver_email }}"></oj-input-text>
+</oj-bind-if>
+<!--3  -->
+<oj-bind-if test="true" >
+<oj-label for="oj-input-text-651077415-1">Approver 1 Name</oj-label>
+<oj-select-single id="oj-input-text-651077415-1" style="width: 25rem; border: solid 1px #7F949F; border-radius:7px;"
+  label-hint="PO Number" item-text="display_name_code" data="[[$variables.getEmployeeListListSDP]]"
+  disabled="[[ ($variables.postXxinvoicehdrreq.status==='Pending'||$variables.postXxinvoicehdrreq.status==='Approved')?true:false ]]"
+  value="{{ $variables.postXxinvoicehdrreq.approver1 }}"
+  on-value-item-changed="[[$listeners.ojInputText6510774151ValueItem2]]"
+  disabled="[[ ($variables.postXxinvoicehdrreq.status==='Pending'||$variables.postXxinvoicehdrreq.status==='Approved')?true:false ]]">
+        <template slot="collectionTemplate" data-oj-as="collection">
+					<br>
+					<oj-input-text  value="{{ $variables.filterObj.approver1 }}" id="oj-input-text-651077415-1" label-hint="Search" placeholder="Search" ></oj-input-text>
+					<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+								vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+								"sortable": "disabled"}' class="oj-select-results" 
+								columns=' [
+                            {"headerText":"Person Number","field":"person_number"},
+                            {"headerText":"Employee Name","field":"display_name_code"},
+                            {"headerText":"E-Mail","field":"email_address"}
+								  ]' 
+								on-oj-row-action="[[collection.handleRowAction]]"
+								data="[[collection.data]]" selected.row="[[collection.selected]]"
+								current-row="{{collection.currentRow}}"></oj-table>
+        </template>
+        <template slot="cellTemplate" data-oj-as="cell">
+              <oj-highlight-text text='[[String(cell.data)]]' >
+              <!-- match-text='[[collection.searchText]]' -->
+              </oj-highlight-text>
+        </template>
+</oj-select-single>
+</oj-bind-if>
+<!--4  -->
+<oj-bind-if test="true" >
+<oj-label for="oj-input-text-651077415-1">Approver 1 Email</oj-label>
+<oj-input-text id="oj-input-text-651077415-1" style="width: 25rem; border: solid 1px #7F949F; border-radius:7px;"
+  label-hint="Approver 1 Email" placeholder="Approver 1 Email" disabled="true"
+  value="{{ $variables.postXxinvoicehdrreq.approver_email_1 }}"></oj-input-text>
+</oj-bind-if>
+<!--5  -->
+<oj-bind-if test="true" >
+<oj-label for="oj-input-text-651077415-1">Approver 2 Name</oj-label>
+<oj-select-single id="oj-input-text-651077415-1" style="width: 25rem; border: solid 1px #7F949F; border-radius:7px;"
+  label-hint="Approver 2 Name" item-text="display_name_code"
+  disabled="[[ ($variables.postXxinvoicehdrreq.status==='Pending'||$variables.postXxinvoicehdrreq.status==='Approved')?true:false ]]"
+  data="[[$variables.getEmployeeListListSDP2]]" value="{{ $variables.postXxinvoicehdrreq.approver2 }}"
+  on-value-item-changed="[[$listeners.ojInputText6510774151ValueItem3]]">
+        <template slot="collectionTemplate" data-oj-as="collection">
+					<br>
+					<oj-input-text  value="{{ $variables.filterObj.approver2 }}" id="oj-input-text-651077415-1" label-hint="Search" placeholder="Search" ></oj-input-text>
+					<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+								vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+								"sortable": "disabled"}' class="oj-select-results" 
+								columns=' [
+                            {"headerText":"Person Number","field":"person_number"},
+                            {"headerText":"Employee Name","field":"display_name_code"},
+                            {"headerText":"E-Mail","field":"email_address"}
+								  ]' 
+								on-oj-row-action="[[collection.handleRowAction]]"
+								data="[[collection.data]]" selected.row="[[collection.selected]]"
+								current-row="{{collection.currentRow}}"></oj-table>
+        </template>
+        <template slot="cellTemplate" data-oj-as="cell">
+              <oj-highlight-text text='[[String(cell.data)]]' >
+              <!-- match-text='[[collection.searchText]]' -->
+              </oj-highlight-text>
+        </template>
+</oj-select-single>
+</oj-bind-if>
+<!--6  -->
+<oj-bind-if test="true" >
+<oj-label for="oj-input-text-651077415-1">Approver 2 Email</oj-label>
+<oj-input-text id="oj-input-text-651077415-1" style="width: 25rem; border: solid 1px #7F949F; border-radius:7px;"
+  label-hint="Approver 2 Email" placeholder="Approver 2 Email" disabled="true"
+  value="{{ $variables.postXxinvoicehdrreq.approver_email_2 }}"></oj-input-text>
+</oj-bind-if>
+<!--5  -->
+<oj-bind-if test="true" >
+<oj-label for="oj-input-text-651077415-1">Approver 3 Name</oj-label>
+<oj-select-single id="oj-input-text-651077415-1" style="width: 25rem; border: solid 1px #7F949F; border-radius:7px;"
+  label-hint="Approver 2 Name" item-text="display_name_code"
+  disabled="[[ ($variables.postXxinvoicehdrreq.status==='Pending'||$variables.postXxinvoicehdrreq.status==='Approved')?true:false ]]"
+  data="[[$variables.getEmployeeListListSDP3]]" value="{{ $variables.postXxinvoicehdrreq.approver3 }}"
+  on-value-item-changed="[[$listeners.ojInputText6510774151ValueItem4]]">
+        <template slot="collectionTemplate" data-oj-as="collection">
+					<br>
+					<oj-input-text  value="{{ $variables.filterObj.approver3 }}" id="oj-input-text-651077415-1" label-hint="Search" placeholder="Search" ></oj-input-text>
+					<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+								vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+								"sortable": "disabled"}' class="oj-select-results" 
+								columns=' [
+                            {"headerText":"Person Number","field":"person_number"},
+                            {"headerText":"Employee Name","field":"display_name_code"},
+                            {"headerText":"E-Mail","field":"email_address"}
+								  ]' 
+								on-oj-row-action="[[collection.handleRowAction]]"
+								data="[[collection.data]]" selected.row="[[collection.selected]]"
+								current-row="{{collection.currentRow}}"></oj-table>
+        </template>
+        <template slot="cellTemplate" data-oj-as="cell">
+              <oj-highlight-text text='[[String(cell.data)]]' >
+              <!-- match-text='[[collection.searchText]]' -->
+              </oj-highlight-text>
+        </template>
+</oj-select-single>
+</oj-bind-if>
+<!--6  -->
+<oj-bind-if test="true" >
+<oj-label for="oj-input-text-651077415-1">Approver 3 Email</oj-label>
+<oj-input-text id="oj-input-text-651077415-1" style="width: 25rem; border: solid 1px #7F949F; border-radius:7px;"
+  label-hint="Approver 3 Email" placeholder="Approver 3 Email" disabled="true"
+  value="{{ $variables.postXxinvoicehdrreq.approver_email_3 }}"></oj-input-text>
+</oj-bind-if>
+<!--5  -->
+<oj-bind-if test="true" >
+<oj-label for="oj-input-text-651077415-1">Approver 4 Name</oj-label>
+<oj-select-single id="oj-input-text-651077415-1" style="width: 25rem; border: solid 1px #7F949F; border-radius:7px;"
+  label-hint="Approver 4 Name" item-text="display_name_code"
+  disabled="[[ ($variables.postXxinvoicehdrreq.status==='Pending'||$variables.postXxinvoicehdrreq.status==='Approved')?true:false ]]"
+  data="[[$variables.getEmployeeListListSDP4]]" value="{{ $variables.postXxinvoicehdrreq.approver4 }}"
+  on-value-item-changed="[[$listeners.ojInputText6510774151ValueItem5]]">
+        <template slot="collectionTemplate" data-oj-as="collection">
+					<br>
+					<oj-input-text  value="{{ $variables.filterObj.approver4 }}" id="oj-input-text-651077415-1" label-hint="Search" placeholder="Search" ></oj-input-text>
+					<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="disabled"
+								vertical-grid-visible="disabled" selection-mode='{"row": "single"}' columns-default='{"resizable": "disabled",
+								"sortable": "disabled"}' class="oj-select-results" 
+								columns=' [
+                            {"headerText":"Person Number","field":"person_number"},
+                            {"headerText":"Employee Name","field":"display_name_code"},
+                            {"headerText":"E-Mail","field":"email_address"}
+								  ]' 
+								on-oj-row-action="[[collection.handleRowAction]]"
+								data="[[collection.data]]" selected.row="[[collection.selected]]"
+								current-row="{{collection.currentRow}}"></oj-table>
+        </template>
+        <template slot="cellTemplate" data-oj-as="cell">
+              <oj-highlight-text text='[[String(cell.data)]]' >
+              <!-- match-text='[[collection.searchText]]' -->
+              </oj-highlight-text>
+        </template>
+</oj-select-single>
+</oj-bind-if>
+<!--6  -->
+<oj-bind-if test="true" >
+<oj-label for="oj-input-text-651077415-1">Approver 4 Email</oj-label>
+<oj-input-text id="oj-input-text-651077415-1" style="width: 25rem; border: solid 1px #7F949F; border-radius:7px;"
+  label-hint="Approver 4 Email" placeholder="Approver 4 Email" disabled="true"
+  value="{{ $variables.postXxinvoicehdrreq.approver_email_4 }}"></oj-input-text>
+</oj-bind-if>
+</oj-form-layout>
+</oj-validation-group>
+</div>
+</div>

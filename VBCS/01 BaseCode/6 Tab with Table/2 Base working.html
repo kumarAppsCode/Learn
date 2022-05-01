@@ -1,0 +1,50 @@
+              <div class="demo-tabbar-container">
+                <oj-tab-bar id="hnavlist" edge="top" selection="{{ $variables.selectedItem3 }}">
+                  <ul>
+                    <li id="home">
+                      <a href="#" aria-controls="home-tab-panel" id="home-tab">Home</a>
+                    </li>
+                    <li id="blogs">
+                      <a href="#" aria-controls="blogs-tab-panel" id="blogs-tab">Blogs</a>
+                    </li>
+                    <li id="settings">
+                      <a href="#" aria-controls="settings-tab-panel" id="settings-tab">Settings</a>
+                    </li>
+                    <li id="about">
+                      <a href="#" aria-controls="about-tab-panel" id="about-tab">About</a>
+                    </li>
+                    <li id="contact">
+                      <a href="#" aria-controls="contact-tab-panel" id="contact-tab">Contact</a>
+                    </li>
+                  </ul>
+                </oj-tab-bar>
+              </div>
+              <div class="demo-switcher-container">
+                <oj-switcher value="[[ $variables.selectedItem3 ]]">
+                  <div slot="home" id="home-tab-panel" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="demo-tab-content">
+                      <h2>Home page content area</h2>
+                    </div>
+                  </div>
+                  <div slot="blogs" id="blogs-tab-panel" role="tabpanel" aria-labelledby="blogs-tab">
+                    <div class="demo-tab-content">
+                      <h2>Blogs content area</h2>
+                    </div>
+                  </div>
+                  <div slot="settings" id="settings-tab-panel" role="tabpanel" aria-labelledby="settings-tab">
+                    <div class="demo-tab-content">
+                      <h2>Settings content area</h2>
+                    </div>
+                  </div>
+                  <div slot="about" id="about-tab-panel" role="tabpanel" aria-labelledby="about-tab">
+                    <div class="demo-tab-content">
+                      <h2>About content area</h2>
+                    </div>
+                  </div>
+                  <div slot="contact" id="contact-tab-panel" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="demo-tab-content">
+                      <h2>Contact page content area</h2>
+                    </div>
+                  </div>
+                </oj-switcher>
+              </div>

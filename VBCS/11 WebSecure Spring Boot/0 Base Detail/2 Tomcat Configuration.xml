@@ -1,0 +1,3 @@
+<role rolename="emp_role"/>
+<user username="emp_user" password="q14_T5et_tom" roles="emp_role"/>
+</tomcat-users>

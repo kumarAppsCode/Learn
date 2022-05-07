@@ -1,0 +1,155 @@
+https://qiaoict-***.integration.ocp.oraclecloud.com/ic/api/process/v1/tasks/200473
+
+https://qiaoict-***.integration.ocp.oraclecloud.com/ic/api/process/v1/tasks/{taskId}
+
+PUT:
+ 
+{
+    "action": {
+        "id": "APPROVE",
+        "type": "CUSTOM"
+    },
+    "comment": {
+        "commentStr": "ok by nandha..45.!",
+        "commentScope": "BPM"
+    }
+}
+--------------------------------
+{
+    "title": "REQ-1223Submit Permission",
+    "number": 200473,
+    "id": "21af9ad6-7650-459e-bfcc-ed5d2eced9f3",
+    "createdBy": "oic ft",
+    "fromUserDisplayName": "oic ft",
+    "fromUserName": "oicft@qia.qa",
+    "priority": 3,
+    "ownerRole": "SelfServiceApplication.Process Owner",
+    "status": "COMPLETED",
+    "state": "COMPLETED",
+    "assignedDate": "2022-04-03T19:53:47.000Z",
+    "createdDate": "2022-04-03T19:53:47.000Z",
+    "updatedById": "oicft@qia.qa",
+    "updatedByDisplayName": "oic ft",
+    "updatedDate": "2022-04-04T08:28:02.000Z",
+    "hasSubTasksFlag": false,
+    "routingType": "SINGLE",
+    "processName": "SelfServiceProcessApps",
+    "processId": "88740",
+    "processDefId": "oracleinternalpcs~SelfServiceApplication!1.1~SelfServiceProcessApps",
+    "isDocsEnabledFlag": false,
+    "isConversationEnabledFlag": false,
+    "externalUIURL": "https://qiaoict-***.integration.ocp.oraclecloud.com/ic/builder/rt/SelfServiceModule/live/webApps/webapp/?employeeId=300000009921685&hdrId=1223&pageNavigation=Edit&requestType=SUBMIT_PERMISSION&requestTypeId=1&page=shell&shell=selfservice&selfservice=selfservice-addedit&taskId=200473",
+    "processInstanceDetail": {
+        "length": 0,
+        "rel": "processInstanceDetail",
+        "href": "https://qiaoict-***.integration.ocp.oraclecloud.com:443/ic/api/process/v1/processes/88740"
+    },
+    "rolesPlayedByUser": [
+        "PUBLIC",
+        "APPROVERS",
+        "CREATOR",
+        "OWNER",
+        "REVIEWERS",
+        "ADMIN"
+    ],
+    "reviewers": {
+        "hasMore": false,
+        "items": [
+            {
+                "levels": 0,
+                "id": "SelfServiceApplication.ProcessReviewer",
+                "type": "role"
+            }
+        ]
+    },
+    "assignees": {
+        "hasMore": false,
+        "items": []
+    },
+    "originalAssignees": {
+        "count": 1,
+        "hasMore": false,
+        "totalResult": true,
+        "items": [
+            {
+                "levels": 0,
+                "id": "/task:task/task:payload/task:SubmitPermission/ns:payload/ns:loginEmail",
+                "type": "user",
+                "adminFlag": false
+            }
+        ]
+    },
+    "payload": {
+        "payload": {
+            "length": 0,
+            "rel": "self",
+            "href": "https://qiaoict-***.integration.ocp.oraclecloud.com:443/ic/api/process/v1/tasks/200473/payload"
+        }
+    },
+    "attachments": {
+        "attachments": {
+            "length": 0,
+            "rel": "attachments",
+            "href": "https://qiaoict--***.integration.ocp.oraclecloud.com:443/ic/api/process/v1/tasks/200473/attachments"
+        }
+    },
+    "history": {
+        "history": {
+            "length": 0,
+            "rel": "self",
+            "href": "https://qiaoict-***.integration.ocp.oraclecloud.com:443/ic/api/process/v1/tasks/200473/history"
+        }
+    },
+    "comments": {
+        "comments": {
+            "length": 0,
+            "rel": "self",
+            "href": "https://qiaoict-***.integration.ocp.oraclecloud.com:443/ic/api/process/v1/tasks/200473/comments"
+        }
+    },
+    "actionList": [
+        {
+            "length": 0,
+            "title": "VIEW_PROCESS_HISTORY",
+            "actionId": "VIEW_PROCESS_HISTORY",
+            "actionType": "System"
+        },
+        {
+            "length": 0,
+            "title": "VIEW_TASK",
+            "actionId": "VIEW_TASK",
+            "actionType": "System"
+        },
+        {
+            "length": 0,
+            "title": "VIEW_TASK_HISTORY",
+            "actionId": "VIEW_TASK_HISTORY",
+            "actionType": "System"
+        },
+        {
+            "length": 0,
+            "title": "VIEW_SUB_TASKS",
+            "actionId": "VIEW_SUB_TASKS",
+            "actionType": "System"
+        }
+    ],
+    "length": 0,
+    "outcome": "APPROVE",
+    "links": [
+        {
+            "length": 0,
+            "rel": "parent",
+            "href": "https://qiaoict-***.integration.ocp.oraclecloud.com:443/ic/api/process/v1/tasks/"
+        },
+        {
+            "length": 0,
+            "rel": "self",
+            "href": "https://qiaoict-***.integration.ocp.oraclecloud.com:443/ic/api/process/v1/tasks/200473"
+        },
+        {
+            "length": 0,
+            "rel": "canonical",
+            "href": "https://qiaoict-***.integration.ocp.oraclecloud.com:443/ic/api/process/v1/tasks/200473"
+        }
+    ]
+}

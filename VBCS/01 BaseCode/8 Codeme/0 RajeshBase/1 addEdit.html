@@ -1,0 +1,97 @@
+<div style="display:flex; justify-content:flex-end; margin-bottom:1%;">
+  <oj-button chroming="solid">
+    <oj-bind-text value="[[$application.translations.app.button__text_6f8f]]"></oj-bind-text>
+  </oj-button>
+  <oj-button chroming="solid" style="margin-left:0.5%;margin-right:1.5%;" on-oj-action="[[$listeners.buttonAction]]">
+    <oj-bind-text value="[[$application.translations.app.button__text_3bf5]]"></oj-bind-text>
+  </oj-button>
+</div>
+
+<div class="oj-panel" style="border:1px solid #a5a9ac; margin:1%;">
+  <h3 style=" font-weight: bold;">
+    <oj-bind-text value="[[$application.translations.app.h3__text_283b]]"></oj-bind-text>
+  </h3>
+
+  <div class="oj-flex">
+    <div class="oj-flex-item oj-sm-12 oj-md-11">
+      <oj-form-layout label-edge='start' max-columns="2" style="margin-top:1%;">
+        <oj-input-text label-hint="[[$application.translations.app.input_text_label_hint_bce8]]"
+          style="width: 10rem; border: solid 1px #7F949F; border-radius:7px;" readonly="true"></oj-input-text>
+        <oj-input-text label-hint="[[$application.translations.app.input_text_label_hint_2b53]]"
+          style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+          placeholder="[[$application.translations.app.input_text_placeholder_020f]]"></oj-input-text>
+        <oj-input-text label-hint="[[$application.translations.app.input_text_label_hint_9ca4]]"
+          style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+          placeholder="[[$application.translations.app.input_text_placeholder_845f]]"></oj-input-text>
+        <oj-input-number label-hint="[[$application.translations.app.input_number_label_hint_923a]]" step="1" min="0"
+          style="width: 6rem; border: solid 1px #7F949F; border-radius:7px;"
+          placeholder="[[$application.translations.app.input_number_placeholder_59ad]]">
+        </oj-input-number>
+        <oj-input-date label-hint="[[$application.translations.app.input_date_label_hint_a4e0]]"
+          style="width: 10.1rem; border: solid 1px #7F949F; border-radius:7px;"></oj-input-date>
+        <oj-input-text label-hint="[[$application.translations.app.input_text_label_hint_1204]]"
+          style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"></oj-input-text>
+        <oj-input-text label-hint="[[$application.translations.app.input_text_label_hint_6cfd]]"
+          style="width: 10rem; border: solid 1px #7F949F; border-radius:7px;" readonly="true"></oj-input-text>
+        <oj-sample-checkbox-switch style="margin-left:3.5%;"
+          label-hint="[[$application.translations.app.sample_checkbox_switch_label_hint_e398]]">
+        </oj-sample-checkbox-switch>
+        <oj-select-single label-hint="[[$application.translations.app.select_single_label_hint_4ca0]]"
+          style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+          data="[[$variables.getBusinessunitListSDP]]" item-text="bu_name">
+        </oj-select-single>
+        <oj-select-single label-hint="[[$application.translations.app.select_single_label_hint_822f]]"
+          style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+          data="[[$variables.getLookupLookuptypenameChildlookuptypeIdListSDP]]" item-text="lookup_value_name_disp">
+        </oj-select-single>
+        <oj-input-date label-hint="[[$application.translations.app.input_date_label_hint_2658]]"
+          style="width: 10.8rem; border: solid 1px #7F949F; border-radius:7px;"
+          placeholder="[[$application.translations.app.input_date_placeholder_db79]]"></oj-input-date>
+        <oj-input-date label-hint="[[$application.translations.app.input_date_label_hint_a4bd]]"
+          style="width: 10.8rem; border: solid 1px #7F949F; border-radius:7px;"
+          placeholder="[[$application.translations.app.input_date_placeholder_12bb]]"></oj-input-date>
+        <oj-input-date label-hint="[[$application.translations.app.input_date_label_hint_294d]]"
+          style="width: 10.8rem; border: solid 1px #7F949F; border-radius:7px;"
+          placeholder="[[$application.translations.app.input_date_placeholder_018b]]"></oj-input-date>
+        <oj-select-single label-hint="[[$application.translations.app.select_single_label_hint_0e09]]"
+          style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"
+          data="[[$variables.getSearchProjectMasterListSDP]]" item-text="project_name">
+        </oj-select-single>
+        <oj-input-text label-hint="[[$application.translations.app.input_text_label_hint_a2e5]]"
+          style="width: 22rem; border: solid 1px #7F949F; border-radius:7px;"></oj-input-text>
+
+      </oj-form-layout>
+
+    </div>
+  </div>
+
+</div>
+<div class="oj-panel" style="border:1px solid #a5a9ac; margin:1%;">
+
+
+  <h3 style=" font-weight: bold;">
+    <oj-bind-text value="[[$application.translations.app.h3__text_5956]]"></oj-bind-text>
+
+  </h3>
+
+  <div class="oj-flex">
+    <div class="oj-flex-item oj-sm-12 oj-md-12">
+      <oj-button chroming="half">
+        <img slot="startIcon" :src="[[ $application.path + 'resources/images/add_ena.png' ]]">Create
+      </oj-button>
+      <oj-sample-export-data max-rows="1000" include-header-row="true" display="all" chroming="half"
+        file-name="Community Master">
+        <span>Export</span>
+        <img slot="startIcon" alt="Archive Data" width="16" height="16"
+      :src="[[ $application.path + 'resources/images/xl.png' ]]" style="object-fit: fill;"/>
+      </oj-sample-export-data>
+    </div>
+  </div>
+  <div class="oj-flex">
+    <oj-table scroll-policy="loadMoreOnScroll"
+      columns='[{"headerText":"Sequence No","field":"","template":"Edit1","width":100},{"headerText":"Installment Type","template":"Color","width":350},{"headerText":"Installment Percentage","width":150},{"headerText":"Charge Type","width":200},{"headerText":"Payment Term","template":"Completion","width":120},{"headerText":"Installment Method","template":"Start Date","width":250},{"headerText":"Project Start Date","template":"End Date","width":120},{"headerText":"Project End Date","width":180},{"headerText":"Period Occurrence","template":"activeFlag","sortable":"disabled","width":150},{"headerText":"Period Duration","width":200},{"headerText":"Period Value","field":"","width":120},{"headerText":"Due Days","field":"","width":120},{"headerText":"Due Date","field":"","width":120},{"headerText":"Remarks","field":"","width":450}]'
+      selection-mode.row="single" edit-mode="rowEdit" id="searchTable" display="grid" horizontal-grid-visible="enabled"
+      vertical-grid-visible="enabled" class="[[ oj-sm-width-full oj-bg-body oj-search-table ]]">
+    </oj-table>
+  </div>
+</div>

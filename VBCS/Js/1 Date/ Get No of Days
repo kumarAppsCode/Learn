@@ -37,3 +37,18 @@
         message="Amount Should not be empty";
         status="N";
       }
+
+      // console.log("Fin==>noOfDays==>"+noOfDays);
+      // console.log("Fin==>isValidtotalAmount==>"+totalAmount);
+      // console.log("Fin==>message==>"+message);
+      // console.log("Fin==>status==>"+status);
+
+    return {
+        'noOfDays':noOfDays,
+        'totalAmount':totalAmount,
+        'message':message,
+        'status':status
+    };
+
+
+  };

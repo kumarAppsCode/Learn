@@ -1,0 +1,39 @@
+  PageModule.prototype.calculatePerdiem = function (perdiemAmount, fromDate, toDate) {
+
+    let noOfDays=0;
+    let totalAmount=0;
+    let message="";
+    let status="N";
+
+      if(typeof(perdiemAmount) !== "undefined" && perdiemAmount !== null & perdiemAmount !=0){
+        if(typeof(fromDate) !== "undefined" && fromDate !== null && typeof(toDate) !== "undefined" && toDate !== null){
+              var date1 = new Date(fromDate);
+              var date2 = new Date(toDate);
+              var Difference_In_Time = date2.getTime() - date1.getTime();
+              var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+              console.log("Difference_In_Days==>"+Difference_In_Days);
+              console.log("perdiemAmount==>"+perdiemAmount);
+              if(Difference_In_Days>=1){
+                  noOfDays=Difference_In_Days;
+                  totalAmount=perdiemAmount*Difference_In_Days;
+                  message="";
+                  status="Y";
+              }else{
+                  noOfDays=0;
+                  totalAmount=0;
+                  message="Number of Days 0";
+                  status="N";
+              }
+
+        }else{
+          noOfDays=0;
+          totalAmount=0;
+          message="Date Should not be Empty";
+          status="N";
+        }
+      }else{
+        noOfDays=0;
+        totalAmount=0;
+        message="Amount Should not be empty";
+        status="N";
+      }

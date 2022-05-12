@@ -1,0 +1,32 @@
+<div class="oj-panel" style="border:1px solid #a5a9ac; margin:1%;">
+<h3 style=" font-weight: bold;">Ok</h3>
+-----div --button
+-----div --table  
+</div>
+=========>===============>====>=======>
+      <div class="oj-flex">
+        <div class="oj-flex-item oj-sm-12 oj-md-12">
+          <oj-button chroming="half" on-oj-action="[[$listeners.buttonAction]]">
+            <img slot="startIcon" :src="[[ $application.path + 'resources/images/add_ena.png' ]]">Create
+          </oj-button>
+          <oj-sample-export-data max-rows="1000" include-header-row="true" display="all" chroming="half"
+            file-name="Community Master">
+            <span>Export</span>
+            <img slot="startIcon" alt="Archive Data" width="16" height="16"
+            :src="[[ $application.path + 'resources/images/xl.png' ]]" style="object-fit: fill;"/>
+          </oj-sample-export-data>
+        </div>
+      </div>
+=========>===============>====>=======>
+      <div class="oj-flex">
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-sm-width-full oj-bg-body oj-search-table"
+        selection-mode.row="single" edit-mode="rowEdit" id="searchTable" display="grid"
+        horizontal-grid-visible="enabled" vertical-grid-visible="enabled" data="[[ $variables.pageSearch ]]"
+        columns='[{"headerText":"community_id","field":"plan_header_id"},
+        {"headerText":"Revision","template":"Completion","width":120,"field":"revision_no"},{"headerText":"Start Date","template":"Start Date","width":120,"field":"start_date"},{"headerText":"End Date","template":"End Date","width":120,"field":"end_date"},{"headerText":"Status","width":180,"field":"status"},{"headerText":"Active Flag","field":"active_flag","template":"activeFlag","sortable":"disabled","width":150}
+        ]' >
+        <oj-paging-control  slot="bottom" id="paging" class="oj-sm-width-full" data="[[ $variables.pageSearch ]]" page-size="10">
+      </oj-paging-control>
+      </oj-table>
+      </div>
+=========>===============>====>=======>

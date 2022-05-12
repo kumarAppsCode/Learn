@@ -1,0 +1,39 @@
+<oj-bind-if test="true">
+<div class="oj-flex">
+  <!-- row 1st layer -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-4  oj-xl-4;">
+    <h1 style="color: #740b40; font-weight: bold;"><oj-bind-text value='[[ "Invoice Number "+$variables.postXxinvoicehdrreq.invoice_request_no ]]'></oj-bind-text></h1>
+  </div>
+  <!-- 2nd layer -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-2  oj-xl-4"></div>
+  <!-- 3rd layer -->
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-6  oj-xl-4"
+    style="display:flex; justify-content:flex-end; margin-bottom:1%;">
+      <!--Approve  -->
+      <oj-button style="margin-left:0.5%;margin-right:1.5%;" class="oj-button-sm" chroming="solid" on-oj-action="[[$listeners.buttonAction6]]"
+      disabled="[[ ($variables.postXxinvoicehdrreq.integration_status==='READY_TO_INVOICE' || $variables.postXxinvoicehdrreq.integration_status==='Error')?false:true ]]"
+        >Transfer To SaaS</oj-button>
+      <!-- :hidden="[[ ($variables.taskId!=null)?false:true ]]" -->
+      <oj-button style="margin-left:0.5%;margin-right:1.5%;" class="oj-button-sm" 
+        :hidden="[[ ($variables.taskId!=null && $variables.postXxinvoicehdrreq.category==='Approver')?false:true ]]"
+        chroming="solid" on-oj-action="[[$listeners.buttonAction2]]">Approve</oj-button>
+      <!--Reject  -->
+      <oj-button style="margin-left:0.5%;margin-right:1.5%;" class="oj-button-sm" 
+        :hidden="[[ ($variables.taskId!=null && $variables.postXxinvoicehdrreq.category==='Approver')?false:true ]]"
+        chroming="solid" on-oj-action="[[$listeners.buttonAction3]]" >Reject</oj-button>
+      <oj-bind-if test="true">
+        <!--Submit  -->
+      <oj-button style="margin-left:0.5%;margin-right:1.5%;" class="oj-button-sm" chroming="solid"
+        :hidden='[[ ($variables.pageNavi==="Create" || ($variables.postXxinvoicehdrreq.status==="Draft"||$variables.postXxinvoicehdrreq.status==="Reject"))?false:true ]]'
+        on-oj-action="[[$listeners.buttonAction]]">Submit</oj-button>
+        <!--Save  -->
+      <oj-button style="margin-left:0.5%;margin-right:1.5%;"class="oj-button-sm" chroming="solid" on-oj-action="[[$listeners.ojButtonOjAction2]]"
+        :hidden='[[ ($variables.pageNavi==="Create" || ($variables.postXxinvoicehdrreq.status==="Draft"||$variables.postXxinvoicehdrreq.status==="Reject"))?false:true ]]' >Save</oj-button>
+      </oj-bind-if>
+      <!--Cancel -->
+      <oj-button style="margin-left:0.5%;margin-right:1.5%;" class="oj-button-sm" chroming="solid" 
+      :hidden="[[ ($variables.taskId!=null)?true:false]]"
+      on-oj-action="[[$listeners.ojButtonOjAction15]]" >Cancel</oj-button>
+  </div>
+</div>
+ </oj-bind-if>

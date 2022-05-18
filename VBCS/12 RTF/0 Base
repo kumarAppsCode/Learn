@@ -1,0 +1,58 @@
+Netbeans RTF Call
+VBCS Rest Call 
+Js
+------------------------
+===============================================================================================================================================
+%PDF-1.6
+5 0 obj
+<<
+/Type /Page
+/Parent 3 0 R
+/Resources 4 0 R
+/Contents 6 0 R
+/MediaBox[ 0 0 594.7 841.1 ]
+/CropBox[ 0 0 594.7 841.1 ]
+/Rotate 0
+>>
+endobj
+6 0 obj
+<< /Length 1343 /Filter /FlateDecode >>
+stream
+x��X�n�F}���
+`m��%on�b;nE�զ-�� �\7߳�%EJ,K*A��{�s�3��2�
+LiM	1!9��U_7O�����c !N�h&�&+s��d9�yχ�&������f���_iru}I���drysq~�����Ͻ��K�J��b��\��}��X$B�Y����P��ٔL�e�
+2F�TE"DL��yt�����!��"���m�h�^��_����ee��-=n�Kڭw�F�l3}��~��^Lw��j��u��n���������L	S1����OoyJL'?��#�G<�%��f�Z29PJZ0�'0#m2zl�\Տ��
+��͚���2]�guw)˜;XN}#YǙv�)jֳ�2{8��@c��p���f�hz��,-��0��Ȃ~�B��Q���*9�G'U`a�Vq4�Ȗ�����l�kPu�C
+===============================================================================================================================================
+application/octet-stream
+No Response Message, Status 200
+
+===============================================================================================================================================
+
+data==body 
+$chain.results.callRestGetTimeEntry.body.type
+TimeEntryReport.pdf
+
+===============================================================================================================================================
+
+   PageModule.prototype.saveFile = function(data, mimeType, filename) {
+    const blob = new Blob([data], {
+      type: mimeType
+    });
+    // IE/Edge
+    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+      window.navigator.msSaveOrOpenBlob(blob);
+      return;
+    }
+    var link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+    // Firefox: delay revoking the ObjectURL
+    setTimeout(function() {
+  
+      URL.revokeObjectURL(blob);
+    }, 100);
+  };
+
+

@@ -1,0 +1,7 @@
+SELECT * FROM xxqia_fin_ie_expense_lines_v 
+where EXPENSE_HEADER_ID=:expHdrId
+AND EXPENSE_LINE_ID =decode(:expLnId,'undefined', EXPENSE_LINE_ID,
+                                 'Search',        EXPENSE_LINE_ID,
+                                 0,               EXPENSE_LINE_ID,
+                                 NULL,            EXPENSE_LINE_ID,
+                                                  :expLnId)

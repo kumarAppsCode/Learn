@@ -1,0 +1,5 @@
+        <template slot="rateAmt">
+          <oj-input-number class="sampletable" value="[[$current.data]]" readonly="true" step="0" placeholder="0.00"
+            converter='{"options":{"decimalFormat":"standard","minimumIntegerDigits":2,"minimumFractionDigits":2,"maximumFractionDigits":2},"type":"number"}'
+            ></oj-input-number>
+        </template>

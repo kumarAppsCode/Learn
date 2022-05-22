@@ -1,0 +1,78 @@
+<div class="oj-flex" style="margin-left:5px;">
+  <div class="oj-sm-4 oj-md-3 oj-flex-item oj-sm-padding-2x-horizontal">
+    <div class="oj-flex">
+      <div class="oj-panel oj-flex-item oj-sm-12 oj-md-12" style="height:130px;background-color: #e4f5d3;">
+        <div class="oj-flex">
+          <div style="text-align: center;">
+            <p style="font-weight: bold;"><oj-bind-text value="Total Number Of Active User"></oj-bind-text></p>
+            <h5 style="color:green;font-weight: 900;font-size: xxx-large">
+              <oj-bind-text value="55"></oj-bind-text>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="oj-sm-4 oj-md-3 oj-flex-item oj-sm-padding-2x-horizontal">
+    <div class="oj-flex">
+      <div class="oj-panel oj-flex-item oj-sm-12 oj-md-12" style="height:130px;background-color:#fceddc;">
+        <div class="oj-flex">
+          <div style="text-align: center;">
+            <p style="font-weight: bold;"><oj-bind-text value="Total Number Of Master Data Conflicts"></oj-bind-text></p>
+            <h5 style="color:#8f520a;font-weight: 900;font-size: xxx-large">
+              <oj-bind-text value="37"></oj-bind-text>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="oj-sm-4 oj-md-3 oj-flex-item oj-sm-padding-2x-horizontal">
+    <div class="oj-flex">
+      <div class="oj-panel oj-flex-item oj-sm-12 oj-md-12" style="height:130px;background-color: #ffebe8;">
+        <div class="oj-flex">
+          <div style="text-align: center;">
+            <p style="font-weight: bold;"><oj-bind-text value="Total Number Of SOD Controls"></oj-bind-text></p>
+            <h5 style="color:red;font-weight: 900;font-size: xxx-large">
+              <oj-bind-text value="65"></oj-bind-text>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="oj-sm-4 oj-md-3 oj-flex-item oj-sm-padding-2x-horizontal">
+    <div class="oj-flex">
+      <div class="oj-panel oj-flex-item oj-sm-12 oj-md-12" style="height:130px;background-color: #e4f1f7;">
+        <div class="oj-flex">
+          <div style="text-align: center;">
+            <p style="font-weight: bold;"><oj-bind-text value="Total Number Of Sensitive Access Controls"></oj-bind-text></p>
+            <h5 style="color:blue;font-weight: 900;font-size: xxx-large">
+              <oj-bind-text value="15"></oj-bind-text>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="width:100%;height:10px"></div>
+<!-- Chart details -->
+<div class="oj-flex" style="margin-top:20px">
+  <div class="oj-sm-4 oj-md-6 oj-flex-item oj-sm-padding-2x-horizontal">
+    <p style="font-weight: bold;"><oj-bind-text value="Top 10 Users with SOD Conflicts"></oj-bind-text></p>
+    <oj-chart type="bar" class="oj-sm-flex-initial" style="max-width:100%;max-height:100%;">
+    </oj-chart>
+  </div>
+  <div class="oj-sm-4 oj-md-6 oj-flex-item oj-sm-padding-2x-horizontal">
+    <p style="font-weight: bold;"><oj-bind-text value="Top 10 Roles with SOD Conflicts"></oj-bind-text></p>
+    <oj-chart type="pie" class="oj-sm-flex-initial" style="max-width:100%;max-height:100%;"></oj-chart>
+  </div>
+</div>
+<!-- <div class="oj-flex">
+  <oj-sample-drawer class="oj-flex-item oj-sm-12 oj-md-12"  style="position:fixed; top:50px;left:0;">
+    <div slot = "drawer" style="width:200px">
+
+    </div>
+  </oj-sample-drawer>
+</div> -->

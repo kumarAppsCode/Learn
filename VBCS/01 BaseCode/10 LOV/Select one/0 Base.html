@@ -1,0 +1,8 @@
+          <oj-select-one id="oj-input-so-651077415-1"
+            style="width: 30rem; border: solid 1px #7F949F; border-radius:7px;" required="true"
+            disabled="[[ ($variables.postExpensesHeader.expense_status==='Pending'||$variables.postExpensesHeader.expense_status==='Approved')?true:false ]]"
+            value="{{ $variables.postExpensesHeader.attribute_data.tripallowancereceived }}">
+            <oj-option value="Null" disabled="true">Select </oj-option>
+            <oj-option value="Yes">Yes</oj-option>
+            <oj-option value="No">No</oj-option>
+          </oj-select-one>

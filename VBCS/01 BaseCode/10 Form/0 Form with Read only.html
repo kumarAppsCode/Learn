@@ -1,0 +1,32 @@
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12" oj-xl-12 oj-panel oj-panel-shadow-md oj-selected">
+    <oj-form-layout label-edge='start' max-columns="2" style="margin-top:1.5%; margin-right:2%;"
+      class="oj-formlayout-full-width oj-applayout-content">
+      <oj-input-text label-hint="[[$application.translations.app.select_single_label_hint_9d04]]"
+        value="{{ $variables.postBudgetTransferHeader.plan_name}}" readonly="true">
+      </oj-input-text>
+      <oj-input-text label-hint="[[$application.translations.app.select_single_label_hint_9d04]]"
+        value="{{ $variables.postBudgetTransferHeader.plan_name}}" readonly="true">
+      </oj-input-text>
+      <oj-input-text label-hint="[[$application.translations.app.select_single_label_hint_2c1e]]" readonly="true"
+        value="{{ $variables.postBudgetTransferHeader.administrator_person_name }}">
+      </oj-input-text>
+      <oj-input-text label-hint="[[$application.translations.app.searchTable_columns_header_text_21ee]]" readonly="true"
+        value="{{ $variables.postBudgetTransferHeader.company_name }}">
+      </oj-input-text>
+
+      <!-- <oj-input-text label-hint="[[$application.translations.app.searchTable_columns_header_text_1ec4]]" readonly="true"
+        value="{{ $variables.postBudgetTransferHeader.currency_code }}">
+      </oj-input-text> -->
+      <!-- <oj-input-number label-hint="[[$application.translations.app.searchTable_columns_header_text_873c]]" min="1900"
+        max="2099" step="1"
+        converter='{"options":{"style":"decimal","unit":"byte","decimalFormat":"standard","useGrouping":false},"type":"number"}'
+        virtual-keyboard="number" readonly="true" value="{{ $variables.postBudgetTransferHeader.budger_year }}">
+      </oj-input-number> -->
+      <oj-input-text readonly="true" value="{{ $variables.postBudgetTransferHeader.status }}"
+        label-hint="[[$application.translations.app.select_single_label_hint_2804]]">
+      </oj-input-text>
+
+    </oj-form-layout>
+  </div>
+</div>

@@ -1,0 +1,220 @@
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-11  oj-xl-12">
+    <div class="oj-flex-item oj-sm-12 oj-md-12">
+      <h1 style="font-size: larger; font-weight: bold; margin-top:2%;">Budget Transfer</h1>
+    </div>
+  </div>
+</div>
+
+<div style="display:flex; justify-content:flex-end;">
+      <!--Approve  -->
+  <oj-button style="margin-left:0.5%;margin-right:1.5%;" class="oj-button-sm" 
+        :hidden="[[ ($variables.taskId!=null && $variables.postBudgetTransferHeader.category==='Approver')?false:true ]]"
+        chroming="solid" on-oj-action="[[$listeners.buttonAction6]]">Approve</oj-button>
+      <!--Reject  -->
+  <oj-button style="margin-left:0.5%;margin-right:1.5%;" class="oj-button-sm" 
+        :hidden="[[ ($variables.taskId!=null && $variables.postBudgetTransferHeader.category==='Approver')?false:true ]]"
+        chroming="solid" on-oj-action="[[$listeners.buttonAction7]]">Reject</oj-button>
+  <!-- <oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction3]]" style="margin-left:0.5%;margin-right:0.5%;"
+  :hidden='[[ (($variables.postBudgetTransferHeader.status==="Draft"||$variables.postBudgetTransferHeader.status==="Reject"))?false:true ]]'>
+    <oj-bind-text value="[[$application.translations.app.button__text_6669]]"></oj-bind-text>
+  </oj-button> -->
+  <oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction3]]" style="margin-left:0.5%;margin-right:0.5%;"
+  :hidden='[[ (($variables.postBudgetTransferHeader.status==="Draft"||$variables.postBudgetTransferHeader.status==="Reject"))?false:true ]]'>
+    <oj-bind-text value="[[$application.translations.app.button__text_346d]]"></oj-bind-text>
+  </oj-button>
+  <oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction3]]"
+  :hidden="[[ ($variables.taskId!=null)?true:false]]">
+    <oj-bind-text value="[[$application.translations.app.button__text_607c]]"></oj-bind-text>
+  </oj-button>
+</div>
+
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12" oj-xl-12 oj-panel oj-panel-shadow-md oj-selected">
+    <oj-form-layout label-edge='start' max-columns="2" style="margin-top:1.5%; margin-right:2%;"
+      class="oj-formlayout-full-width oj-applayout-content">
+      <oj-input-text label-hint="[[$application.translations.app.select_single_label_hint_9d04]]"
+        value="{{ $variables.postBudgetTransferHeader.plan_name}}" readonly="true">
+      </oj-input-text>
+      <oj-input-text label-hint="[[$application.translations.app.select_single_label_hint_9d04]]"
+        value="{{ $variables.postBudgetTransferHeader.plan_name}}" readonly="true">
+      </oj-input-text>
+      <oj-input-text label-hint="[[$application.translations.app.select_single_label_hint_2c1e]]" readonly="true"
+        value="{{ $variables.postBudgetTransferHeader.administrator_person_name }}">
+      </oj-input-text>
+      <oj-input-text label-hint="[[$application.translations.app.searchTable_columns_header_text_21ee]]" readonly="true"
+        value="{{ $variables.postBudgetTransferHeader.company_name }}">
+      </oj-input-text>
+
+      <!-- <oj-input-text label-hint="[[$application.translations.app.searchTable_columns_header_text_1ec4]]" readonly="true"
+        value="{{ $variables.postBudgetTransferHeader.currency_code }}">
+      </oj-input-text> -->
+      <!-- <oj-input-number label-hint="[[$application.translations.app.searchTable_columns_header_text_873c]]" min="1900"
+        max="2099" step="1"
+        converter='{"options":{"style":"decimal","unit":"byte","decimalFormat":"standard","useGrouping":false},"type":"number"}'
+        virtual-keyboard="number" readonly="true" value="{{ $variables.postBudgetTransferHeader.budger_year }}">
+      </oj-input-number> -->
+      <oj-input-text readonly="true" value="{{ $variables.postBudgetTransferHeader.status }}"
+        label-hint="[[$application.translations.app.select_single_label_hint_2804]]">
+      </oj-input-text>
+
+    </oj-form-layout>
+  </div>
+</div>
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12">
+    <oj-button chroming="half" on-oj-action="[[$listeners.buttonAction]]">
+      <oj-bind-text value="[[$application.translations.app.button__text_bda7]]"></oj-bind-text>
+      <img slot="startIcon" :src="[[ $application.path + 'resources/images/Add.png' ]]">
+    </oj-button>
+    <!-- <oj-sample-export-data max-rows="1000" include-header-row="true" display="all" chroming="half"
+      file-name="Budget Plan">
+      <span>Export</span>
+      <img slot="startIcon" alt="Archive Data" width="16" height="16"
+        :src="[[ $application.path + 'resources/images/Export.png' ]]" style="object-fit: fill;"/>
+    </oj-sample-export-data> -->
+  </div>
+</div>
+<div class="oj-flex">
+  <oj-table scroll-policy="loadMoreOnScroll" class="oj-sm-width-full oj-bg-body oj-search-table" style="max-width:96vw;"
+    selection-mode.row="single" edit-mode="rowEdit" id="searchTable" display="grid" horizontal-grid-visible="enabled"
+    vertical-grid-visible="enabled"
+    columns='[[ [{"headerText":$application.translations.app.searchTable_columns_header_text_ead3,"field":"","template":"editTemplate"},{"headerText":$application.translations.app.input_text_label_hint_29fd,"field":"hdr_transfer_number","width":300},{"headerText":$application.translations.app.input_date_label_hint_cfee,"field":"hdr_transfer_date","template":"dateFormatTemplate"},{"headerText":$application.translations.app.select_single_label_hint_9d04,"field":"hdr_plan_name"},{"headerText":$application.translations.app.select_single_label_hint_2c1e,"field":"hdr_administrator_person_name"},{"headerText":$application.translations.app.searchTable_columns_header_text_21ee,"field":"hdr_company_name"},{"headerText":$application.translations.app.searchTable_columns_header_text_28d7,"field":"transfer_type_disp"},{"headerText":$application.translations.app.searchTable_columns_header_text_6468,"field":"from_dept_code"},{"headerText":$application.translations.app.searchTable_columns_header_text_85ae,"field":"to_dept_code"},{"headerText":$application.translations.app.searchTable_columns_header_text_05bf,"field":"from_account_code"},{"headerText":$application.translations.app.searchTable_columns_header_text_3e9d,"field":"to_account_code"},{"headerText":$application.translations.app.searchTable_columns_header_text_1ec4,"field":"currency_code"},{"headerText":$application.translations.app.searchTable_columns_header_text_bd58,"field":"budget_transfer_amount"},{"headerText":$application.translations.app.searchTable_columns_header_text_873c,"field":"budget_year"},{"headerText":$application.translations.app.searchTable_columns_header_text_e44b,"field":"dept_owner"},{"headerText":$application.translations.app.searchTable_columns_header_text_ab8f,"field":"transfer_ref"},{"headerText":$application.translations.app.select_single_label_hint_2804,"field":"status"},{"headerText":$application.translations.app.searchTable_columns_header_text_1e82,"field":"remarks"}] ]]'
+    data="[[ $variables.budgetTransferLinesPDP ]]">
+
+    <template slot="editTemplate">
+      <a target="_blank" <oj-button chroming="half">
+        <img :src="[[ $application.path + 'resources/images/Edit.png' ]]" style="margin-left:35%;"
+          on-click="[[$listeners.imageClick]]"
+          >
+      </a>
+    </template>
+    <template slot="activeFlagTemplate">
+      <oj-bind-if test='[[ $current.data!=="true" ]]'>
+        <img :src="[[ $application.path + 'resources/images/Cancel.png' ]]"  style="margin-left:40%;" >
+      </oj-bind-if>
+      <oj-bind-if test='[[ $current.data==="true" ]]'>
+        <img :src="[[ $application.path + 'resources/images/Ok_icon.png' ]]"  style="margin-left:40%;" >
+      </oj-bind-if>
+    </template>
+    <template slot="dateFormatTemplate">
+      <oj-input-date value="[[$current.data]]" readonly="true"
+        converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+    </template>
+    <oj-paging-control slot="bottom" id="paging" class="oj-sm-width-full" page-size="8"
+      data="[[ $variables.budgetTransferLinesPDP ]]">
+    </oj-paging-control>
+
+  </oj-table>
+</div>
+
+
+<oj-dialog style="display:none; width: 1200px; height: 425px;" dialog-title="Budget Transfer"
+  id="budgetTransferLinePopupId">
+  <div slot="body">
+    <div class="oj-flex">
+      <div class="oj-flex-item oj-sm-12 oj-md-11">
+        <oj-validation-group id="budgetTransferLineFormId">
+          <oj-form-layout label-edge='start' columns="2" max-columns="2" style="margin-top:0.5%;">
+            <oj-input-text label-hint="[[$application.translations.app.input_text_label_hint_684d]]" disabled="true"
+              value="{{ $variables.postBudgetTransferLines.transfer_ref }}"></oj-input-text>
+            <!-- <oj-select-single label-hint="[[$application.translations.app.searchTable_columns_header_text_05bf]]"
+              value="[[ $variables.postBudgetTransferLines.from_account_code ]]"
+              data="[[$variables.getCOASegmentListSDP]]" item-text="flex_value_meaning_code">
+            </oj-select-single> -->
+            <oj-select-single label-hint="[[$application.translations.app.searchTable_columns_header_text_05bf]]"
+              id="fromAccountLOVId" data="[[$variables.getCOASegmentListSDP]]" item-text="lov_display_name"
+              value="{{ $variables.postBudgetTransferLines.from_account_code }}" required="true">
+            </oj-select-single>
+
+            <oj-select-single required="true"
+              label-hint="[[$application.translations.app.searchTable_columns_header_text_3e9d]]"
+              value="{{ $variables.postBudgetTransferLines.to_account_code }}"
+              data="[[$variables.getCOASegmentListSDP2]]" item-text="lov_display_name">
+            </oj-select-single>
+
+            <oj-select-single required="[[ $variables.postBudgetTransferLines.transfer_type=='ACROS_DEPT' ]]"
+              label-hint="[[$application.translations.app.searchTable_columns_header_text_6468]]"
+              value="{{ $variables.postBudgetTransferLines.from_dept_code }}"
+              data="[[$variables.getCOASegmentListSDP3]]" item-text="lov_display_name"
+              disabled="[[ $variables.postBudgetTransferLines.transfer_type=='WITH_IN_DEPT' ]]">
+            </oj-select-single>
+            <oj-select-single required="[[ $variables.postBudgetTransferLines.transfer_type=='ACROS_DEPT' ]]"
+              label-hint="[[$application.translations.app.searchTable_columns_header_text_85ae]]"
+              value="{{ $variables.postBudgetTransferLines.to_dept_code }}" data="[[$variables.getCOASegmentListSDP4]]"
+              item-text="lov_display_name"
+              disabled="[[ $variables.postBudgetTransferLines.transfer_type=='WITH_IN_DEPT' ]]">
+            </oj-select-single>
+
+            <oj-combobox-one required="true"
+              label-hint="[[$application.translations.app.searchTable_columns_header_text_28d7]]"
+              value="{{ $variables.postBudgetTransferLines.transfer_type }}" placeholder="select Transfer Type"
+              on-value-changed="[[$listeners.comboValue]]">
+              <oj-option value="WITH_IN_DEPT">With In Department</oj-option>
+              <oj-option value="ACROS_DEPT">Across Department </oj-option>
+            </oj-combobox-one>
+
+            <oj-input-number label-hint="[[$application.translations.app.searchTable_columns_header_text_bd58]]"
+              step="1" value="{{ $variables.postBudgetTransferLines.budget_transfer_amount }}" required="true">
+            </oj-input-number>
+            <oj-input-text label-hint="[[$application.translations.app.input_text_label_hint_a46c]]" disabled="true"
+              value="{{ $variables.postBudgetTransferLines.dept_owner }}"></oj-input-text>
+            <oj-input-date converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+              placeholder="[[$application.translations.app.input_date_placeholder_949f]]"
+              label-hint="[[$application.translations.app.input_date_label_hint_f306]]" disabled="true"
+              value="{{ $variables.postBudgetTransferLines.creation_date }}"></oj-input-date>
+            <oj-text-area label-hint="[[$application.translations.app.searchTable_columns_header_text_1e82]]"
+              value="{{ $variables.postBudgetTransferLines.remarks }}">
+            </oj-text-area>
+          </oj-form-layout>
+        </oj-validation-group>
+      </div>
+    </div>
+  </div>
+  <div slot="footer" style="justify-content:center; margin-top:0.5%;">
+    <!-- <div style="display:flex; justify-content:flex-center;"> -->
+    <oj-button class="oj-button-sm" chroming="solid" on-oj-action="[[$listeners.buttonAction5]]">
+      <oj-bind-text value="[[$application.translations.app.button__text_0622]]"></oj-bind-text>
+    </oj-button>
+    <oj-button class="oj-button-sm" chroming="solid" on-oj-action="[[$listeners.buttonAction4]]">
+      <oj-bind-text value="[[$application.translations.app.button__text_346d]]"></oj-bind-text>
+    </oj-button>
+    <oj-button class="oj-button-sm" chroming="solid" on-oj-action="[[$listeners.buttonAction2]]">
+      <oj-bind-text value="[[$application.translations.app.button__text_3190]]"></oj-bind-text>
+    </oj-button>
+    <!-- </div> -->
+
+  </div>
+</oj-dialog>
+
+
+
+<oj-dialog dialog-title="Approve" id="approvePopUp">
+<div>
+<oj-text-area label-hint="Comments" placeholder="Comments" value="{{ $variables.responseComment }}"></oj-text-area>
+<oj-validation-group>
+<oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction10]]" >Submit</oj-button>
+<oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction8]]" >Cancel</oj-button>
+</oj-validation-group>
+
+</div>
+</oj-dialog>
+
+<oj-dialog dialog-title="Reject" id="rejectPopUp">
+<div>
+<oj-text-area label-hint="Comments" placeholder="Comments" value="{{ $variables.responseComment }}"></oj-text-area>
+<oj-validation-group>
+<oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction11]]"  >Submit</oj-button>
+<oj-button chroming="solid" on-oj-action="[[$listeners.buttonAction9]]" >Cancel</oj-button>
+</oj-validation-group>
+</div>
+</oj-dialog>
+
+<oj-dialog dialog-title="In-Progress" id="loadingplzwait" style="width: 467px; height: 445px;">
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12">
+    <img :src="[[ $application.path + 'resources/images/loading-please-wait-icon-1.gif' ]]" width="453px"
+      height="342px">
+  </div>
+</div>
+</oj-dialog>

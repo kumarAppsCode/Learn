@@ -1,0 +1,15 @@
+  PageModule.prototype.columncheck = function(pagetype) {
+      if(pagetype=='SUBMIT_PERMISSION'){
+        return "display:none;";
+      }else{
+        return null;
+      }
+  };
+
+
+-----------------
+        {"headerText":"Request Number","field":"request_number","resizable":"enabled"},
+        {"headerText":"Business Unit","field":"requester_business_unit","resizable":"enabled"},
+        {"headerText":"Employee Name","field":"requester_full_name","headerStyle":$functions.columncheck($variables.pageRequestType),"style":$functions.columncheck($variables.pageRequestType)},
+        {"headerText":"Employee Number","field":"requester_person_number","resizable":"enabled"},
+        {"headerText":"Request Type","field":"request_type_disp","resizable":"enabled"},
